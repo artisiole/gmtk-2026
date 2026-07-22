@@ -32,5 +32,6 @@ script = ExtResource("3_dqkch")
 shape = SubResource("CircleShape2D_g2els")
 
 [node name="CursorSprite" type="Sprite2D" parent="RotationPivot/Interactor" unique_id=1119822940]
+z_index = 100
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_qhqgy")
