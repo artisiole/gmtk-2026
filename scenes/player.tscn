@@ -24,6 +24,8 @@ shape = SubResource("RectangleShape2D_bpmhk")
 
 [node name="Interactor" type="StaticBody2D" parent="RotationPivot" unique_id=1074913469]
 position = Vector2(86, 0)
+collision_layer = 2
+collision_mask = 3
 
 [node name="CursorCollision" type="CollisionShape2D" parent="RotationPivot/Interactor" unique_id=1228547089]
 shape = SubResource("CircleShape2D_g2els")
