@@ -16,3 +16,17 @@ func _physics_process(delta: float) -> void:
 	velocity = input * SPEED
 	
 	move_and_slide()
+
+func _process(delta: float) -> void:
+	# rotate cursor to be pointing to the mouse
+	
+	# get the vectors needed
+	var v1: Vector2 = Vector2.RIGHT
+	var v2: Vector2 = (get_viewport().get_mouse_position() - global_position).normalized()  # The vector between the player position and mouse position
+	
+	var angle = acos(v1.dot(v2))
+	# Multiple the angle by the sign of the y component of v2
+	# if the mouse is above the player, v2.y < 0
+	angle *= sign(v2.y)
+	
+	get_node("RotationPivot").rotation = angle
