@@ -5,6 +5,11 @@ extends CharacterBody2D
 
 var SPEED = 400
 
+var rotation_pivot
+
+func _ready() -> void: 
+	rotation_pivot = get_node("RotationPivot")
+
 func _physics_process(delta: float) -> void:
 	var input = Input.get_vector("left", "right", "up", "down").normalized()
 	
@@ -29,4 +34,9 @@ func _process(delta: float) -> void:
 	# if the mouse is above the player, v2.y < 0
 	angle *= sign(v2.y)
 	
-	get_node("RotationPivot").rotation = angle
+	# Lerp smoothing hopefully done right
+	var blend = pow(0.5, delta * 500) # magic number
+	rotation_pivot.rotation = lerp_angle( rotation_pivot.rotation, angle, blend)
+	
+	# Set sprite rotation to the opposite of the pivot rotation to keep it unrotated
+	rotation_pivot.get_node("Interactor/CursorSprite").rotation = -rotation_pivot.rotation
