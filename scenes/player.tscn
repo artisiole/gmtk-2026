@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bk3rtxa1ypj1p"]
+
+[ext_resource type="Script" uid="uid://b1hdk3jfuahhf" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://w5kafc3luitw" path="res://sprites/icon.svg" id="2_qhqgy"]
+[ext_resource type="Script" uid="uid://b3v1ih6fblcni" path="res://scripts/interactor.gd" id="3_dqkch"]
+[ext_resource type="Texture2D" uid="uid://cx45iyrgguf70" path="res://sprites/crosshair085.png" id="3_qhqgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpmhk"]
+size = Vector2(38, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 18.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1519330593]
+script = ExtResource("1_g2els")
+
+[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=1766745481]
+scale = Vector2(0.3, 0.5)
+texture = ExtResource("2_qhqgy")
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=581234897]
+shape = SubResource("RectangleShape2D_bpmhk")
+
+[node name="RotationPivot" type="Node2D" parent="." unique_id=1715832901]
+
+[node name="Interactor" type="Area2D" parent="RotationPivot" unique_id=742383532]
+position = Vector2(86, 0)
+collision_mask = 2
+script = ExtResource("3_dqkch")
+
+[node name="CursorCollision" type="CollisionShape2D" parent="RotationPivot/Interactor" unique_id=1228547089]
+shape = SubResource("CircleShape2D_g2els")
+
+[node name="CursorSprite" type="Sprite2D" parent="RotationPivot/Interactor" unique_id=1119822940]
+z_index = 100
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_qhqgy")
