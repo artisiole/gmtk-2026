@@ -7,8 +7,11 @@ var phase_textures = [ null, null, null, null]
 var phase: int = 0
 var phase_times =  [0.0, 0.0, 0.0]
 
+var plant_plucked: bool = false
+
+@onready var plant_sprite = get_node("PlantInteract/PlantSprite")
+
 func _on_body_entered(body: Node2D) -> void:
-	print(body.name)
 	if body.is_in_group("seed"):
 		planted = true
 		plantTime = 0.0
@@ -23,17 +26,17 @@ func _on_body_entered(body: Node2D) -> void:
 		phase_times[1] = body.phaseTimes[1]
 		phase_times[2] = body.phaseTimes[2]
 		
-		get_node("PlantSprite").texture = phase_textures[0]
+		plant_sprite.texture = phase_textures[0]
 		
 		body.queue_free()
 		
 func _process(delta: float) -> void:
-	if planted:
+	if planted and not plant_plucked:
 		plantTime += delta
 		
 	if plantTime > phase_times[0]:
-		get_node("PlantSprite").texture = phase_textures[1]
+		plant_sprite.texture = phase_textures[1]
 	if plantTime > phase_times[1]:
-		get_node("PlantSprite").texture = phase_textures[2]
+		plant_sprite.texture = phase_textures[2]
 	if plantTime > phase_times[2]:
-		get_node("PlantSprite").texture = phase_textures[3]
+		plant_sprite.texture = phase_textures[3]

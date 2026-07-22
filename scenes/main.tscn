@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b6jhkp1wgk8gg" path="res://sprites/placeholder_seed.png" id="4_tefeu"]
 [ext_resource type="Texture2D" uid="uid://hyst8xb50gkg" path="res://sprites/placeholder_plant2.png" id="5_choun"]
 [ext_resource type="Texture2D" uid="uid://dorfvr31r4yrd" path="res://sprites/placeholder_plant_wilt.png" id="6_85g3d"]
+[ext_resource type="Script" uid="uid://dqkwtdci77md3" path="res://scripts/plant.gd" id="10_choun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85ri6"]
 size = Vector2(13, 775)
@@ -16,10 +17,16 @@ size = Vector2(13, 775)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
 size = Vector2(1315, 16.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
-size = Vector2(82, 72)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_choun"]
+size = Vector2(91.26222, 79.315674)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpmhk"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
+size = Vector2(124, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npwjr"]
 size = Vector2(128, 128)
 
 [node name="Node2D" type="Node2D" unique_id=311975873]
@@ -65,7 +72,8 @@ scale = Vector2(0.802, 0.636)
 texture = ExtResource("4_tefeu")
 
 [node name="InteractableCollision" type="CollisionShape2D" parent="Seed" unique_id=1327673341]
-shape = SubResource("RectangleShape2D_0wfyh")
+position = Vector2(-0.97091675, -0.7775879)
+shape = SubResource("RectangleShape2D_choun")
 
 [node name="Plot" type="Area2D" parent="." unique_id=84077910]
 z_index = -1
@@ -80,6 +88,22 @@ texture = ExtResource("4_jyhfs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plot" unique_id=431591611]
 shape = SubResource("RectangleShape2D_bpmhk")
 
-[node name="PlantSprite" type="Sprite2D" parent="Plot" unique_id=507395991]
+[node name="PlantInteract" type="AnimatableBody2D" parent="Plot" unique_id=373731014]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("10_choun")
+
+[node name="InteractableCollision" type="CollisionShape2D" parent="Plot/PlantInteract" unique_id=782413269]
+z_index = 6
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="PlantSprite" type="Sprite2D" parent="Plot/PlantInteract" unique_id=507395991]
+
+[node name="PlayerBlock" type="StaticBody2D" parent="Plot" unique_id=1254641943]
+z_index = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plot/PlayerBlock" unique_id=694879653]
+shape = SubResource("RectangleShape2D_npwjr")
 
 [connection signal="body_entered" from="Plot" to="Plot" method="_on_body_entered"]
