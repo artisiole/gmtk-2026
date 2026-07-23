@@ -9,6 +9,8 @@ const cursor_max_distance = 86
 var rotation_pivot
 var interactor
 
+var camera_y_pos: int = 360
+
 func _ready() -> void: 
 	rotation_pivot = get_node("RotationPivot")
 	interactor = get_node("RotationPivot/Interactor")
@@ -27,7 +29,14 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	# Cursor behavior
-	var distance_from_mouse = (get_viewport().get_mouse_position() - global_position).length()
+	var adjusted_mouse_pos: Vector2
+		
+	if camera_y_pos == 1080:
+		adjusted_mouse_pos = Vector2(get_viewport().get_mouse_position().x, get_viewport().get_mouse_position().y + 720)
+	else:
+		adjusted_mouse_pos = get_viewport().get_mouse_position()
+	
+	var distance_from_mouse = (adjusted_mouse_pos - global_position).length()
 	
 	if distance_from_mouse > cursor_max_distance: # if the mouse is farther from the player than the cursor max distance, point it towards the mouse
 		# reset interactor position to max distance
@@ -35,7 +44,7 @@ func _process(delta: float) -> void:
 		
 		# get the vectors needed
 		var v1: Vector2 = Vector2.RIGHT
-		var v2: Vector2 = (get_viewport().get_mouse_position() - global_position).normalized()  # The vector between the player position and mouse position
+		var v2 = (adjusted_mouse_pos - global_position).normalized() # The vector between the player position and mouse position
 		
 		var angle = acos(v1.dot(v2))
 		# Multiple the angle by the sign of the y component of v2
@@ -43,8 +52,8 @@ func _process(delta: float) -> void:
 		angle *= sign(v2.y)
 		
 		## Lerp smoothing hopefully done right
-		# var blend = pow(0.5, delta * 500) # magic number
-		# rotation_pivot.rotation = lerp_angle( rotation_pivot.rotation, angle, blend)
+		#var blend = pow(0.5, delta * 500) # magic number
+		#rotation_pivot.rotation = lerp_angle( rotation_pivot.rotation, angle, blend)
 		rotation_pivot.rotation = angle
 		
 		# Set sprite rotation to the opposite of the pivot rotation to keep it unrotated
@@ -52,4 +61,4 @@ func _process(delta: float) -> void:
 	else: # otherwise, set the cursor position to the mouse position
 		rotation_pivot.rotation = 0
 		interactor.get_node("CursorSprite").rotation = 0
-		interactor.global_position = get_viewport().get_mouse_position()
+		interactor.global_position = adjusted_mouse_pos
