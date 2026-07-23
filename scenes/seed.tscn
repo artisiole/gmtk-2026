@@ -10,6 +10,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_choun"]
 size = Vector2(91.26222, 79.315674)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bpmhk"]
+radius = 49.999996
+
 [node name="Seed" type="AnimatableBody2D" unique_id=843498348 groups=["seed"]]
 process_priority = -1
 z_index = -1
@@ -32,3 +35,8 @@ texture = ExtResource("6_ulwy6")
 [node name="InteractableCollision" type="CollisionShape2D" parent="." unique_id=1026264058]
 position = Vector2(-0.97091675, -0.7775879)
 shape = SubResource("RectangleShape2D_choun")
+
+[node name="PlotResolver" type="Area2D" parent="." unique_id=266530715]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlotResolver" unique_id=1487361564]
+shape = SubResource("CircleShape2D_bpmhk")
