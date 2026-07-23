@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ckomxm1lifmva"]
+
+[ext_resource type="Texture2D" uid="uid://blme5flblt5vu" path="res://sprites/placeholder_title.png" id="1_u80x2"]
+[ext_resource type="Texture2D" uid="uid://5n2evooqkrk5" path="res://sprites/placeholder_start.png" id="2_bodal"]
+[ext_resource type="Texture2D" uid="uid://btkcalj1r4p72" path="res://sprites/placeholder_start_click.png" id="3_0auqf"]
+[ext_resource type="Script" uid="uid://ru5gwjmgk1l6" path="res://scripts/button.gd" id="3_bodal"]
+[ext_resource type="Texture2D" uid="uid://qqk5ko7ct7le" path="res://sprites/placeholder_start_hover.png" id="4_y16t7"]
+
+[node name="Start" type="Node2D" unique_id=1213545205]
+
+[node name="PlaceholderTitle" type="Sprite2D" parent="." unique_id=961098136]
+z_index = 1
+texture_filter = 1
+position = Vector2(640, 288)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("1_u80x2")
+
+[node name="Control" type="Control" parent="." unique_id=849992359]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureButton" type="TextureButton" parent="Control" unique_id=1320030925]
+z_index = 1
+layout_mode = 0
+offset_left = 576.0
+offset_top = 480.0
+offset_right = 704.0
+offset_bottom = 544.0
+texture_normal = ExtResource("2_bodal")
+texture_pressed = ExtResource("3_0auqf")
+texture_hover = ExtResource("4_y16t7")
+script = ExtResource("3_bodal")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1836648898]
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0.34117648, 0.6509804, 0.8666667, 1)
+metadata/_edit_lock_ = true
+
+[connection signal="button_up" from="Control/TextureButton" to="Control/TextureButton" method="_on_button_up"]
