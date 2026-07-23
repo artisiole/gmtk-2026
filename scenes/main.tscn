@@ -293,6 +293,7 @@ tile_map_data = PackedByteArray("AAAFAPf/AQAAAAAAAAAGAPf/AQABAAAAAAAHAPf/AQABAAA
 tile_set = SubResource("TileSet_bjg73")
 
 [node name="CameraTrigger" type="Area2D" parent="." unique_id=926716643 node_paths=PackedStringArray("camera")]
+position = Vector2(1, 30)
 script = ExtResource("24_y6deb")
 camera = NodePath("../Camera2D")
 destination = Vector2(640, 1080)
@@ -302,7 +303,7 @@ position = Vector2(1035, 733)
 shape = SubResource("RectangleShape2D_jm57v")
 
 [node name="CameraTrigger2" type="Area2D" parent="." unique_id=1422505816 node_paths=PackedStringArray("camera")]
-position = Vector2(-2, -29)
+position = Vector2(-1, -48)
 script = ExtResource("24_y6deb")
 camera = NodePath("../Camera2D")
 destination = Vector2(640, 360)
