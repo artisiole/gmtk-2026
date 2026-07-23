@@ -17,6 +17,7 @@ scale = Vector2(0.1, 0.127)
 collision_layer = 2
 collision_mask = 3
 collision_priority = 0.1
+sync_to_physics = false
 script = ExtResource("1_syr4b")
 planted_phase0 = ExtResource("2_rc2fx")
 planted_phase1 = ExtResource("3_80u5d")
