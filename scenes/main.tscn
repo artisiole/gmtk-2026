@@ -225,6 +225,7 @@ scale = Vector2(0.805, 0.805)
 texture = ExtResource("4_jyhfs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plot" unique_id=431591611]
+z_index = 10
 shape = SubResource("RectangleShape2D_bpmhk")
 
 [node name="PlantInteract" type="AnimatableBody2D" parent="Plot" unique_id=373731014 groups=["plant"]]
@@ -244,6 +245,40 @@ shape = SubResource("RectangleShape2D_0wfyh")
 z_index = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plot/PlayerBlock" unique_id=694879653]
+shape = SubResource("RectangleShape2D_npwjr")
+
+[node name="Plot2" type="Area2D" parent="." unique_id=224257154]
+z_index = 5
+position = Vector2(268, 353)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("4_tbgi4")
+
+[node name="PlotSprite" type="Sprite2D" parent="Plot2" unique_id=1248815210]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.805, 0.805)
+texture = ExtResource("4_jyhfs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plot2" unique_id=1746633502]
+z_index = 10
+shape = SubResource("RectangleShape2D_bpmhk")
+
+[node name="PlantInteract" type="AnimatableBody2D" parent="Plot2" unique_id=162410245 groups=["plant"]]
+z_index = 4
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("10_choun")
+
+[node name="InteractableCollision" type="CollisionShape2D" parent="Plot2/PlantInteract" unique_id=81939873]
+z_index = 6
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="PlantSprite" type="Sprite2D" parent="Plot2/PlantInteract" unique_id=951211224]
+
+[node name="PlayerBlock" type="StaticBody2D" parent="Plot2" unique_id=1137279496]
+z_index = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plot2/PlayerBlock" unique_id=1592257853]
 shape = SubResource("RectangleShape2D_npwjr")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1055604865]
@@ -334,6 +369,9 @@ shape = SubResource("RectangleShape2D_jscy8")
 [connection signal="body_entered" from="Plot" to="Plot" method="_on_body_entered"]
 [connection signal="mouse_entered" from="Plot" to="Plot" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Plot" to="Plot" method="_on_mouse_exited"]
+[connection signal="body_entered" from="Plot2" to="Plot2" method="_on_body_entered"]
+[connection signal="mouse_entered" from="Plot2" to="Plot2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Plot2" to="Plot2" method="_on_mouse_exited"]
 [connection signal="body_entered" from="CameraTrigger" to="CameraTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTrigger2" to="CameraTrigger2" method="_on_body_entered"]
 [connection signal="body_entered" from="Compost" to="Compost" method="_on_body_entered"]
