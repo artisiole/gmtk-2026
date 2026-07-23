@@ -4,7 +4,6 @@ var planted: bool = false
 var plantTime: float = 0.0
 
 var phase_textures = [ null, null, null, null]
-var phase: int = 0
 var phase_times =  [0.0, 0.0, 0.0]
 
 var plant_plucked: bool = false
@@ -14,7 +13,7 @@ var plant_plucked: bool = false
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("seed"):
 		planted = true
-		plantTime = 0.0
+		plantTime = 0.0 
 		
 		# This is bad but literally who cares
 		phase_textures[0] = body.planted_phase0
@@ -40,11 +39,8 @@ func _process(delta: float) -> void:
 		plant_sprite.texture = phase_textures[2]
 	if plantTime > phase_times[2]:
 		plant_sprite.texture = phase_textures[3]
-
-
-func _on_mouse_entered() -> void:
+	
 	if has_overlapping_areas():
 		get_node("PlotSprite").modulate.a = 0.1
-
-func _on_mouse_exited() -> void:
-	get_node("PlotSprite").modulate.a = 0
+	else: 
+		get_node("PlotSprite").modulate.a = 0

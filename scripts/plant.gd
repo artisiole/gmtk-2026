@@ -19,7 +19,4 @@ func end_interact():
 func _process(delta: float) -> void:
 	# interact behavior
 	if interacting:
-		set_collision_layer_value(1, false)
 		global_position = current_interactor.global_position
-	else:
-		set_collision_layer_value(1, true)

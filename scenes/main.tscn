@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://cvyuu4og1sv41" path="res://sprites/counter.png" id="22_dgi5k"]
 [ext_resource type="Texture2D" uid="uid://dihpo8ci28wku" path="res://sprites/table.png" id="23_j8jky"]
 [ext_resource type="Script" uid="uid://xfujb21knitr" path="res://scripts/camera_trigger.gd" id="24_y6deb"]
+[ext_resource type="Script" uid="uid://c2ftiu1535mow" path="res://scripts/compost.gd" id="25_2wyq8"]
+[ext_resource type="Texture2D" uid="uid://q2rslxocu0it" path="res://sprites/placeholder_compost.png" id="25_og1vs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85ri6"]
 size = Vector2(13, 1458)
@@ -181,6 +183,9 @@ sources/1 = SubResource("TileSetAtlasSource_j2jfr")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jm57v"]
 size = Vector2(188, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4s8k"]
+size = Vector2(92, 96)
+
 [node name="Node2D" type="Node2D" unique_id=311975873]
 
 [node name="Player" parent="." unique_id=1519330593 instance=ExtResource("2_0wfyh")]
@@ -233,6 +238,28 @@ texture = ExtResource("4_tefeu")
 position = Vector2(-0.97091675, -0.7775879)
 shape = SubResource("RectangleShape2D_choun")
 
+[node name="Seed2" type="AnimatableBody2D" parent="." unique_id=1679405209 groups=["seed"]]
+z_index = 5
+position = Vector2(224, 605)
+scale = Vector2(0.515, 0.643)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("2_tbgi4")
+planted_phase0 = ExtResource("3_tipki")
+planted_phase1 = ExtResource("4_85g3d")
+planted_phase2 = ExtResource("5_choun")
+planted_wilted = ExtResource("6_85g3d")
+phaseTimes = [5.0, 10.0, 30.0]
+
+[node name="InteractableSprite" type="Sprite2D" parent="Seed2" unique_id=1765625727]
+z_index = 2
+scale = Vector2(0.802, 0.636)
+texture = ExtResource("4_tefeu")
+
+[node name="InteractableCollision" type="CollisionShape2D" parent="Seed2" unique_id=879263508]
+position = Vector2(-0.97091675, -0.7775879)
+shape = SubResource("RectangleShape2D_choun")
+
 [node name="Plot" type="Area2D" parent="." unique_id=84077910]
 z_index = 5
 position = Vector2(194, 353)
@@ -247,8 +274,9 @@ texture = ExtResource("4_jyhfs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plot" unique_id=431591611]
 shape = SubResource("RectangleShape2D_bpmhk")
 
-[node name="PlantInteract" type="AnimatableBody2D" parent="Plot" unique_id=373731014]
-collision_layer = 3
+[node name="PlantInteract" type="AnimatableBody2D" parent="Plot" unique_id=373731014 groups=["plant"]]
+z_index = 4
+collision_layer = 2
 collision_mask = 3
 script = ExtResource("10_choun")
 
@@ -313,8 +341,29 @@ destination = Vector2(640, 360)
 position = Vector2(1035, 733)
 shape = SubResource("RectangleShape2D_jm57v")
 
+[node name="Compost" type="Area2D" parent="." unique_id=948883071]
+z_index = 1
+position = Vector2(73, 679)
+scale = Vector2(0.5, 0.5)
+collision_mask = 3
+script = ExtResource("25_2wyq8")
+
+[node name="CompostSprite" type="Sprite2D" parent="Compost" unique_id=1653027536]
+texture = ExtResource("25_og1vs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Compost" unique_id=1602995088]
+position = Vector2(-4, 12)
+shape = SubResource("RectangleShape2D_h4s8k")
+
+[node name="PlayerBlock" type="StaticBody2D" parent="Compost" unique_id=890534140]
+z_index = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Compost/PlayerBlock" unique_id=221349679]
+shape = SubResource("RectangleShape2D_npwjr")
+
 [connection signal="body_entered" from="Plot" to="Plot" method="_on_body_entered"]
 [connection signal="mouse_entered" from="Plot" to="Plot" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Plot" to="Plot" method="_on_mouse_exited"]
 [connection signal="body_entered" from="CameraTrigger" to="CameraTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTrigger2" to="CameraTrigger2" method="_on_body_entered"]
+[connection signal="body_entered" from="Compost" to="Compost" method="_on_body_entered"]
