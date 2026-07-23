@@ -56,6 +56,9 @@ func _process(delta: float) -> void:
 	if timeout == false and player_orient:
 		animated_sprite.flip_h = player_orient < 0
 	
+	if timeout: # If the day is over, just skip the rest of this script
+		return
+	
 	var distance_from_mouse = (adjusted_mouse_pos - global_position).length()
 	
 	if distance_from_mouse > cursor_max_distance: # if the mouse is farther from the player than the cursor max distance, point it towards the mouse
