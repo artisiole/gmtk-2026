@@ -51,7 +51,7 @@ func _process(delta: float) -> void:
 	if time_remaining < 0 and timing == true:
 		timeout.emit()
 		var tween = get_tree().create_tween()
-		tween.tween_property($"..", "global_position", Vector2(640.0, -360.0), 2.5).set_trans(Tween.TRANS_SPRING)
+		tween.tween_property($"..", "global_position", Vector2(640.0, -360.0), 2.5).set_trans(Tween.TRANS_BACK)
 		timing = false
 	
 	# Because we're setting timing to be false here, these statements can only be true for one frame.

@@ -5,7 +5,7 @@ extends CharacterBody2D
 # ^^ lmfao fuckin goober we're using this shit
 
 var SPEED = 400
-const cursor_max_distance = 86
+const cursor_max_distance = 129
 
 var rotation_pivot
 var interactor
@@ -23,7 +23,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var input = Input.get_vector("left", "right", "up", "down").normalized()
-	
 	
 	if timeout == false and input != Vector2.ZERO:
 		_animation_player.play("walk")
@@ -61,7 +60,7 @@ func _process(delta: float) -> void:
 	
 	if distance_from_mouse > cursor_max_distance: # if the mouse is farther from the player than the cursor max distance, point it towards the mouse
 		# reset interactor position to max distance
-		rotation_pivot.get_node("Interactor").position = Vector2(cursor_max_distance, 0)
+		rotation_pivot.get_node("Interactor").position = Vector2(86, 0)
 		
 		# get the vectors needed
 		var v1: Vector2 = Vector2.RIGHT
