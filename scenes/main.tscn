@@ -24,61 +24,86 @@
 [ext_resource type="Script" uid="uid://c2ftiu1535mow" path="res://scripts/compost.gd" id="25_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://q2rslxocu0it" path="res://sprites/placeholder_compost.png" id="25_og1vs"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_85ri6"]
-size = Vector2(13, 1458)
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y6deb"]
+friction = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
-size = Vector2(1315, 16.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pm3ni"]
-size = Vector2(981.5, 16.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6deb"]
-size = Vector2(178, 11.25)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kmb1v"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pm3ni"]
 texture = ExtResource("11_pm3ni")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6, -8, -6)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(6, -8, 8, -8, 8, 8, 6, 8)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -6, -8, -6, 8, -8, 8)
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 6, 8, 6, 8, 8, -8, 8)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6, -8, -6)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(6, -8, 8, -8, 8, 8, 6, 8)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -6, -8, -6, 8, -8, 8)
 3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 6, 8, 6, 8, 8, -8, 8)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6, -8, -6)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(6, -8, 8, -8, 8, 8, 6, 8)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -6, -8, -6, 8, -8, 8)
 3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 6, 8, 6, 8, 8, -8, 8)
 0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6, -8, -6)
 1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(6, -8, 8, -8, 8, 8, 6, 8)
 2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -6, -8, -6, 8, -8, 8)
 3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 6, 8, 6, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fuf3a"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y6deb"]
 texture = ExtResource("12_y6deb")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6, -6, -6, -6, 8, -8, 8)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, 6, 8, 6, -6, -8, -6)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -8, -6, 6, 8, 6, 8, 8, -8, 8, -8, -8)
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(6, 6, 6, -8, 8, -8, 8, 8, -8, 8, -8, 6)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6, -6, -6, -6, 8, -8, 8)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, 6, 8, 6, -6, -8, -6)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -8, -6, 6, 8, 6, 8, 8, -8, 8, -8, -8)
 3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(6, 6, 6, -8, 8, -8, 8, 8, -8, 8, -8, 6)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6, -6, -6, -6, 8, -8, 8)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, 6, 8, 6, -6, -8, -6)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -8, -6, 6, 8, 6, 8, 8, -8, 8, -8, -8)
 3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(6, 6, 6, -8, 8, -8, 8, 8, -8, 8, -8, 6)
 0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6, -6, -6, -6, 8, -8, 8)
 1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, 6, 8, 6, -6, -8, -6)
 2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -8, -6, 6, 8, 6, 8, 8, -8, 8, -8, -8)
 3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(6, 6, 6, -8, 8, -8, 8, 8, -8, 8, -8, 6)
 
-[sub_resource type="TileSet" id="TileSet_pibwh"]
-sources/0 = SubResource("TileSetAtlasSource_kmb1v")
-sources/1 = SubResource("TileSetAtlasSource_fuf3a")
+[sub_resource type="TileSet" id="TileSet_og1vs"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_y6deb")
+sources/0 = SubResource("TileSetAtlasSource_pm3ni")
+sources/1 = SubResource("TileSetAtlasSource_y6deb")
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y6deb"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2wyq8"]
 friction = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c6pm6"]
@@ -130,7 +155,7 @@ texture = ExtResource("21_5q0nq")
 
 [sub_resource type="TileSet" id="TileSet_nvyfr"]
 physics_layer_0/collision_layer = 1
-physics_layer_0/physics_material = SubResource("PhysicsMaterial_y6deb")
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_2wyq8")
 sources/0 = SubResource("TileSetAtlasSource_c6pm6")
 sources/1 = SubResource("TileSetAtlasSource_5he1u")
 sources/2 = SubResource("TileSetAtlasSource_cjqg0")
@@ -161,7 +186,7 @@ texture = ExtResource("23_j8jky")
 
 [sub_resource type="TileSet" id="TileSet_bjg73"]
 physics_layer_0/collision_layer = 1
-physics_layer_0/physics_material = SubResource("PhysicsMaterial_y6deb")
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_2wyq8")
 sources/0 = SubResource("TileSetAtlasSource_ty1g6")
 sources/1 = SubResource("TileSetAtlasSource_j2jfr")
 
@@ -183,47 +208,42 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
 size = Vector2(124, 122)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_og1vs"]
+blend_mode = 3
+
+[sub_resource type="Gradient" id="Gradient_y6deb"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bpmhk"]
+gradient = SubResource("Gradient_y6deb")
+
+[sub_resource type="Gradient" id="Gradient_pm3ni"]
+offsets = PackedFloat32Array(0, 0.6325301)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bpmhk"]
+gradient = SubResource("Gradient_pm3ni")
+fill = 1
+fill_from = Vector2(0.5217391, 0.5173913)
+
 [node name="Node2D" type="Node2D" unique_id=311975873]
 
 [node name="Player" parent="." unique_id=1519330593 instance=ExtResource("2_0wfyh")]
 z_index = 4
 position = Vector2(121, 133)
-
-[node name="Boundaries" type="Node2D" parent="." unique_id=2084108758]
-
-[node name="Walls" type="StaticBody2D" parent="Boundaries" unique_id=1028835517]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Walls" unique_id=1762951722]
-position = Vector2(-7, 712)
-shape = SubResource("RectangleShape2D_85ri6")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries/Walls" unique_id=416053934]
-position = Vector2(1286, 709)
-shape = SubResource("RectangleShape2D_85ri6")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundaries/Walls" unique_id=1195485319]
-position = Vector2(635.5, -8.25)
-shape = SubResource("RectangleShape2D_sugp2")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Boundaries/Walls" unique_id=1710448542]
-position = Vector2(469.25, 728)
-shape = SubResource("RectangleShape2D_pm3ni")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Boundaries/Walls" unique_id=923265468]
-position = Vector2(1209, 725.375)
-shape = SubResource("RectangleShape2D_y6deb")
+scale = Vector2(1.2, 1.2)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1055604865]
 position = Vector2(640, 360.00003)
 scale = Vector2(5, 5)
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=468879426]
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1132094721]
 z_index = 2
 texture_filter = 1
 position = Vector2(0, 720)
 scale = Vector2(5, 5)
 tile_map_data = PackedByteArray("AAAAAPf/AQAAAAEAAAABAPf/AAAAAAEAAAACAPf/AAAAAAEAAAADAPf/AAAAAAEAAAAEAPf/AAAAAAEAAAAFAPf/AAAAAAEAAAAGAPf/AAAAAAEAAAAHAPf/AAAAAAEAAAAIAPf/AAAAAAEAAAAJAPf/AAAAAAEAAAAKAPf/AAAAAAEAAAALAPf/AAAAAAEAAAAMAPf/AAAAAAEAAAANAPf/AAAAAAEAAAAOAPf/AAAAAAEAAAAPAPf/AQABAAEAAAAPAPj/AAABAAEAAAAPAPn/AAABAAEAAAAPAPr/AAABAAEAAAAPAPv/AAABAAEAAAAPAPz/AAABAAEAAAAPAP3/AAABAAEAAAAPAP7/AAABAAEAAAAPAP//AQADAAEAAAAAAPj/AAACAAEAAAAAAPn/AAACAAEAAAAAAPr/AAACAAEAAAAAAPv/AAACAAEAAAAAAPz/AAACAAEAAAAAAP3/AAACAAEAAAAAAP7/AAACAAEAAAAAAP//AQACAAEAAAABAP//AAADAAEAAAACAP//AAADAAEAAAADAP//AAADAAEAAAAEAP//AAADAAEAAAAFAP//AAADAAEAAAAGAP//AAADAAEAAAAHAP//AAADAAEAAAAIAP//AAADAAEAAAAJAP//AAADAAEAAAAKAP//AAADAAEAAAALAP//AAADAAEAAAAOAP//AAADAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAQABAAAAAAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAAAAAMAAAACAAAAAAAAAAQAAAACAAAAAAAAAAUAAAACAAAAAAAAAAYAAAACAAAAAAAAAAcAAAACAAAAAAAPAAcAAAABAAAAAAAPAAYAAAABAAAAAAAPAAUAAAABAAAAAAAPAAQAAAABAAAAAAAPAAMAAAABAAAAAAAPAAIAAAABAAAAAAAPAAEAAAABAAAAAAAAAAgAAQACAAAAAAABAAgAAAADAAAAAAACAAgAAAADAAAAAAADAAgAAAADAAAAAAAEAAgAAAADAAAAAAAFAAgAAAADAAAAAAAGAAgAAAADAAAAAAAJAAgAAAADAAAAAAAKAAgAAAADAAAAAAALAAgAAAADAAAAAAAMAAgAAAADAAAAAAANAAgAAAADAAAAAAAOAAgAAAADAAAAAAAPAAgAAQADAAAAAAA=")
-tile_set = SubResource("TileSet_pibwh")
+tile_set = SubResource("TileSet_og1vs")
 metadata/_edit_lock_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1824992334]
@@ -477,6 +497,89 @@ z_index = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1/Plot5/PlayerBlock" unique_id=65574227]
 shape = SubResource("RectangleShape2D_npwjr")
+
+[node name="NightOverlay" type="Sprite2D" parent="." unique_id=1512364212]
+modulate = Color(0.7393999, 0.7724399, 1.2349999, 1)
+z_index = 22
+material = SubResource("CanvasItemMaterial_og1vs")
+position = Vector2(627.00006, 728.375)
+scale = Vector2(5.90625, 1513.25)
+texture = SubResource("GradientTexture1D_bpmhk")
+
+[node name="NightLights_Main" type="Node2D" parent="." unique_id=572058060]
+
+[node name="PointLight2D" type="PointLight2D" parent="NightLights_Main" unique_id=903424512]
+position = Vector2(352.00003, 180)
+scale = Vector2(5.663, 5.648)
+color = Color(1, 0.6862745, 0.44705883, 0.24313726)
+energy = 1.9
+texture = SubResource("GradientTexture2D_bpmhk")
+
+[node name="PointLight2D2" type="PointLight2D" parent="NightLights_Main" unique_id=1145822458]
+position = Vector2(350.00003, 350)
+scale = Vector2(5.663, 5.648)
+color = Color(1, 0.6862745, 0.44705883, 0.24313726)
+energy = 1.9
+texture = SubResource("GradientTexture2D_bpmhk")
+
+[node name="PointLight2D3" type="PointLight2D" parent="NightLights_Main" unique_id=248825495]
+position = Vector2(349, 514)
+scale = Vector2(5.663, 5.648)
+color = Color(1, 0.6862745, 0.44705883, 0.24313726)
+energy = 1.9
+texture = SubResource("GradientTexture2D_bpmhk")
+
+[node name="PointLight2D4" type="PointLight2D" parent="NightLights_Main" unique_id=2106718470]
+position = Vector2(915, 515.00006)
+scale = Vector2(5.663, 5.648)
+color = Color(1, 0.6862745, 0.44705883, 0.24313726)
+energy = 1.9
+texture = SubResource("GradientTexture2D_bpmhk")
+
+[node name="PointLight2D5" type="PointLight2D" parent="NightLights_Main" unique_id=1646717059]
+position = Vector2(914.00006, 357)
+scale = Vector2(5.663, 5.648)
+color = Color(1, 0.6862745, 0.44705883, 0.24313726)
+energy = 1.9
+texture = SubResource("GradientTexture2D_bpmhk")
+
+[node name="PointLight2D6" type="PointLight2D" parent="NightLights_Main" unique_id=1278808477]
+position = Vector2(919.00006, 192.00003)
+scale = Vector2(5.663, 5.648)
+color = Color(1, 0.6862745, 0.44705883, 0.24313726)
+energy = 1.9
+texture = SubResource("GradientTexture2D_bpmhk")
+
+[node name="PointLight2D7" type="PointLight2D" parent="NightLights_Main" unique_id=1197612616]
+position = Vector2(643.00006, 360)
+scale = Vector2(8.068, 8.053)
+color = Color(1, 0.6862745, 0.44705883, 0.24313726)
+energy = 1.9
+texture = SubResource("GradientTexture2D_bpmhk")
+
+[node name="NightLights_Customers" type="Node2D" parent="." unique_id=710636430]
+position = Vector2(-2, 707)
+
+[node name="PointLight2D7" type="PointLight2D" parent="NightLights_Customers" unique_id=451990756]
+position = Vector2(620, 365)
+scale = Vector2(11.128, 11.113)
+color = Color(1, 0.6862745, 0.44705883, 0.24313726)
+energy = 1.9
+texture = SubResource("GradientTexture2D_bpmhk")
+
+[node name="PointLight2D8" type="PointLight2D" parent="NightLights_Customers" unique_id=1159666945]
+position = Vector2(244, 351)
+scale = Vector2(11.128, 11.113)
+color = Color(1, 0.6862745, 0.44705883, 0.24313726)
+energy = 1.9
+texture = SubResource("GradientTexture2D_bpmhk")
+
+[node name="PointLight2D9" type="PointLight2D" parent="NightLights_Customers" unique_id=1583980292]
+position = Vector2(1055, 357)
+scale = Vector2(11.128, 11.113)
+color = Color(1, 0.6862745, 0.44705883, 0.24313726)
+energy = 1.9
+texture = SubResource("GradientTexture2D_bpmhk")
 
 [connection signal="body_entered" from="CameraTrigger" to="CameraTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTrigger2" to="CameraTrigger2" method="_on_body_entered"]
