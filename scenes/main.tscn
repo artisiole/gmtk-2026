@@ -376,7 +376,7 @@ shape = SubResource("RectangleShape2D_jscy8")
 
 [node name="Planter1L" type="Node2D" parent="." unique_id=1000403627]
 
-[node name="Plot" type="Area2D" parent="Planter1L" unique_id=84077910]
+[node name="Plot" type="Area2D" parent="Planter1L" unique_id=84077910 groups=["plot"]]
 z_index = 5
 position = Vector2(194, 193)
 scale = Vector2(0.5, 0.5)
@@ -411,7 +411,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1L/Plot/PlayerBlock" unique_id=694879653]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot2" type="Area2D" parent="Planter1L" unique_id=224257154]
+[node name="Plot2" type="Area2D" parent="Planter1L" unique_id=224257154 groups=["plot"]]
 z_index = 5
 position = Vector2(277, 193)
 scale = Vector2(0.5, 0.5)
@@ -446,7 +446,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1L/Plot2/PlayerBlock" unique_id=1592257853]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot3" type="Area2D" parent="Planter1L" unique_id=2036477470]
+[node name="Plot3" type="Area2D" parent="Planter1L" unique_id=2036477470 groups=["plot"]]
 z_index = 5
 position = Vector2(361, 193)
 scale = Vector2(0.5, 0.5)
@@ -481,7 +481,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1L/Plot3/PlayerBlock" unique_id=1000817171]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot4" type="Area2D" parent="Planter1L" unique_id=90850051]
+[node name="Plot4" type="Area2D" parent="Planter1L" unique_id=90850051 groups=["plot"]]
 z_index = 5
 position = Vector2(445, 193)
 scale = Vector2(0.5, 0.5)
@@ -516,7 +516,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1L/Plot4/PlayerBlock" unique_id=1006129150]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot5" type="Area2D" parent="Planter1L" unique_id=744054623]
+[node name="Plot5" type="Area2D" parent="Planter1L" unique_id=744054623 groups=["plot"]]
 z_index = 5
 position = Vector2(525, 193)
 scale = Vector2(0.5, 0.5)
@@ -553,7 +553,7 @@ shape = SubResource("RectangleShape2D_npwjr")
 
 [node name="Planter2L" type="Node2D" parent="." unique_id=1110121087]
 
-[node name="Plot" type="Area2D" parent="Planter2L" unique_id=8008552]
+[node name="Plot" type="Area2D" parent="Planter2L" unique_id=8008552 groups=["plot"]]
 z_index = 5
 position = Vector2(194, 353)
 scale = Vector2(0.5, 0.5)
@@ -588,7 +588,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2L/Plot/PlayerBlock" unique_id=1981842591]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot2" type="Area2D" parent="Planter2L" unique_id=1562260205]
+[node name="Plot2" type="Area2D" parent="Planter2L" unique_id=1562260205 groups=["plot"]]
 z_index = 5
 position = Vector2(277, 353)
 scale = Vector2(0.5, 0.5)
@@ -623,7 +623,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2L/Plot2/PlayerBlock" unique_id=817323112]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot3" type="Area2D" parent="Planter2L" unique_id=975317947]
+[node name="Plot3" type="Area2D" parent="Planter2L" unique_id=975317947 groups=["plot"]]
 z_index = 5
 position = Vector2(361, 353)
 scale = Vector2(0.5, 0.5)
@@ -658,7 +658,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2L/Plot3/PlayerBlock" unique_id=185267280]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot4" type="Area2D" parent="Planter2L" unique_id=1599095216]
+[node name="Plot4" type="Area2D" parent="Planter2L" unique_id=1599095216 groups=["plot"]]
 z_index = 5
 position = Vector2(445, 353)
 scale = Vector2(0.5, 0.5)
@@ -693,7 +693,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2L/Plot4/PlayerBlock" unique_id=332512557]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot5" type="Area2D" parent="Planter2L" unique_id=1325695658]
+[node name="Plot5" type="Area2D" parent="Planter2L" unique_id=1325695658 groups=["plot"]]
 z_index = 5
 position = Vector2(525, 353)
 scale = Vector2(0.5, 0.5)
@@ -730,7 +730,7 @@ shape = SubResource("RectangleShape2D_npwjr")
 
 [node name="Planter3L" type="Node2D" parent="." unique_id=2020319950]
 
-[node name="Plot" type="Area2D" parent="Planter3L" unique_id=830412277]
+[node name="Plot" type="Area2D" parent="Planter3L" unique_id=830412277 groups=["plot"]]
 z_index = 5
 position = Vector2(194, 513)
 scale = Vector2(0.5, 0.5)
@@ -765,7 +765,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3L/Plot/PlayerBlock" unique_id=1025956633]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot2" type="Area2D" parent="Planter3L" unique_id=1380015182]
+[node name="Plot2" type="Area2D" parent="Planter3L" unique_id=1380015182 groups=["plot"]]
 z_index = 5
 position = Vector2(277, 513)
 scale = Vector2(0.5, 0.5)
@@ -800,7 +800,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3L/Plot2/PlayerBlock" unique_id=1391332206]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot3" type="Area2D" parent="Planter3L" unique_id=234861878]
+[node name="Plot3" type="Area2D" parent="Planter3L" unique_id=234861878 groups=["plot"]]
 z_index = 5
 position = Vector2(361, 513)
 scale = Vector2(0.5, 0.5)
@@ -835,7 +835,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3L/Plot3/PlayerBlock" unique_id=1104124801]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot4" type="Area2D" parent="Planter3L" unique_id=607876690]
+[node name="Plot4" type="Area2D" parent="Planter3L" unique_id=607876690 groups=["plot"]]
 z_index = 5
 position = Vector2(445, 513)
 scale = Vector2(0.5, 0.5)
@@ -870,7 +870,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3L/Plot4/PlayerBlock" unique_id=1079302445]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot5" type="Area2D" parent="Planter3L" unique_id=2111358259]
+[node name="Plot5" type="Area2D" parent="Planter3L" unique_id=2111358259 groups=["plot"]]
 z_index = 5
 position = Vector2(525, 513)
 scale = Vector2(0.5, 0.5)
@@ -907,7 +907,7 @@ shape = SubResource("RectangleShape2D_npwjr")
 
 [node name="Planter1R" type="Node2D" parent="." unique_id=302869505]
 
-[node name="Plot" type="Area2D" parent="Planter1R" unique_id=1647953021]
+[node name="Plot" type="Area2D" parent="Planter1R" unique_id=1647953021 groups=["plot"]]
 z_index = 5
 position = Vector2(754, 193)
 scale = Vector2(0.5, 0.5)
@@ -942,7 +942,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1R/Plot/PlayerBlock" unique_id=1547273680]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot2" type="Area2D" parent="Planter1R" unique_id=1810359153]
+[node name="Plot2" type="Area2D" parent="Planter1R" unique_id=1810359153 groups=["plot"]]
 z_index = 5
 position = Vector2(837, 193)
 scale = Vector2(0.5, 0.5)
@@ -977,7 +977,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1R/Plot2/PlayerBlock" unique_id=1778527966]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot3" type="Area2D" parent="Planter1R" unique_id=1481734137]
+[node name="Plot3" type="Area2D" parent="Planter1R" unique_id=1481734137 groups=["plot"]]
 z_index = 5
 position = Vector2(921, 193)
 scale = Vector2(0.5, 0.5)
@@ -1012,7 +1012,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1R/Plot3/PlayerBlock" unique_id=1723736147]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot4" type="Area2D" parent="Planter1R" unique_id=1668791418]
+[node name="Plot4" type="Area2D" parent="Planter1R" unique_id=1668791418 groups=["plot"]]
 z_index = 5
 position = Vector2(1005, 193)
 scale = Vector2(0.5, 0.5)
@@ -1047,7 +1047,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1R/Plot4/PlayerBlock" unique_id=960279230]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot5" type="Area2D" parent="Planter1R" unique_id=1417923312]
+[node name="Plot5" type="Area2D" parent="Planter1R" unique_id=1417923312 groups=["plot"]]
 z_index = 5
 position = Vector2(1085, 193)
 scale = Vector2(0.5, 0.5)
@@ -1084,7 +1084,7 @@ shape = SubResource("RectangleShape2D_npwjr")
 
 [node name="Planter2R" type="Node2D" parent="." unique_id=1035804490]
 
-[node name="Plot" type="Area2D" parent="Planter2R" unique_id=624146283]
+[node name="Plot" type="Area2D" parent="Planter2R" unique_id=624146283 groups=["plot"]]
 z_index = 5
 position = Vector2(754, 353)
 scale = Vector2(0.5, 0.5)
@@ -1119,7 +1119,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2R/Plot/PlayerBlock" unique_id=684436929]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot2" type="Area2D" parent="Planter2R" unique_id=303201536]
+[node name="Plot2" type="Area2D" parent="Planter2R" unique_id=303201536 groups=["plot"]]
 z_index = 5
 position = Vector2(837, 353)
 scale = Vector2(0.5, 0.5)
@@ -1154,7 +1154,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2R/Plot2/PlayerBlock" unique_id=539140962]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot3" type="Area2D" parent="Planter2R" unique_id=1262817319]
+[node name="Plot3" type="Area2D" parent="Planter2R" unique_id=1262817319 groups=["plot"]]
 z_index = 5
 position = Vector2(921, 353)
 scale = Vector2(0.5, 0.5)
@@ -1189,7 +1189,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2R/Plot3/PlayerBlock" unique_id=1091456622]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot4" type="Area2D" parent="Planter2R" unique_id=2018599937]
+[node name="Plot4" type="Area2D" parent="Planter2R" unique_id=2018599937 groups=["plot"]]
 z_index = 5
 position = Vector2(1005, 353)
 scale = Vector2(0.5, 0.5)
@@ -1224,7 +1224,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2R/Plot4/PlayerBlock" unique_id=859700125]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot5" type="Area2D" parent="Planter2R" unique_id=1172413464]
+[node name="Plot5" type="Area2D" parent="Planter2R" unique_id=1172413464 groups=["plot"]]
 z_index = 5
 position = Vector2(1085, 353)
 scale = Vector2(0.5, 0.5)
@@ -1261,7 +1261,7 @@ shape = SubResource("RectangleShape2D_npwjr")
 
 [node name="Planter3R" type="Node2D" parent="." unique_id=1649100471]
 
-[node name="Plot" type="Area2D" parent="Planter3R" unique_id=756994332]
+[node name="Plot" type="Area2D" parent="Planter3R" unique_id=756994332 groups=["plot"]]
 z_index = 5
 position = Vector2(754, 513)
 scale = Vector2(0.5, 0.5)
@@ -1296,7 +1296,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3R/Plot/PlayerBlock" unique_id=123210904]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot2" type="Area2D" parent="Planter3R" unique_id=257267160]
+[node name="Plot2" type="Area2D" parent="Planter3R" unique_id=257267160 groups=["plot"]]
 z_index = 5
 position = Vector2(837, 513)
 scale = Vector2(0.5, 0.5)
@@ -1331,7 +1331,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3R/Plot2/PlayerBlock" unique_id=765687497]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot3" type="Area2D" parent="Planter3R" unique_id=1203769939]
+[node name="Plot3" type="Area2D" parent="Planter3R" unique_id=1203769939 groups=["plot"]]
 z_index = 5
 position = Vector2(921, 513)
 scale = Vector2(0.5, 0.5)
@@ -1366,7 +1366,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3R/Plot3/PlayerBlock" unique_id=300212999]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot4" type="Area2D" parent="Planter3R" unique_id=844118770]
+[node name="Plot4" type="Area2D" parent="Planter3R" unique_id=844118770 groups=["plot"]]
 z_index = 5
 position = Vector2(1005, 513)
 scale = Vector2(0.5, 0.5)
@@ -1401,7 +1401,7 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3R/Plot4/PlayerBlock" unique_id=725606879]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot5" type="Area2D" parent="Planter3R" unique_id=1331537684]
+[node name="Plot5" type="Area2D" parent="Planter3R" unique_id=1331537684 groups=["plot"]]
 z_index = 5
 position = Vector2(1085, 513)
 scale = Vector2(0.5, 0.5)
