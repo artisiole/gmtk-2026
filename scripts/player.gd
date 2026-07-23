@@ -15,6 +15,7 @@ var timeout: bool = false
 var camera_y_pos: int = 360
 
 @onready var animated_sprite = $PlayerSprite
+@onready var free_head = $PlayerSprite/Doghead
 @onready var _animation_player = $AnimationPlayer
 
 func _ready() -> void: 
@@ -31,8 +32,11 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("sprint"):
 		SPEED = 400
+		_animation_player.speed_scale = 1.5
 	else:
 		SPEED = 300
+		_animation_player.speed_scale = 1
+	
 	
 	if timeout == true:
 		velocity = input * 0
@@ -55,6 +59,7 @@ func _process(delta: float) -> void:
 	
 	if timeout == false and player_orient:
 		animated_sprite.flip_h = player_orient < 0
+		free_head.flip_h = player_orient < 0
 	
 	if timeout: # If the day is over, just skip the rest of this script
 		return
