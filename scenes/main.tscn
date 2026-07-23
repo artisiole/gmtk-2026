@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cvyuu4og1sv41" path="res://sprites/counter.png" id="22_dgi5k"]
 [ext_resource type="Script" uid="uid://cenlfoq56pfda" path="res://scripts/seed_bag.gd" id="22_pm3ni"]
 [ext_resource type="Texture2D" uid="uid://dihpo8ci28wku" path="res://sprites/table.png" id="23_j8jky"]
+[ext_resource type="Script" uid="uid://v235w2pgt05g" path="res://scripts/day_manager.gd" id="24_og1vs"]
 [ext_resource type="Script" uid="uid://xfujb21knitr" path="res://scripts/camera_trigger.gd" id="24_y6deb"]
 [ext_resource type="Script" uid="uid://c2ftiu1535mow" path="res://scripts/compost.gd" id="25_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://q2rslxocu0it" path="res://sprites/placeholder_compost.png" id="25_og1vs"]
@@ -580,6 +581,25 @@ scale = Vector2(11.128, 11.113)
 color = Color(1, 0.6862745, 0.44705883, 0.24313726)
 energy = 1.9
 texture = SubResource("GradientTexture2D_bpmhk")
+
+[node name="DayManager" type="Node2D" parent="." unique_id=2003692533]
+script = ExtResource("24_og1vs")
+
+[node name="Control" type="Control" parent="DayManager" unique_id=1795467015]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TimerLabel" type="RichTextLabel" parent="DayManager/Control" unique_id=1365663658]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 311.0
+offset_bottom = 172.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 53
+text = " 5:00"
 
 [connection signal="body_entered" from="CameraTrigger" to="CameraTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTrigger2" to="CameraTrigger2" method="_on_body_entered"]
