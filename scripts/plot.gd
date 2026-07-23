@@ -40,3 +40,11 @@ func _process(delta: float) -> void:
 		plant_sprite.texture = phase_textures[2]
 	if plantTime > phase_times[2]:
 		plant_sprite.texture = phase_textures[3]
+
+
+func _on_mouse_entered() -> void:
+	if has_overlapping_areas():
+		get_node("PlotSprite").modulate.a = 0.1
+
+func _on_mouse_exited() -> void:
+	get_node("PlotSprite").modulate.a = 0
