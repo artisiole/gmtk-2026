@@ -14,7 +14,6 @@ func end_interact():
 	position = Vector2(0, -18)
 
 func _process(delta: float) -> void:
-	print(position)
 	# interact behavior
 	if interacting:
 		set_collision_layer_value(3, false)

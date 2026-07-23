@@ -15,3 +15,4 @@ func _on_body_entered(body: Node2D) -> void:
 		# fix bug with pot plant not moving properly
 		for pot in pots.get_children():
 			pot.get_node("PlantInteract").position.y = -18
+			pot.planted = false

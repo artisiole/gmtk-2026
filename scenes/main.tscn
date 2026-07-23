@@ -31,7 +31,6 @@
 [ext_resource type="Script" uid="uid://ba1harbkrdkr7" path="res://scripts/sky_overlay.gd" id="27_vxglm"]
 [ext_resource type="Script" uid="uid://cu8sufpb00tbi" path="res://scripts/pot.gd" id="29_tel4y"]
 [ext_resource type="Texture2D" uid="uid://4qn1ekr5kn82" path="res://sprites/placeholder_pot.png" id="29_yq6so"]
-[ext_resource type="Texture2D" uid="uid://hyst8xb50gkg" path="res://sprites/placeholder_plant2.png" id="30_fv21b"]
 [ext_resource type="Script" uid="uid://biycf687cvo5j" path="res://scripts/potted_plant.gd" id="31_qkpxi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y6deb"]
@@ -1549,8 +1548,9 @@ position = Vector2(645, 691)
 
 [node name="Pot1" type="Area2D" parent="Pots_Container/Pots" unique_id=1018824245]
 z_index = 4
-position = Vector2(-122, -32)
+position = Vector2(-119, -32)
 scale = Vector2(0.6, 0.6)
+collision_mask = 7
 script = ExtResource("29_tel4y")
 
 [node name="PotSprite" type="Sprite2D" parent="Pots_Container/Pots/Pot1" unique_id=1593524571]
@@ -1575,7 +1575,96 @@ shape = SubResource("RectangleShape2D_0wfyh")
 [node name="PotPlantSprite" type="Sprite2D" parent="Pots_Container/Pots/Pot1/PlantInteract" unique_id=905105229]
 position = Vector2(0, -0.00036621094)
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("30_fv21b")
+
+[node name="Pot2" type="Area2D" parent="Pots_Container/Pots" unique_id=1157369006]
+z_index = 4
+position = Vector2(-42, -32)
+scale = Vector2(0.6, 0.6)
+collision_mask = 7
+script = ExtResource("29_tel4y")
+
+[node name="PotSprite" type="Sprite2D" parent="Pots_Container/Pots/Pot2" unique_id=168601410]
+texture = ExtResource("29_yq6so")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pots_Container/Pots/Pot2" unique_id=325321666]
+position = Vector2(0.00012207031, -16.666626)
+shape = SubResource("RectangleShape2D_85ri6")
+
+[node name="PlantInteract" type="AnimatableBody2D" parent="Pots_Container/Pots/Pot2" unique_id=1723079896 groups=["potted_plant"]]
+z_index = 4
+position = Vector2(0, -18)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("31_qkpxi")
+
+[node name="InteractableCollision" type="CollisionShape2D" parent="Pots_Container/Pots/Pot2/PlantInteract" unique_id=1660774523]
+z_index = 6
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="PotPlantSprite" type="Sprite2D" parent="Pots_Container/Pots/Pot2/PlantInteract" unique_id=1548852261]
+position = Vector2(0, -0.00036621094)
+scale = Vector2(0.7, 0.7)
+
+[node name="Pot3" type="Area2D" parent="Pots_Container/Pots" unique_id=1262693191]
+z_index = 4
+position = Vector2(35, -32)
+scale = Vector2(0.6, 0.6)
+collision_mask = 7
+script = ExtResource("29_tel4y")
+
+[node name="PotSprite" type="Sprite2D" parent="Pots_Container/Pots/Pot3" unique_id=766961058]
+texture = ExtResource("29_yq6so")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pots_Container/Pots/Pot3" unique_id=1204494606]
+position = Vector2(0.00012207031, -16.666626)
+shape = SubResource("RectangleShape2D_85ri6")
+
+[node name="PlantInteract" type="AnimatableBody2D" parent="Pots_Container/Pots/Pot3" unique_id=1435829457 groups=["potted_plant"]]
+z_index = 4
+position = Vector2(0, -18)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("31_qkpxi")
+
+[node name="InteractableCollision" type="CollisionShape2D" parent="Pots_Container/Pots/Pot3/PlantInteract" unique_id=768924443]
+z_index = 6
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="PotPlantSprite" type="Sprite2D" parent="Pots_Container/Pots/Pot3/PlantInteract" unique_id=519672313]
+position = Vector2(0, -0.00036621094)
+scale = Vector2(0.7, 0.7)
+
+[node name="Pot4" type="Area2D" parent="Pots_Container/Pots" unique_id=1647475435]
+z_index = 4
+position = Vector2(112, -32)
+scale = Vector2(0.6, 0.6)
+collision_mask = 7
+script = ExtResource("29_tel4y")
+
+[node name="PotSprite" type="Sprite2D" parent="Pots_Container/Pots/Pot4" unique_id=1645057885]
+texture = ExtResource("29_yq6so")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pots_Container/Pots/Pot4" unique_id=1783668184]
+position = Vector2(0.00012207031, -16.666626)
+shape = SubResource("RectangleShape2D_85ri6")
+
+[node name="PlantInteract" type="AnimatableBody2D" parent="Pots_Container/Pots/Pot4" unique_id=639106518 groups=["potted_plant"]]
+z_index = 4
+position = Vector2(0, -18)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("31_qkpxi")
+
+[node name="InteractableCollision" type="CollisionShape2D" parent="Pots_Container/Pots/Pot4/PlantInteract" unique_id=2129717869]
+z_index = 6
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="PotPlantSprite" type="Sprite2D" parent="Pots_Container/Pots/Pot4/PlantInteract" unique_id=1625185569]
+position = Vector2(0, -0.00036621094)
+scale = Vector2(0.7, 0.7)
 
 [node name="Top_Position" type="Node2D" parent="Pots_Container" unique_id=69595684]
 
@@ -1682,3 +1771,7 @@ position = Vector2(0, 146)
 [connection signal="body_entered" from="Planter3R/Plot5" to="Planter3R/Plot5" method="_on_body_entered"]
 [connection signal="mouse_entered" from="Planter3R/Plot5" to="Planter3R/Plot5" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Planter3R/Plot5" to="Planter3R/Plot5" method="_on_mouse_exited"]
+[connection signal="body_entered" from="Pots_Container/Pots/Pot1" to="Pots_Container/Pots/Pot1" method="_on_body_entered"]
+[connection signal="body_entered" from="Pots_Container/Pots/Pot2" to="Pots_Container/Pots/Pot2" method="_on_body_entered"]
+[connection signal="body_entered" from="Pots_Container/Pots/Pot3" to="Pots_Container/Pots/Pot3" method="_on_body_entered"]
+[connection signal="body_entered" from="Pots_Container/Pots/Pot4" to="Pots_Container/Pots/Pot4" method="_on_body_entered"]
