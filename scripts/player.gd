@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 # Extremely rudimentary top down movement script
 # Will be replaced
+# ^^ lmfao fuckin goober we're using this shit
 
 var SPEED = 400
 const cursor_max_distance = 86
@@ -11,12 +12,20 @@ var interactor
 
 var camera_y_pos: int = 360
 
+@onready var animated_sprite = $PlayerSprite
+@onready var _animation_player = $AnimationPlayer
+
 func _ready() -> void: 
 	rotation_pivot = get_node("RotationPivot")
 	interactor = get_node("RotationPivot/Interactor")
 
 func _physics_process(delta: float) -> void:
 	var input = Input.get_vector("left", "right", "up", "down").normalized()
+	
+	if input != Vector2.ZERO:
+		_animation_player.play("walk")
+	else:
+		_animation_player.play("RESET")
 	
 	if Input.is_action_pressed("sprint"):
 		SPEED = 400
@@ -35,6 +44,11 @@ func _process(delta: float) -> void:
 		adjusted_mouse_pos = Vector2(get_viewport().get_mouse_position().x, get_viewport().get_mouse_position().y + 720)
 	else:
 		adjusted_mouse_pos = get_viewport().get_mouse_position()
+	
+	var player_orient = (adjusted_mouse_pos.x - global_position.x)
+	
+	if player_orient:
+		animated_sprite.flip_h = player_orient < 0
 	
 	var distance_from_mouse = (adjusted_mouse_pos - global_position).length()
 	
