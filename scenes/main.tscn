@@ -2,9 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://bk3rtxa1ypj1p" path="res://scenes/player.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://c32euceak0p4m" path="res://scenes/seed.tscn" id="2_yc10j"]
+[ext_resource type="FontFile" uid="uid://ca2gs2ba2l4u1" path="res://LisaFloral.ttf" id="3_og1vs"]
 [ext_resource type="Texture2D" uid="uid://dpxo4edi50mm3" path="res://sprites/placeholder_plot.png" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://d03liaggx6gs6" path="res://scripts/plot.gd" id="4_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://b6jhkp1wgk8gg" path="res://sprites/placeholder_seed.png" id="4_tefeu"]
+[ext_resource type="Script" uid="uid://dnufb3nel8i2u" path="res://scripts/light.gd" id="5_2f3dj"]
 [ext_resource type="Script" uid="uid://dqkwtdci77md3" path="res://scripts/plant.gd" id="10_choun"]
 [ext_resource type="Texture2D" uid="uid://c4gnhrraiybsu" path="res://sprites/outerwalls.png" id="11_pm3ni"]
 [ext_resource type="Texture2D" uid="uid://dldwwr5i5yrbu" path="res://sprites/outerwallcorners.png" id="12_y6deb"]
@@ -12,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cadpjhbvosxji" path="res://sprites/grass.png" id="14_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://cnqlcixvu45v5" path="res://sprites/wheregrassmeetsconcrete.png" id="15_vxglm"]
 [ext_resource type="Texture2D" uid="uid://be15qwg738ku3" path="res://sprites/carpet.png" id="16_2f3dj"]
+[ext_resource type="Texture2D" uid="uid://bb3nc3gq02qsv" path="res://sprites/grassoutside.png" id="17_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://dfla7pb4j0irf" path="res://sprites/woodfloot.png" id="17_yq6so"]
 [ext_resource type="Texture2D" uid="uid://dobueh38sqxnw" path="res://sprites/plantercenter.png" id="18_fv21b"]
 [ext_resource type="Texture2D" uid="uid://c2y2mxed0hi3y" path="res://sprites/planterleft.png" id="19_tel4y"]
@@ -24,6 +27,7 @@
 [ext_resource type="Script" uid="uid://xfujb21knitr" path="res://scripts/camera_trigger.gd" id="24_y6deb"]
 [ext_resource type="Script" uid="uid://c2ftiu1535mow" path="res://scripts/compost.gd" id="25_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://q2rslxocu0it" path="res://sprites/placeholder_compost.png" id="25_og1vs"]
+[ext_resource type="Script" uid="uid://ba1harbkrdkr7" path="res://scripts/sky_overlay.gd" id="27_vxglm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y6deb"]
 friction = 0.0
@@ -191,6 +195,21 @@ physics_layer_0/physics_material = SubResource("PhysicsMaterial_2wyq8")
 sources/0 = SubResource("TileSetAtlasSource_ty1g6")
 sources/1 = SubResource("TileSetAtlasSource_j2jfr")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vxglm"]
+texture = ExtResource("17_2wyq8")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_f04hv"]
+sources/0 = SubResource("TileSetAtlasSource_vxglm")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jm57v"]
 size = Vector2(188, 16)
 
@@ -209,7 +228,7 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
 size = Vector2(124, 122)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_og1vs"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vxglm"]
 blend_mode = 3
 
 [sub_resource type="Gradient" id="Gradient_y6deb"]
@@ -219,7 +238,8 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 gradient = SubResource("Gradient_y6deb")
 
 [sub_resource type="Gradient" id="Gradient_pm3ni"]
-offsets = PackedFloat32Array(0, 0.6325301)
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.76547605)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bpmhk"]
@@ -232,7 +252,7 @@ fill_from = Vector2(0.5217391, 0.5173913)
 [node name="Player" parent="." unique_id=1519330593 instance=ExtResource("2_0wfyh")]
 z_index = 4
 position = Vector2(121, 133)
-scale = Vector2(1.2, 1.2)
+scale = Vector2(1.5, 1.5)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1055604865]
 position = Vector2(640, 360.00003)
@@ -252,13 +272,15 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TimerLabel" type="RichTextLabel" parent="Camera2D/DayManager/Control" unique_id=1365663658]
-z_index = 10
+z_index = 101
 layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 311.0
-offset_bottom = 172.0
+offset_left = 26.000004
+offset_top = -6.000033
+offset_right = 347.67828
+offset_bottom = 112.88112
+scale = Vector2(0.715, 0.715)
 theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("3_og1vs")
 theme_override_font_sizes/normal_font_size = 53
 text = " 5:00"
 
@@ -287,6 +309,12 @@ position = Vector2(0, 720)
 scale = Vector2(5, 5)
 tile_map_data = PackedByteArray("AAAFAPf/AQAAAAAAAAAGAPf/AQABAAAAAAAHAPf/AQABAAAAAAAIAPf/AQABAAAAAAAJAPf/AQABAAAAAAAKAPf/AQACAAAAAAAAAAIAAAAAAAAAAAABAAIAAAABAAAAAAACAAIAAAABAAAAAAADAAIAAAABAAAAAAAEAAIAAAABAAAAAAAFAAIAAAABAAAAAAAGAAIAAAABAAAAAAAHAAIAAAABAAAAAAAIAAIAAAABAAAAAAAJAAIAAAABAAAAAAAKAAIAAAABAAAAAAALAAIAAAABAAAAAAAMAAIAAAABAAAAAAANAAIAAAABAAAAAAAOAAIAAAABAAAAAAAPAAIAAAACAAAAAAA=")
 tile_set = SubResource("TileSet_bjg73")
+metadata/_edit_lock_ = true
+
+[node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=1278598535]
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAIAAAABAP//AAABAAIAAAACAP//AAABAAIAAAADAP//AAABAAIAAAAEAP//AAABAAIAAAAFAP//AAABAAIAAAAGAP//AAABAAIAAAAHAP//AAABAAIAAAAIAP//AAABAAIAAAAJAP//AAABAAIAAAAKAP//AAABAAIAAAALAP//AAABAAIAAAAMAP//AAABAAIAAAANAP//AAABAAIAAAAOAP//AAABAAIAAAAPAP//AAACAAIAAAAPAP7/AAACAAEAAAAPAP3/AAACAAEAAAAPAPz/AAACAAEAAAAPAPv/AAACAAEAAAAPAPr/AAACAAEAAAAPAPn/AAACAAEAAAAPAPj/AAACAAEAAAAPAPf/AAACAAAAAAAAAPf/AAAAAAAAAAABAPf/AAABAAAAAAACAPf/AAABAAAAAAADAPf/AAABAAAAAAAEAPf/AAABAAAAAAAFAPf/AAABAAAAAAAGAPf/AAABAAAAAAAHAPf/AAABAAAAAAAIAPf/AAABAAAAAAAJAPf/AAABAAAAAAAKAPf/AAABAAAAAAALAPf/AAABAAAAAAAMAPf/AAABAAAAAAANAPf/AAABAAAAAAAOAPf/AAABAAAAAAAAAPj/AAAAAAEAAAAAAPn/AAAAAAEAAAAAAPr/AAAAAAEAAAAAAPv/AAAAAAEAAAAAAPz/AAAAAAEAAAAAAP3/AAAAAAEAAAABAP3/AAABAAEAAAABAP7/AAABAAEAAAAAAP7/AAAAAAEAAAAFAPr/AAABAAEAAAAFAPn/AAABAAEAAAAFAPj/AAABAAEAAAAEAPj/AAABAAEAAAADAPj/AAABAAEAAAACAPj/AAABAAEAAAABAPj/AAABAAEAAAABAPn/AAABAAEAAAABAPr/AAABAAEAAAABAPv/AAABAAEAAAABAPz/AAABAAEAAAACAPz/AAABAAEAAAACAPv/AAABAAEAAAACAPr/AAABAAEAAAACAPn/AAABAAEAAAADAPn/AAABAAEAAAADAPr/AAABAAEAAAADAPv/AAABAAEAAAADAPz/AAABAAEAAAADAP3/AAABAAEAAAACAP3/AAABAAEAAAACAP7/AAABAAEAAAADAP7/AAABAAEAAAAEAP7/AAABAAEAAAAEAP3/AAABAAEAAAAEAPz/AAABAAEAAAAEAPv/AAABAAEAAAAEAPr/AAABAAEAAAAEAPn/AAABAAEAAAAFAPv/AAABAAEAAAAFAPz/AAABAAEAAAAFAP3/AAABAAEAAAAFAP7/AAABAAEAAAAGAP7/AAABAAEAAAAGAP3/AAABAAEAAAAGAPz/AAABAAEAAAAGAPv/AAABAAEAAAAGAPr/AAABAAEAAAAGAPn/AAABAAEAAAAGAPj/AAABAAEAAAAHAPj/AAABAAEAAAAHAPn/AAABAAEAAAAHAPr/AAABAAEAAAAHAPv/AAABAAEAAAAHAPz/AAABAAEAAAAHAP3/AAABAAEAAAAHAP7/AAABAAEAAAAIAP7/AAABAAEAAAAIAP3/AAABAAEAAAAIAPz/AAABAAEAAAAIAPv/AAABAAEAAAAIAPr/AAABAAEAAAAIAPn/AAABAAEAAAAIAPj/AAABAAEAAAAJAPj/AAABAAEAAAAJAPn/AAABAAEAAAAJAPr/AAABAAEAAAAJAPv/AAABAAEAAAAJAPz/AAABAAEAAAAJAP3/AAABAAEAAAAJAP7/AAABAAEAAAAKAP7/AAABAAEAAAAKAP3/AAABAAEAAAAKAPz/AAABAAEAAAAKAPv/AAABAAEAAAAKAPr/AAABAAEAAAAKAPn/AAABAAEAAAAKAPj/AAABAAEAAAALAPj/AAABAAEAAAALAPn/AAABAAEAAAALAPr/AAABAAEAAAALAPv/AAABAAEAAAALAPz/AAABAAEAAAALAP3/AAABAAEAAAALAP7/AAABAAEAAAAMAP7/AAABAAEAAAAMAP3/AAABAAEAAAAMAPz/AAABAAEAAAAMAPv/AAABAAEAAAAMAPr/AAABAAEAAAAMAPn/AAABAAEAAAAMAPj/AAABAAEAAAANAPj/AAABAAEAAAANAPn/AAABAAEAAAANAPr/AAABAAEAAAANAPv/AAABAAEAAAANAPz/AAABAAEAAAANAP3/AAABAAEAAAANAP7/AAABAAEAAAAOAP7/AAABAAEAAAAOAP3/AAABAAEAAAAOAPz/AAABAAEAAAAOAPv/AAABAAEAAAAOAPr/AAABAAEAAAAOAPn/AAABAAEAAAAOAPj/AAABAAEAAAA=")
+tile_set = SubResource("TileSet_f04hv")
 metadata/_edit_lock_ = true
 
 [node name="CameraTrigger" type="Area2D" parent="." unique_id=926716643 node_paths=PackedStringArray("camera")]
@@ -1408,89 +1436,100 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3R/Plot5/PlayerBlock" unique_id=1304467126]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="NightOverlay" type="Sprite2D" parent="." unique_id=1512364212]
-modulate = Color(0.7393999, 0.7724399, 1.2349999, 1)
+[node name="SkyOverlay" type="Sprite2D" parent="." unique_id=1512364212]
+modulate = Color(1.02, 1.02, 1.02, 1)
 z_index = 22
-material = SubResource("CanvasItemMaterial_og1vs")
-position = Vector2(640, 719.5)
-scale = Vector2(4.9999995, 1440.9999)
+material = SubResource("CanvasItemMaterial_vxglm")
+position = Vector2(639.99994, 360)
+scale = Vector2(4.999999, 2159.9995)
 texture = SubResource("GradientTexture1D_bpmhk")
+script = ExtResource("27_vxglm")
 
-[node name="NightLights_Main" type="Node2D" parent="." unique_id=572058060]
+[node name="Lights_Main" type="Node2D" parent="." unique_id=572058060]
+position = Vector2(3.637979e-12, 1.8189894e-12)
+scale = Vector2(0.99999994, 0.99999994)
 
-[node name="PointLight2D" type="PointLight2D" parent="NightLights_Main" unique_id=903424512]
+[node name="PointLight2D" type="PointLight2D" parent="Lights_Main" unique_id=903424512]
 position = Vector2(352.00003, 180)
-scale = Vector2(5.663, 5.648)
+scale = Vector2(10.999999, 5.648)
 color = Color(1, 0.6862745, 0.44705883, 0.24313726)
 energy = 1.9
 texture = SubResource("GradientTexture2D_bpmhk")
+script = ExtResource("5_2f3dj")
 
-[node name="PointLight2D2" type="PointLight2D" parent="NightLights_Main" unique_id=1145822458]
+[node name="PointLight2D2" type="PointLight2D" parent="Lights_Main" unique_id=1145822458]
 position = Vector2(350.00003, 350)
-scale = Vector2(5.663, 5.648)
+scale = Vector2(10.84375, 5.648)
 color = Color(1, 0.6862745, 0.44705883, 0.24313726)
 energy = 1.9
 texture = SubResource("GradientTexture2D_bpmhk")
 
-[node name="PointLight2D3" type="PointLight2D" parent="NightLights_Main" unique_id=248825495]
+[node name="PointLight2D3" type="PointLight2D" parent="Lights_Main" unique_id=248825495]
 position = Vector2(349, 514)
-scale = Vector2(5.663, 5.648)
+scale = Vector2(10.875001, 5.648)
 color = Color(1, 0.6862745, 0.44705883, 0.24313726)
 energy = 1.9
 texture = SubResource("GradientTexture2D_bpmhk")
 
-[node name="PointLight2D4" type="PointLight2D" parent="NightLights_Main" unique_id=2106718470]
-position = Vector2(915, 515.00006)
-scale = Vector2(5.663, 5.648)
+[node name="PointLight2D4" type="PointLight2D" parent="Lights_Main" unique_id=2106718470]
+position = Vector2(928, 514.00006)
+scale = Vector2(11.406249, 5.648)
 color = Color(1, 0.6862745, 0.44705883, 0.24313726)
 energy = 1.9
 texture = SubResource("GradientTexture2D_bpmhk")
 
-[node name="PointLight2D5" type="PointLight2D" parent="NightLights_Main" unique_id=1646717059]
-position = Vector2(914.00006, 357)
-scale = Vector2(5.663, 5.648)
+[node name="PointLight2D5" type="PointLight2D" parent="Lights_Main" unique_id=1646717059]
+position = Vector2(921, 354)
+scale = Vector2(11.21875, 5.648)
 color = Color(1, 0.6862745, 0.44705883, 0.24313726)
 energy = 1.9
 texture = SubResource("GradientTexture2D_bpmhk")
 
-[node name="PointLight2D6" type="PointLight2D" parent="NightLights_Main" unique_id=1278808477]
-position = Vector2(919.00006, 192.00003)
-scale = Vector2(5.663, 5.648)
+[node name="PointLight2D6" type="PointLight2D" parent="Lights_Main" unique_id=1278808477]
+position = Vector2(920.99994, 192.00002)
+scale = Vector2(11.031248, 5.648)
 color = Color(1, 0.6862745, 0.44705883, 0.24313726)
 energy = 1.9
 texture = SubResource("GradientTexture2D_bpmhk")
 
-[node name="PointLight2D7" type="PointLight2D" parent="NightLights_Main" unique_id=1197612616]
+[node name="PointLight2D7" type="PointLight2D" parent="Lights_Main" unique_id=1197612616]
 position = Vector2(643.00006, 360)
-scale = Vector2(8.068, 8.053)
+scale = Vector2(8.068, 12)
 color = Color(1, 0.6862745, 0.44705883, 0.24313726)
 energy = 1.9
 texture = SubResource("GradientTexture2D_bpmhk")
 
-[node name="NightLights_Customers" type="Node2D" parent="." unique_id=710636430]
-position = Vector2(-2, 707)
+[node name="Lights_Customers" type="Node2D" parent="." unique_id=710636430]
+position = Vector2(-1.9999998, 707)
+scale = Vector2(0.99999994, 0.99999994)
 
-[node name="PointLight2D7" type="PointLight2D" parent="NightLights_Customers" unique_id=451990756]
+[node name="PointLight2D7" type="PointLight2D" parent="Lights_Customers" unique_id=451990756]
 position = Vector2(620, 365)
-scale = Vector2(11.128, 11.113)
+scale = Vector2(14.6875, 13.28125)
 color = Color(1, 0.6862745, 0.44705883, 0.24313726)
 energy = 1.9
 texture = SubResource("GradientTexture2D_bpmhk")
 
-[node name="PointLight2D8" type="PointLight2D" parent="NightLights_Customers" unique_id=1159666945]
-position = Vector2(244, 351)
-scale = Vector2(11.128, 11.113)
+[node name="PointLight2D8" type="PointLight2D" parent="Lights_Customers" unique_id=1159666945]
+position = Vector2(247.99998, 357)
+scale = Vector2(11.128, 13.8125)
 color = Color(1, 0.6862745, 0.44705883, 0.24313726)
 energy = 1.9
 texture = SubResource("GradientTexture2D_bpmhk")
 
-[node name="PointLight2D9" type="PointLight2D" parent="NightLights_Customers" unique_id=1583980292]
+[node name="PointLight2D9" type="PointLight2D" parent="Lights_Customers" unique_id=1583980292]
 position = Vector2(1055, 357)
-scale = Vector2(11.128, 11.113)
+scale = Vector2(11.128, 13.75)
 color = Color(1, 0.6862745, 0.44705883, 0.24313726)
 energy = 1.9
 texture = SubResource("GradientTexture2D_bpmhk")
 
+[connection signal="daytime" from="Camera2D/DayManager" to="SkyOverlay" method="_on_day_manager_daytime"]
+[connection signal="daytime" from="Camera2D/DayManager" to="Lights_Main/PointLight2D" method="_on_day_manager_daytime"]
+[connection signal="nighttime" from="Camera2D/DayManager" to="SkyOverlay" method="_on_day_manager_nighttime"]
+[connection signal="nighttime" from="Camera2D/DayManager" to="Lights_Main/PointLight2D" method="_on_day_manager_nighttime"]
+[connection signal="sunset" from="Camera2D/DayManager" to="SkyOverlay" method="_on_day_manager_sunset"]
+[connection signal="sunset" from="Camera2D/DayManager" to="Lights_Main/PointLight2D" method="_on_day_manager_sunset"]
 [connection signal="timeout" from="Camera2D/DayManager" to="Player" method="_on_day_manager_timeout"]
 [connection signal="body_entered" from="CameraTrigger" to="CameraTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTrigger2" to="CameraTrigger2" method="_on_body_entered"]
