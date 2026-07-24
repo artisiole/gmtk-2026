@@ -1465,80 +1465,76 @@ script = ExtResource("28_pyfee")
 [node name="Lights_Main" type="Node2D" parent="." unique_id=572058060]
 position = Vector2(3.637979e-12, 1.8189894e-12)
 scale = Vector2(0.99999994, 0.99999994)
-
-[node name="PointLight2D" type="PointLight2D" parent="Lights_Main" unique_id=903424512]
-position = Vector2(352.00003, 180)
-scale = Vector2(10.999999, 5.648)
-color = Color(1, 0.6862745, 0.44705883, 0.24313726)
-energy = 1.9
-texture = SubResource("GradientTexture2D_bpmhk")
 script = ExtResource("29_q4lcp")
 
+[node name="PointLight2D" type="PointLight2D" parent="Lights_Main" unique_id=903424512]
+position = Vector2(352, 179.99998)
+scale = Vector2(10.999998, 5.6479993)
+color = Color(1, 1, 1, 0.24313726)
+energy = 0.5
+texture = SubResource("GradientTexture2D_bpmhk")
+
 [node name="PointLight2D2" type="PointLight2D" parent="Lights_Main" unique_id=1145822458]
-position = Vector2(350.00003, 350)
-scale = Vector2(10.84375, 5.648)
-color = Color(1, 0.6862745, 0.44705883, 0.24313726)
-energy = 1.9
+position = Vector2(350, 349.99997)
+scale = Vector2(10.843749, 5.6479993)
+color = Color(1, 1, 1, 0.24313726)
+energy = 0.5
 texture = SubResource("GradientTexture2D_bpmhk")
 
 [node name="PointLight2D3" type="PointLight2D" parent="Lights_Main" unique_id=248825495]
-position = Vector2(349, 514)
-scale = Vector2(10.875001, 5.648)
-color = Color(1, 0.6862745, 0.44705883, 0.24313726)
-energy = 1.9
+position = Vector2(348.99997, 513.99994)
+scale = Vector2(10.875, 5.6479993)
+color = Color(1, 1, 1, 0.24313726)
+energy = 0.5
 texture = SubResource("GradientTexture2D_bpmhk")
 
 [node name="PointLight2D4" type="PointLight2D" parent="Lights_Main" unique_id=2106718470]
-position = Vector2(928, 514.00006)
-scale = Vector2(11.406249, 5.648)
-color = Color(1, 0.6862745, 0.44705883, 0.24313726)
-energy = 1.9
+position = Vector2(927.99994, 514)
+scale = Vector2(11.406248, 5.6479993)
+color = Color(1, 1, 1, 0.24313726)
+energy = 0.5
 texture = SubResource("GradientTexture2D_bpmhk")
 
 [node name="PointLight2D5" type="PointLight2D" parent="Lights_Main" unique_id=1646717059]
-position = Vector2(921, 354)
-scale = Vector2(11.21875, 5.648)
-color = Color(1, 0.6862745, 0.44705883, 0.24313726)
-energy = 1.9
+position = Vector2(920.99994, 353.99997)
+scale = Vector2(11.218749, 5.6479993)
+color = Color(1, 1, 1, 0.24313726)
+energy = 0.5
 texture = SubResource("GradientTexture2D_bpmhk")
 
 [node name="PointLight2D6" type="PointLight2D" parent="Lights_Main" unique_id=1278808477]
-position = Vector2(920.99994, 192.00002)
-scale = Vector2(11.031248, 5.648)
-color = Color(1, 0.6862745, 0.44705883, 0.24313726)
-energy = 1.9
+position = Vector2(920.9999, 192)
+scale = Vector2(11.031247, 5.6479993)
+color = Color(1, 1, 1, 0.24313726)
+energy = 0.5
 texture = SubResource("GradientTexture2D_bpmhk")
 
 [node name="PointLight2D7" type="PointLight2D" parent="Lights_Main" unique_id=1197612616]
-position = Vector2(643.00006, 360)
-scale = Vector2(8.068, 12)
-color = Color(1, 0.6862745, 0.44705883, 0.24313726)
-energy = 1.9
+position = Vector2(643, 359.99997)
+scale = Vector2(8.067999, 11.999999)
+color = Color(1, 1, 1, 0.24313726)
+energy = 0.5
 texture = SubResource("GradientTexture2D_bpmhk")
 
-[node name="Lights_Customers" type="Node2D" parent="." unique_id=710636430]
-position = Vector2(-1.9999998, 707)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="PointLight2D7" type="PointLight2D" parent="Lights_Customers" unique_id=451990756]
-position = Vector2(620, 365)
-scale = Vector2(14.6875, 13.28125)
-color = Color(1, 0.6862745, 0.44705883, 0.24313726)
-energy = 1.9
+[node name="PointLight2D8" type="PointLight2D" parent="Lights_Main" unique_id=451990756]
+position = Vector2(617.99994, 1072)
+scale = Vector2(14.687499, 13.281249)
+color = Color(1, 1, 1, 0.24313726)
+energy = 0.5
 texture = SubResource("GradientTexture2D_bpmhk")
 
-[node name="PointLight2D8" type="PointLight2D" parent="Lights_Customers" unique_id=1159666945]
-position = Vector2(247.99998, 357)
-scale = Vector2(11.128, 13.8125)
-color = Color(1, 0.6862745, 0.44705883, 0.24313726)
-energy = 1.9
+[node name="PointLight2D9" type="PointLight2D" parent="Lights_Main" unique_id=1159666945]
+position = Vector2(245.99997, 1064)
+scale = Vector2(11.127999, 13.812499)
+color = Color(1, 1, 1, 0.24313726)
+energy = 0.5
 texture = SubResource("GradientTexture2D_bpmhk")
 
-[node name="PointLight2D9" type="PointLight2D" parent="Lights_Customers" unique_id=1583980292]
-position = Vector2(1055, 357)
-scale = Vector2(11.128, 13.75)
-color = Color(1, 0.6862745, 0.44705883, 0.24313726)
-energy = 1.9
+[node name="PointLight2D10" type="PointLight2D" parent="Lights_Main" unique_id=1583980292]
+position = Vector2(1052.9999, 1064)
+scale = Vector2(11.127999, 13.749999)
+color = Color(1, 1, 1, 0.24313726)
+energy = 0.5
 texture = SubResource("GradientTexture2D_bpmhk")
 
 [node name="Pots_Container" type="Node2D" parent="." unique_id=425512997]
@@ -1582,12 +1578,13 @@ texture = ExtResource("33_f0fir")
 position = Vector2(0, 146)
 
 [connection signal="daytime" from="Camera2D/DayManager" to="SkyOverlay" method="_on_day_manager_daytime"]
-[connection signal="daytime" from="Camera2D/DayManager" to="Lights_Main/PointLight2D" method="_on_day_manager_daytime"]
+[connection signal="daytime" from="Camera2D/DayManager" to="Lights_Main" method="_on_day_manager_daytime"]
 [connection signal="nighttime" from="Camera2D/DayManager" to="SkyOverlay" method="_on_day_manager_nighttime"]
-[connection signal="nighttime" from="Camera2D/DayManager" to="Lights_Main/PointLight2D" method="_on_day_manager_nighttime"]
+[connection signal="nighttime" from="Camera2D/DayManager" to="Lights_Main" method="_on_day_manager_nighttime"]
 [connection signal="sunset" from="Camera2D/DayManager" to="SkyOverlay" method="_on_day_manager_sunset"]
-[connection signal="sunset" from="Camera2D/DayManager" to="Lights_Main/PointLight2D" method="_on_day_manager_sunset"]
+[connection signal="sunset" from="Camera2D/DayManager" to="Lights_Main" method="_on_day_manager_sunset"]
 [connection signal="timeout" from="Camera2D/DayManager" to="Player" method="_on_day_manager_timeout"]
+[connection signal="timeout" from="Camera2D/DayManager" to="Lights_Main" method="_on_day_manager_timeout"]
 [connection signal="body_entered" from="CameraTrigger" to="CameraTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTrigger2" to="CameraTrigger2" method="_on_body_entered"]
 [connection signal="body_entered" from="Compost" to="Compost" method="_on_body_entered"]
