@@ -3,9 +3,10 @@ extends StaticBody2D
 var interacting: bool = false
 var current_interactor
 
-@onready var pot = get_parent()
+@export var player: Node2D
+@onready var sprite = $WaterCanSprite
 
-var flower_name
+var waters = 0
 
 func start_interact(interactor):
 	interacting = true
@@ -13,12 +14,17 @@ func start_interact(interactor):
 
 func end_interact():
 	interacting = false
-	position = Vector2(0, -18)
 
 func _process(delta: float) -> void:
 	# interact behavior
 	if interacting:
 		set_collision_layer_value(3, false)
+		
+		sprite.flip_h = (global_position.x - player.global_position.x) < 0
+		$Drips.position.x = abs($Drips.position.x) * sign(global_position.x - player.global_position.x)
+		
+		$Drips.visible = waters > 0
+		
 		global_position = current_interactor.global_position
 	else:
 		set_collision_layer_value(3, true)

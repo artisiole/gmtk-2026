@@ -27,6 +27,7 @@ planted_phase1 = ExtResource("3_80u5d")
 planted_phase2 = ExtResource("4_ina5y")
 planted_wilted = ExtResource("5_tk4hb")
 phaseTimes = [5.0, 10.0, 30.0]
+flower_name = "White"
 
 [node name="InteractableSprite" type="Sprite2D" parent="." unique_id=640613304]
 scale = Vector2(0.802, 0.636)

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dnogvowl6ec6m"]
+
+[ext_resource type="Script" uid="uid://cby6gnyjemn7j" path="res://scripts/seed.gd" id="1_knp84"]
+[ext_resource type="Texture2D" uid="uid://dtr3uyygrgp3v" path="res://sprites/placeholder_plant0.png" id="2_4hp63"]
+[ext_resource type="Texture2D" uid="uid://k8en8w3q6nxy" path="res://sprites/placeholder_blue_plant1.png" id="3_knp84"]
+[ext_resource type="Texture2D" uid="uid://dil0rerobel08" path="res://sprites/placeholder_blue_plant2.png" id="4_4hp63"]
+[ext_resource type="Texture2D" uid="uid://dorfvr31r4yrd" path="res://sprites/placeholder_plant_wilt.png" id="5_67v64"]
+[ext_resource type="Texture2D" uid="uid://dfgo1sld7kgpf" path="res://sprites/placeholder_seed_seed.png" id="6_1clls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_choun"]
+size = Vector2(91.26222, 79.315674)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bpmhk"]
+radius = 49.999996
+
+[node name="Seed2" type="AnimatableBody2D" unique_id=843498348 groups=["seed"]]
+process_priority = -1
+z_index = -1
+scale = Vector2(0.1, 0.127)
+collision_layer = 2
+collision_mask = 3
+collision_priority = 0.1
+sync_to_physics = false
+script = ExtResource("1_knp84")
+planted_phase0 = ExtResource("2_4hp63")
+planted_phase1 = ExtResource("3_knp84")
+planted_phase2 = ExtResource("4_4hp63")
+planted_wilted = ExtResource("5_67v64")
+phaseTimes = [7.0, 15.0, 50.0]
+flower_name = "Blue"
+
+[node name="InteractableSprite" type="Sprite2D" parent="." unique_id=640613304]
+modulate = Color(0.19215687, 1, 1, 1)
+scale = Vector2(0.802, 0.636)
+texture = ExtResource("6_1clls")
+
+[node name="InteractableCollision" type="CollisionShape2D" parent="." unique_id=1026264058]
+position = Vector2(-0.97091675, -0.7775879)
+shape = SubResource("RectangleShape2D_choun")
+
+[node name="PlotResolver" type="Area2D" parent="." unique_id=266530715]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlotResolver" unique_id=1487361564]
+shape = SubResource("CircleShape2D_bpmhk")

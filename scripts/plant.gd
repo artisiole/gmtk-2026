@@ -4,6 +4,7 @@ var interacting: bool = false
 var current_interactor
 
 @onready var plot = get_parent()
+var planted = false
 
 func start_interact(interactor):
 	if plot.planted:

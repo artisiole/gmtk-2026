@@ -27,11 +27,22 @@
 [ext_resource type="Script" uid="uid://v235w2pgt05g" path="res://scripts/day_manager.gd" id="24_og1vs"]
 [ext_resource type="Script" uid="uid://xfujb21knitr" path="res://scripts/camera_trigger.gd" id="24_y6deb"]
 [ext_resource type="Script" uid="uid://c2ftiu1535mow" path="res://scripts/compost.gd" id="25_2wyq8"]
+[ext_resource type="PackedScene" uid="uid://dnogvowl6ec6m" path="res://scenes/seed_blue.tscn" id="25_5poiv"]
 [ext_resource type="Texture2D" uid="uid://q2rslxocu0it" path="res://sprites/placeholder_compost.png" id="25_og1vs"]
+[ext_resource type="Texture2D" uid="uid://b8hgbodq0sil1" path="res://sprites/placeholder_seed_bagblue.png" id="25_pibwh"]
+[ext_resource type="Texture2D" uid="uid://buretfqlu061j" path="res://sprites/placeholder_seed_bagred.png" id="26_c6pm6"]
+[ext_resource type="PackedScene" uid="uid://c3arroqqvp7si" path="res://scenes/seed_red.tscn" id="27_2cjbq"]
+[ext_resource type="Texture2D" uid="uid://dskrdnp8akkr3" path="res://sprites/placeholder_seed_bagpurple.png" id="27_5he1u"]
 [ext_resource type="Script" uid="uid://ba1harbkrdkr7" path="res://scripts/sky_overlay.gd" id="27_vxglm"]
+[ext_resource type="Texture2D" uid="uid://c6kxhu2w4b8qj" path="res://sprites/info_bubble_water.png" id="28_j8jky"]
+[ext_resource type="PackedScene" uid="uid://dp8dxw1nd6i10" path="res://scenes/seed_purple.tscn" id="29_chjal"]
 [ext_resource type="Script" uid="uid://cu8sufpb00tbi" path="res://scripts/pot.gd" id="29_tel4y"]
 [ext_resource type="Texture2D" uid="uid://4qn1ekr5kn82" path="res://sprites/placeholder_pot.png" id="29_yq6so"]
 [ext_resource type="Script" uid="uid://biycf687cvo5j" path="res://scripts/potted_plant.gd" id="31_qkpxi"]
+[ext_resource type="Texture2D" uid="uid://c48kmjod5fsce" path="res://sprites/plot_wateringcan.png" id="33_5q0nq"]
+[ext_resource type="Script" uid="uid://crstuqj8qi3mf" path="res://scripts/watering_can.gd" id="33_dgi5k"]
+[ext_resource type="Script" uid="uid://dbg0rw6r5m3ss" path="res://scripts/water_fountain.gd" id="36_fuf3a"]
+[ext_resource type="Texture2D" uid="uid://be7nd2gb5cpjo" path="res://sprites/placeholder_fountain.png" id="36_kmb1v"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y6deb"]
 friction = 0.0
@@ -223,14 +234,14 @@ sources/0 = SubResource("TileSetAtlasSource_vxglm")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jm57v"]
 size = Vector2(188, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4s8k"]
-size = Vector2(92, 96)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jscy8"]
+size = Vector2(105, 117)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npwjr"]
 size = Vector2(128, 128)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jscy8"]
-size = Vector2(105, 117)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4s8k"]
+size = Vector2(92, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpmhk"]
 size = Vector2(128, 128)
@@ -259,6 +270,24 @@ fill_from = Vector2(0.5217391, 0.5173913)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85ri6"]
 size = Vector2(126.666595, 123.33325)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5q0nq"]
+size = Vector2(121.666855, 110)
+
+[sub_resource type="Curve" id="Curve_fuf3a"]
+_limits = [0.0, 1024.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.67906976, 1012.49445), 0.0, 0.0, 0, 0, Vector2(1, 1024), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_kmb1v"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_kmb1v"]
+colors = PackedColorArray(1, 1, 1, 1, 0.5921569, 1, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pcix"]
+size = Vector2(88, 27)
 
 [node name="Node2D" type="Node2D" unique_id=311975873]
 
@@ -311,7 +340,7 @@ visibility_layer = 2
 texture_filter = 1
 position = Vector2(0, 720)
 scale = Vector2(5, 5)
-tile_map_data = PackedByteArray("AAAAAP//CgAAAAIAAAABAP//CgABAAIAAAACAP//CgABAAIAAAADAP//CgABAAIAAAAEAP//CgABAAIAAAAFAP//CgABAAIAAAAGAP//CgABAAIAAAAHAP//CgABAAIAAAAIAP//CgABAAIAAAAJAP//CgABAAIAAAAKAP//CgABAAIAAAALAP//CgABAAIAAAAMAP//CQAAAAAAAAANAP//CQAAAAAAAAAOAP//CgABAAIAAAAPAP//CgACAAIAAAAAAP7/CgAAAAEAAAAAAP3/CgAAAAEAAAAAAPz/CgAAAAEAAAAAAPv/CgAAAAEAAAAAAPr/CgAAAAEAAAAAAPn/CgAAAAEAAAAAAPj/CgAAAAEAAAAAAPf/CgAAAAAAAAAPAPf/CgACAAAAAAAPAPj/CgACAAEAAAAPAPn/CgACAAEAAAAPAPr/CgACAAEAAAAPAPv/CgACAAEAAAAPAPz/CgACAAEAAAAPAP3/CgACAAEAAAAPAP7/CgACAAEAAAAOAPf/CgABAAAAAAANAPf/CgABAAAAAAAMAPf/CgABAAAAAAALAPf/CgABAAAAAAAKAPf/CgABAAAAAAAJAPf/CgABAAAAAAAIAPf/CgABAAAAAAAHAPf/CgABAAAAAAAGAPf/CgABAAAAAAAFAPf/CgABAAAAAAAEAPf/CgABAAAAAAADAPf/CgABAAAAAAACAPf/CgABAAAAAAABAPf/CgABAAAAAAACAP3/AwAAAAAAAAADAP3/AgAAAAAAAAAEAP3/AgAAAAAAAAAFAP3/AgAAAAAAAAAGAP3/BAAAAAAAAAACAPn/AwAAAAAAAAACAPv/AwAAAAAAAAADAPn/AgAAAAAAAAADAPv/AgAAAAAAAAAEAPn/AgAAAAAAAAAEAPv/AgAAAAAAAAAFAPn/AgAAAAAAAAAFAPv/AgAAAAAAAAAGAPn/BAAAAAAAAAAGAPv/BAAAAAAAAAAKAPn/AgAAAAAAAAAKAPv/AgAAAAAAAAAKAP3/AgAAAAAAAAALAPn/AgAAAAAAAAALAPv/AgAAAAAAAAALAP3/AgAAAAAAAAAMAPn/AgAAAAAAAAAMAPv/AgAAAAAAAAAMAP3/AgAAAAAAAAANAPn/BAAAAAAAAAANAPv/BAAAAAAAAAANAP3/BAAAAAAAAAAJAPn/AwAAAAAAAAAJAPv/AwAAAAAAAAAJAP3/AwAAAAAAAAABAP7/CQAAAAAAAAACAP7/CQAAAAAAAAADAP7/CQAAAAAAAAAEAP7/CQAAAAAAAAAFAP7/CQAAAAAAAAAGAP7/CQAAAAAAAAAHAP7/CQAAAAAAAAAIAP7/CQAAAAAAAAAJAP7/CQAAAAAAAAAKAP7/CQAAAAAAAAALAP7/CQAAAAAAAAAMAP7/CQAAAAAAAAANAP7/CQAAAAAAAAAOAP7/CQAAAAAAAAAOAP3/CQAAAAAAAAAOAPz/CQAAAAAAAAAOAPv/CQAAAAAAAAAOAPr/CQAAAAAAAAAOAPn/CQAAAAAAAAAOAPj/CQAAAAAAAAANAPj/CQAAAAAAAAAMAPj/CQAAAAAAAAALAPj/CQAAAAAAAAAKAPj/CQAAAAAAAAAJAPj/CQAAAAAAAAAIAPj/CQAAAAAAAAAHAPj/CQAAAAAAAAAGAPj/CQAAAAAAAAAFAPj/CQAAAAAAAAAEAPj/CQAAAAAAAAADAPj/CQAAAAAAAAACAPj/CQAAAAAAAAABAPj/CQAAAAAAAAABAPn/CQAAAAAAAAABAPr/CQAAAAAAAAABAPv/CQAAAAAAAAABAPz/CQAAAAAAAAABAP3/CQAAAAAAAAACAPz/CQAAAAAAAAADAPz/CQAAAAAAAAAEAPz/CQAAAAAAAAAFAPz/CQAAAAAAAAAGAPz/CQAAAAAAAAAHAPz/CQAAAAAAAAAIAPz/CQAAAAAAAAAJAPz/CQAAAAAAAAAKAPz/CQAAAAAAAAALAPz/CQAAAAAAAAAMAPz/CQAAAAAAAAANAPz/CQAAAAAAAAAIAP3/CQAAAAAAAAAHAP3/CQAAAAAAAAAHAPv/CQAAAAAAAAAIAPv/CQAAAAAAAAAIAPr/CQAAAAAAAAAHAPr/CQAAAAAAAAAGAPr/CQAAAAAAAAAFAPr/CQAAAAAAAAAEAPr/CQAAAAAAAAADAPr/CQAAAAAAAAACAPr/CQAAAAAAAAAKAPr/CQAAAAAAAAALAPr/CQAAAAAAAAAMAPr/CQAAAAAAAAANAPr/CQAAAAAAAAAJAPr/CQAAAAAAAAAIAPn/CQAAAAAAAAAHAPn/CQAAAAAAAAAMAAAADAAAAAAAAAANAAAADAAAAAAAAAANAAEADAAAAAAAAAAMAAEADAAAAAAAAAALAAEADAAAAAAAAAAKAAEADAAAAAAAAAAJAAEADAAAAAAAAAAIAAEADAAAAAAAAAAHAAEADAAAAAAAAAAGAAEADAAAAAAAAAAFAAEADAAAAAAAAAAEAAEADAAAAAAAAAADAAEADAAAAAAAAAACAAEADAAAAAAAAAABAAEADAAAAAAAAAAAAAEADAAAAAAAAAAAAAAADAAAAAAAAAABAAAADAAAAAAAAAACAAAADAAAAAAAAAADAAAADAAAAAAAAAAEAAAADAAAAAAAAAAFAAAADAAAAAAAAAAGAAAADAAAAAAAAAAHAAAADAAAAAAAAAAIAAAADAAAAAAAAAAJAAAADAAAAAAAAAAKAAAADAAAAAAAAAALAAAADAAAAAAAAAAOAAAADAAAAAAAAAAPAAAADAAAAAAAAAAPAAEADAAAAAAAAAAOAAEADAAAAAAAAAAPAAIADAAAAAAAAAAOAAIADAAAAAAAAAANAAIADAAAAAAAAAAMAAIADAAAAAAAAAALAAIADAAAAAAAAAAKAAIADAAAAAAAAAAJAAIADAAAAAAAAAAIAAIADAAAAAAAAAAHAAIADAAAAAAAAAAGAAIADAAAAAAAAAAFAAIADAAAAAAAAAAEAAIADAAAAAAAAAADAAIADAAAAAAAAAACAAIADAAAAAAAAAABAAIADAAAAAAAAAAAAAIADAAAAAAAAAAAAAQACwAAAAAAAAAAAAUADAAAAAAAAAAAAAYADAAAAAAAAAAAAAcADAAAAAAAAAAAAAgADAAAAAAAAAABAAQACwAAAAAAAAABAAUADAAAAAAAAAABAAYADAAAAAAAAAABAAcADAAAAAAAAAABAAgADAAAAAAAAAACAAQACwAAAAAAAAACAAUADAAAAAAAAAACAAYADAAAAAAAAAACAAcADAAAAAAAAAACAAgADAAAAAAAAAADAAQACwAAAAAAAAADAAUADAAAAAAAAAADAAYADAAAAAAAAAADAAcADAAAAAAAAAADAAgADAAAAAAAAAAEAAQACwAAAAAAAAAEAAUADAAAAAAAAAAEAAYADAAAAAAAAAAEAAcADAAAAAAAAAAEAAgADAAAAAAAAAAFAAQACwAAAAAAAAAFAAUADAAAAAAAAAAFAAYADAAAAAAAAAAFAAcADAAAAAAAAAAFAAgADAAAAAAAAAAGAAQACwAAAAAAAAAGAAUADAAAAAAAAAAGAAYADAAAAAAAAAAGAAcADAAAAAAAAAAGAAgADAAAAAAAAAAHAAQACwAAAAAAAAAHAAUACwAAAAAAAAAHAAYACwAAAAAAAAAHAAcACwAAAAAAAAAHAAgACwAAAAAAAAAIAAQACwAAAAAAAAAIAAUACwAAAAAAAAAIAAYACwAAAAAAAAAIAAcACwAAAAAAAAAIAAgACwAAAAAAAAAJAAQACwAAAAAAAAAJAAUADAAAAAAAAAAJAAYADAAAAAAAAAAJAAcADAAAAAAAAAAJAAgADAAAAAAAAAAKAAQACwAAAAAAAAAKAAUADAAAAAAAAAAKAAYADAAAAAAAAAAKAAcADAAAAAAAAAAKAAgADAAAAAAAAAALAAQACwAAAAAAAAALAAUADAAAAAAAAAALAAYADAAAAAAAAAALAAcADAAAAAAAAAALAAgADAAAAAAAAAAMAAQACwAAAAAAAAAMAAUADAAAAAAAAAAMAAYADAAAAAAAAAAMAAcADAAAAAAAAAAMAAgADAAAAAAAAAANAAQACwAAAAAAAAANAAUADAAAAAAAAAANAAYADAAAAAAAAAANAAcADAAAAAAAAAANAAgADAAAAAAAAAAOAAQACwAAAAAAAAAOAAUADAAAAAAAAAAOAAYADAAAAAAAAAAOAAcADAAAAAAAAAAOAAgADAAAAAAAAAAPAAQACwAAAAAAAAAPAAUADAAAAAAAAAAPAAYADAAAAAAAAAAPAAcADAAAAAAAAAAPAAgADAAAAAAAAAAAAAkADAAAAAAAAAABAAkADAAAAAAAAAACAAkADAAAAAAAAAADAAkADAAAAAAAAAAEAAkADAAAAAAAAAAFAAkADAAAAAAAAAAGAAkADAAAAAAAAAAHAAkACwAAAAAAAAAIAAkACwAAAAAAAAAJAAkADAAAAAAAAAAKAAkADAAAAAAAAAALAAkADAAAAAAAAAAMAAkADAAAAAAAAAANAAkADAAAAAAAAAAOAAkADAAAAAAAAAAPAAkADAAAAAAAAAAAAAMADAAAAAAAAAABAAMADAAAAAAAAAACAAMADAAAAAAAAAADAAMADAAAAAAAAAAEAAMADAAAAAAAAAAFAAMADAAAAAAAAAAGAAMADAAAAAAAAAAHAAMADAAAAAAAAAAIAAMADAAAAAAAAAAJAAMADAAAAAAAAAAKAAMADAAAAAAAAAALAAMADAAAAAAAAAAMAAMADAAAAAAAAAANAAMADAAAAAAAAAAOAAMADAAAAAAAAAAPAAMADAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAP//CgAAAAIAAAABAP//CgABAAIAAAACAP//CgABAAIAAAADAP//CgABAAIAAAAEAP//CgABAAIAAAAFAP//CgABAAIAAAAGAP//CgABAAIAAAAHAP//CgABAAIAAAAIAP//CgABAAIAAAAJAP//CgABAAIAAAAKAP//CgABAAIAAAALAP//CgABAAIAAAAMAP//CQAAAAAAAAANAP//CQAAAAAAAAAOAP//CgABAAIAAAAPAP//CgACAAIAAAAAAP7/CgAAAAEAAAAAAP3/CgAAAAEAAAAAAPz/CgAAAAEAAAAAAPv/CgAAAAEAAAAAAPr/CgAAAAEAAAAAAPn/CgAAAAEAAAAAAPj/CgAAAAEAAAAAAPf/CgAAAAAAAAAPAPf/CgACAAAAAAAPAPj/CgACAAEAAAAPAPn/CgACAAEAAAAPAPr/CgACAAEAAAAPAPv/CgACAAEAAAAPAPz/CgACAAEAAAAPAP3/CgACAAEAAAAPAP7/CgACAAEAAAAOAPf/CgABAAAAAAANAPf/CgABAAAAAAAMAPf/CgABAAAAAAALAPf/CgABAAAAAAAKAPf/CgABAAAAAAAJAPf/CgABAAAAAAAIAPf/CgABAAAAAAAHAPf/CgABAAAAAAAGAPf/CgABAAAAAAAFAPf/CgABAAAAAAAEAPf/CgABAAAAAAADAPf/CgABAAAAAAACAPf/CgABAAAAAAABAPf/CgABAAAAAAADAP3/AgAAAAAAAAAEAP3/AgAAAAAAAAADAPn/AgAAAAAAAAAEAPn/AgAAAAAAAAALAPn/AgAAAAAAAAALAP3/AgAAAAAAAAAMAPn/AgAAAAAAAAAMAP3/AgAAAAAAAAABAP7/CQAAAAAAAAACAP7/CQAAAAAAAAADAP7/CQAAAAAAAAAEAP7/CQAAAAAAAAAFAP7/CQAAAAAAAAAGAP7/CQAAAAAAAAAHAP7/CQAAAAAAAAAIAP7/CQAAAAAAAAAJAP7/CQAAAAAAAAAKAP7/CQAAAAAAAAALAP7/CQAAAAAAAAAMAP7/CQAAAAAAAAANAP7/CQAAAAAAAAAOAP7/CQAAAAAAAAAOAP3/CQAAAAAAAAAOAPz/CQAAAAAAAAAOAPv/CQAAAAAAAAAOAPr/CQAAAAAAAAAOAPn/CQAAAAAAAAAOAPj/CQAAAAAAAAANAPj/CQAAAAAAAAAMAPj/CQAAAAAAAAALAPj/CQAAAAAAAAAKAPj/CQAAAAAAAAAJAPj/CQAAAAAAAAAIAPj/CQAAAAAAAAAHAPj/CQAAAAAAAAAGAPj/CQAAAAAAAAAFAPj/CQAAAAAAAAAEAPj/CQAAAAAAAAADAPj/CQAAAAAAAAACAPj/CQAAAAAAAAABAPj/CQAAAAAAAAABAPn/CQAAAAAAAAABAPr/CQAAAAAAAAABAPv/CQAAAAAAAAABAPz/CQAAAAAAAAABAP3/CQAAAAAAAAACAPz/CQAAAAAAAAADAPz/AgAAAAAAAAAFAPz/CQAAAAAAAAAGAPz/CQAAAAAAAAAHAPz/CQAAAAAAAAAIAPz/CQAAAAAAAAAJAPz/CQAAAAAAAAAKAPz/CQAAAAAAAAAMAPz/AgAAAAAAAAANAPz/CQAAAAAAAAAIAP3/CQAAAAAAAAAHAP3/CQAAAAAAAAAHAPv/CQAAAAAAAAAIAPv/CQAAAAAAAAAIAPr/CQAAAAAAAAAHAPr/CQAAAAAAAAAGAPr/CQAAAAAAAAAFAPr/CQAAAAAAAAADAPr/AgAAAAAAAAACAPr/CQAAAAAAAAAKAPr/CQAAAAAAAAAMAPr/AgAAAAAAAAANAPr/CQAAAAAAAAAJAPr/CQAAAAAAAAAIAPn/CQAAAAAAAAAHAPn/CQAAAAAAAAAMAAAADAAAAAAAAAANAAAADAAAAAAAAAANAAEADAAAAAAAAAAMAAEADAAAAAAAAAALAAEADAAAAAAAAAAKAAEADAAAAAAAAAAJAAEADAAAAAAAAAAIAAEADAAAAAAAAAAHAAEADAAAAAAAAAAGAAEADAAAAAAAAAAFAAEADAAAAAAAAAAEAAEADAAAAAAAAAADAAEADAAAAAAAAAACAAEADAAAAAAAAAABAAEADAAAAAAAAAAAAAEADAAAAAAAAAAAAAAADAAAAAAAAAABAAAADAAAAAAAAAACAAAADAAAAAAAAAADAAAADAAAAAAAAAAEAAAADAAAAAAAAAAFAAAADAAAAAAAAAAGAAAADAAAAAAAAAAHAAAADAAAAAAAAAAIAAAADAAAAAAAAAAJAAAADAAAAAAAAAAKAAAADAAAAAAAAAALAAAADAAAAAAAAAAOAAAADAAAAAAAAAAPAAAADAAAAAAAAAAPAAEADAAAAAAAAAAOAAEADAAAAAAAAAAPAAIADAAAAAAAAAAOAAIADAAAAAAAAAANAAIADAAAAAAAAAAMAAIADAAAAAAAAAALAAIADAAAAAAAAAAKAAIADAAAAAAAAAAJAAIADAAAAAAAAAAIAAIADAAAAAAAAAAHAAIADAAAAAAAAAAGAAIADAAAAAAAAAAFAAIADAAAAAAAAAAEAAIADAAAAAAAAAADAAIADAAAAAAAAAACAAIADAAAAAAAAAABAAIADAAAAAAAAAAAAAIADAAAAAAAAAAAAAQACwAAAAAAAAAAAAUADAAAAAAAAAAAAAYADAAAAAAAAAAAAAcADAAAAAAAAAAAAAgADAAAAAAAAAABAAQACwAAAAAAAAABAAUADAAAAAAAAAABAAYADAAAAAAAAAABAAcADAAAAAAAAAABAAgADAAAAAAAAAACAAQACwAAAAAAAAACAAUADAAAAAAAAAACAAYADAAAAAAAAAACAAcADAAAAAAAAAACAAgADAAAAAAAAAADAAQACwAAAAAAAAADAAUADAAAAAAAAAADAAYADAAAAAAAAAADAAcADAAAAAAAAAADAAgADAAAAAAAAAAEAAQACwAAAAAAAAAEAAUADAAAAAAAAAAEAAYADAAAAAAAAAAEAAcADAAAAAAAAAAEAAgADAAAAAAAAAAFAAQACwAAAAAAAAAFAAUADAAAAAAAAAAFAAYADAAAAAAAAAAFAAcADAAAAAAAAAAFAAgADAAAAAAAAAAGAAQACwAAAAAAAAAGAAUADAAAAAAAAAAGAAYADAAAAAAAAAAGAAcADAAAAAAAAAAGAAgADAAAAAAAAAAHAAQACwAAAAAAAAAHAAUACwAAAAAAAAAHAAYACwAAAAAAAAAHAAcACwAAAAAAAAAHAAgACwAAAAAAAAAIAAQACwAAAAAAAAAIAAUACwAAAAAAAAAIAAYACwAAAAAAAAAIAAcACwAAAAAAAAAIAAgACwAAAAAAAAAJAAQACwAAAAAAAAAJAAUADAAAAAAAAAAJAAYADAAAAAAAAAAJAAcADAAAAAAAAAAJAAgADAAAAAAAAAAKAAQACwAAAAAAAAAKAAUADAAAAAAAAAAKAAYADAAAAAAAAAAKAAcADAAAAAAAAAAKAAgADAAAAAAAAAALAAQACwAAAAAAAAALAAUADAAAAAAAAAALAAYADAAAAAAAAAALAAcADAAAAAAAAAALAAgADAAAAAAAAAAMAAQACwAAAAAAAAAMAAUADAAAAAAAAAAMAAYADAAAAAAAAAAMAAcADAAAAAAAAAAMAAgADAAAAAAAAAANAAQACwAAAAAAAAANAAUADAAAAAAAAAANAAYADAAAAAAAAAANAAcADAAAAAAAAAANAAgADAAAAAAAAAAOAAQACwAAAAAAAAAOAAUADAAAAAAAAAAOAAYADAAAAAAAAAAOAAcADAAAAAAAAAAOAAgADAAAAAAAAAAPAAQACwAAAAAAAAAPAAUADAAAAAAAAAAPAAYADAAAAAAAAAAPAAcADAAAAAAAAAAPAAgADAAAAAAAAAAAAAkADAAAAAAAAAABAAkADAAAAAAAAAACAAkADAAAAAAAAAADAAkADAAAAAAAAAAEAAkADAAAAAAAAAAFAAkADAAAAAAAAAAGAAkADAAAAAAAAAAHAAkACwAAAAAAAAAIAAkACwAAAAAAAAAJAAkADAAAAAAAAAAKAAkADAAAAAAAAAALAAkADAAAAAAAAAAMAAkADAAAAAAAAAANAAkADAAAAAAAAAAOAAkADAAAAAAAAAAPAAkADAAAAAAAAAAAAAMADAAAAAAAAAABAAMADAAAAAAAAAACAAMADAAAAAAAAAADAAMADAAAAAAAAAAEAAMADAAAAAAAAAAFAAMADAAAAAAAAAAGAAMADAAAAAAAAAAHAAMADAAAAAAAAAAIAAMADAAAAAAAAAAJAAMADAAAAAAAAAAKAAMADAAAAAAAAAALAAMADAAAAAAAAAAMAAMADAAAAAAAAAANAAMADAAAAAAAAAAOAAMADAAAAAAAAAAPAAMADAAAAAAAAAACAPv/CQAAAAAAAAADAPv/CQAAAAAAAAAEAPv/CQAAAAAAAAAFAPv/CQAAAAAAAAAGAPv/CQAAAAAAAAAJAPv/CQAAAAAAAAAKAPv/CQAAAAAAAAALAPv/CQAAAAAAAAAMAPv/CQAAAAAAAAANAPv/CQAAAAAAAAACAP3/CQAAAAAAAAAFAP3/BAAAAAAAAAAGAP3/CQAAAAAAAAACAPn/CQAAAAAAAAAFAPn/BAAAAAAAAAAGAPn/CQAAAAAAAAAJAPn/CQAAAAAAAAAKAPn/AwAAAAAAAAAJAP3/CQAAAAAAAAAKAP3/AwAAAAAAAAANAP3/CQAAAAAAAAANAPn/CQAAAAAAAAAEAPz/CQAAAAAAAAAEAPr/CQAAAAAAAAALAPr/CQAAAAAAAAALAPz/CQAAAAAAAAA=")
 tile_set = SubResource("TileSet_nvyfr")
 metadata/_edit_lock_ = true
 
@@ -331,7 +360,7 @@ tile_set = SubResource("TileSet_f04hv")
 metadata/_edit_lock_ = true
 
 [node name="CameraTrigger" type="Area2D" parent="." unique_id=926716643 node_paths=PackedStringArray("camera", "pots", "pot_dest")]
-position = Vector2(1, 30)
+position = Vector2(-2, 51)
 script = ExtResource("24_y6deb")
 camera = NodePath("../Camera2D")
 destination = Vector2(640, 1080)
@@ -343,7 +372,7 @@ position = Vector2(1035, 733)
 shape = SubResource("RectangleShape2D_jm57v")
 
 [node name="CameraTrigger2" type="Area2D" parent="." unique_id=1422505816 node_paths=PackedStringArray("camera", "pots", "pot_dest")]
-position = Vector2(-1, -48)
+position = Vector2(-5, -72)
 script = ExtResource("24_y6deb")
 camera = NodePath("../Camera2D")
 destination = Vector2(640, 360)
@@ -353,6 +382,104 @@ pot_dest = NodePath("../Pots_Container/Top_Position")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraTrigger2" unique_id=1207109850]
 position = Vector2(1035, 733)
 shape = SubResource("RectangleShape2D_jm57v")
+
+[node name="SeedBags" type="Node2D" parent="." unique_id=637152682]
+
+[node name="SeedBag" type="StaticBody2D" parent="SeedBags" unique_id=1244492215]
+z_index = 6
+position = Vector2(58, 253)
+collision_layer = 2
+script = ExtResource("22_pm3ni")
+seed_spawned = ExtResource("2_yc10j")
+
+[node name="SeedBagSprite" type="Sprite2D" parent="SeedBags/SeedBag" unique_id=75806690]
+z_index = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_tefeu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBags/SeedBag" unique_id=612276195]
+position = Vector2(-0.5, -0.5)
+scale = Vector2(0.4, 0.4)
+shape = SubResource("RectangleShape2D_jscy8")
+
+[node name="PlayerBlock" type="StaticBody2D" parent="SeedBags/SeedBag" unique_id=1816433085]
+z_index = -1
+scale = Vector2(0.41, 0.41)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBags/SeedBag/PlayerBlock" unique_id=286234897]
+shape = SubResource("RectangleShape2D_npwjr")
+
+[node name="SeedBagBlue" type="StaticBody2D" parent="SeedBags" unique_id=979646887]
+z_index = 6
+position = Vector2(57, 330)
+collision_layer = 2
+script = ExtResource("22_pm3ni")
+seed_spawned = ExtResource("25_5poiv")
+
+[node name="SeedBagSprite" type="Sprite2D" parent="SeedBags/SeedBagBlue" unique_id=1268698847]
+z_index = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("25_pibwh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBags/SeedBagBlue" unique_id=1480957533]
+position = Vector2(-0.5, -0.5)
+scale = Vector2(0.4, 0.4)
+shape = SubResource("RectangleShape2D_jscy8")
+
+[node name="PlayerBlock" type="StaticBody2D" parent="SeedBags/SeedBagBlue" unique_id=1346235466]
+z_index = -1
+scale = Vector2(0.41, 0.41)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBags/SeedBagBlue/PlayerBlock" unique_id=1318060829]
+shape = SubResource("RectangleShape2D_npwjr")
+
+[node name="SeedBagRed" type="StaticBody2D" parent="SeedBags" unique_id=884574255]
+z_index = 6
+position = Vector2(58, 409)
+collision_layer = 2
+script = ExtResource("22_pm3ni")
+seed_spawned = ExtResource("27_2cjbq")
+
+[node name="SeedBagSprite" type="Sprite2D" parent="SeedBags/SeedBagRed" unique_id=1351396849]
+z_index = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("26_c6pm6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBags/SeedBagRed" unique_id=151980733]
+position = Vector2(-0.5, -0.5)
+scale = Vector2(0.4, 0.4)
+shape = SubResource("RectangleShape2D_jscy8")
+
+[node name="PlayerBlock" type="StaticBody2D" parent="SeedBags/SeedBagRed" unique_id=483324492]
+z_index = -1
+scale = Vector2(0.41, 0.41)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBags/SeedBagRed/PlayerBlock" unique_id=1971027275]
+shape = SubResource("RectangleShape2D_npwjr")
+
+[node name="SeedBagPurple" type="StaticBody2D" parent="SeedBags" unique_id=296470189]
+z_index = 6
+position = Vector2(57, 487)
+collision_layer = 2
+script = ExtResource("22_pm3ni")
+seed_spawned = ExtResource("29_chjal")
+
+[node name="SeedBagSprite" type="Sprite2D" parent="SeedBags/SeedBagPurple" unique_id=861062776]
+z_index = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("27_5he1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBags/SeedBagPurple" unique_id=762756341]
+position = Vector2(-0.5, -0.5)
+scale = Vector2(0.4, 0.4)
+shape = SubResource("RectangleShape2D_jscy8")
+
+[node name="PlayerBlock" type="StaticBody2D" parent="SeedBags/SeedBagPurple" unique_id=1249536510]
+z_index = -1
+scale = Vector2(0.41, 0.41)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBags/SeedBagPurple/PlayerBlock" unique_id=152423113]
+shape = SubResource("RectangleShape2D_npwjr")
 
 [node name="Compost" type="Area2D" parent="." unique_id=948883071]
 z_index = 1
@@ -374,31 +501,15 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Compost/PlayerBlock" unique_id=221349679]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="SeedBag" type="StaticBody2D" parent="." unique_id=1244492215]
-z_index = 6
-position = Vector2(433, 42.999996)
-collision_layer = 2
-script = ExtResource("22_pm3ni")
-seed_spawned = ExtResource("2_yc10j")
-
-[node name="SeedBagSprite" type="Sprite2D" parent="SeedBag" unique_id=75806690]
-z_index = 2
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("4_tefeu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBag" unique_id=612276195]
-position = Vector2(-0.5, -0.5)
-scale = Vector2(0.4, 0.4)
-shape = SubResource("RectangleShape2D_jscy8")
-
 [node name="Planter1L" type="Node2D" parent="." unique_id=1000403627]
 
 [node name="Plot" type="Area2D" parent="Planter1L" unique_id=84077910 groups=["plot"]]
 z_index = 5
-position = Vector2(194, 193)
+position = Vector2(278, 274)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter1L/Plot" unique_id=1331214618]
 modulate = Color(1, 1, 1, 0)
@@ -428,12 +539,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1L/Plot/PlayerBlock" unique_id=694879653]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter1L/Plot" unique_id=380835665]
+position = Vector2(50, -54)
+
 [node name="Plot2" type="Area2D" parent="Planter1L" unique_id=224257154 groups=["plot"]]
 z_index = 5
 position = Vector2(277, 193)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter1L/Plot2" unique_id=1248815210]
 modulate = Color(1, 1, 1, 0)
@@ -463,12 +578,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1L/Plot2/PlayerBlock" unique_id=1592257853]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter1L/Plot2" unique_id=1337850736]
+position = Vector2(50, -54)
+
 [node name="Plot3" type="Area2D" parent="Planter1L" unique_id=2036477470 groups=["plot"]]
 z_index = 5
-position = Vector2(361, 193)
+position = Vector2(359, 193)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter1L/Plot3" unique_id=1264716179]
 modulate = Color(1, 1, 1, 0)
@@ -498,12 +617,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1L/Plot3/PlayerBlock" unique_id=1000817171]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter1L/Plot3" unique_id=1979463933]
+position = Vector2(50, -54)
+
 [node name="Plot4" type="Area2D" parent="Planter1L" unique_id=90850051 groups=["plot"]]
 z_index = 5
-position = Vector2(445, 193)
+position = Vector2(438, 193)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter1L/Plot4" unique_id=1487155357]
 modulate = Color(1, 1, 1, 0)
@@ -533,226 +656,18 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1L/Plot4/PlayerBlock" unique_id=1006129150]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot5" type="Area2D" parent="Planter1L" unique_id=744054623 groups=["plot"]]
-z_index = 5
-position = Vector2(525, 193)
-scale = Vector2(0.5, 0.5)
-collision_mask = 5
-script = ExtResource("4_tbgi4")
-
-[node name="PlotSprite" type="Sprite2D" parent="Planter1L/Plot5" unique_id=1923452752]
-modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.805, 0.805)
-texture = ExtResource("4_jyhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1L/Plot5" unique_id=902662255]
-z_index = 10
-shape = SubResource("RectangleShape2D_bpmhk")
-
-[node name="PlantInteract" type="AnimatableBody2D" parent="Planter1L/Plot5" unique_id=1668905340 groups=["plant"]]
-z_index = 4
-collision_layer = 2
-collision_mask = 3
-script = ExtResource("10_choun")
-
-[node name="InteractableCollision" type="CollisionShape2D" parent="Planter1L/Plot5/PlantInteract" unique_id=236913010]
-z_index = 6
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_0wfyh")
-
-[node name="PlantSprite" type="Sprite2D" parent="Planter1L/Plot5/PlantInteract" unique_id=203037491]
-
-[node name="PlayerBlock" type="StaticBody2D" parent="Planter1L/Plot5" unique_id=92843055]
-z_index = -1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1L/Plot5/PlayerBlock" unique_id=65574227]
-shape = SubResource("RectangleShape2D_npwjr")
-
-[node name="Planter2L" type="Node2D" parent="." unique_id=1110121087]
-
-[node name="Plot" type="Area2D" parent="Planter2L" unique_id=8008552 groups=["plot"]]
-z_index = 5
-position = Vector2(194, 353)
-scale = Vector2(0.5, 0.5)
-collision_mask = 5
-script = ExtResource("4_tbgi4")
-
-[node name="PlotSprite" type="Sprite2D" parent="Planter2L/Plot" unique_id=1609905738]
-modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.805, 0.805)
-texture = ExtResource("4_jyhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2L/Plot" unique_id=1676494131]
-z_index = 10
-shape = SubResource("RectangleShape2D_bpmhk")
-
-[node name="PlantInteract" type="AnimatableBody2D" parent="Planter2L/Plot" unique_id=1384802602 groups=["plant"]]
-z_index = 4
-collision_layer = 2
-collision_mask = 3
-script = ExtResource("10_choun")
-
-[node name="InteractableCollision" type="CollisionShape2D" parent="Planter2L/Plot/PlantInteract" unique_id=245327871]
-z_index = 6
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_0wfyh")
-
-[node name="PlantSprite" type="Sprite2D" parent="Planter2L/Plot/PlantInteract" unique_id=1230072199]
-
-[node name="PlayerBlock" type="StaticBody2D" parent="Planter2L/Plot" unique_id=1481566046]
-z_index = -1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2L/Plot/PlayerBlock" unique_id=1981842591]
-shape = SubResource("RectangleShape2D_npwjr")
-
-[node name="Plot2" type="Area2D" parent="Planter2L" unique_id=1562260205 groups=["plot"]]
-z_index = 5
-position = Vector2(277, 353)
-scale = Vector2(0.5, 0.5)
-collision_mask = 5
-script = ExtResource("4_tbgi4")
-
-[node name="PlotSprite" type="Sprite2D" parent="Planter2L/Plot2" unique_id=1403137367]
-modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.805, 0.805)
-texture = ExtResource("4_jyhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2L/Plot2" unique_id=895379185]
-z_index = 10
-shape = SubResource("RectangleShape2D_bpmhk")
-
-[node name="PlantInteract" type="AnimatableBody2D" parent="Planter2L/Plot2" unique_id=750994835 groups=["plant"]]
-z_index = 4
-collision_layer = 2
-collision_mask = 3
-script = ExtResource("10_choun")
-
-[node name="InteractableCollision" type="CollisionShape2D" parent="Planter2L/Plot2/PlantInteract" unique_id=860822289]
-z_index = 6
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_0wfyh")
-
-[node name="PlantSprite" type="Sprite2D" parent="Planter2L/Plot2/PlantInteract" unique_id=1563378061]
-
-[node name="PlayerBlock" type="StaticBody2D" parent="Planter2L/Plot2" unique_id=1720549429]
-z_index = -1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2L/Plot2/PlayerBlock" unique_id=817323112]
-shape = SubResource("RectangleShape2D_npwjr")
-
-[node name="Plot3" type="Area2D" parent="Planter2L" unique_id=975317947 groups=["plot"]]
-z_index = 5
-position = Vector2(361, 353)
-scale = Vector2(0.5, 0.5)
-collision_mask = 5
-script = ExtResource("4_tbgi4")
-
-[node name="PlotSprite" type="Sprite2D" parent="Planter2L/Plot3" unique_id=451079663]
-modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.805, 0.805)
-texture = ExtResource("4_jyhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2L/Plot3" unique_id=1855556997]
-z_index = 10
-shape = SubResource("RectangleShape2D_bpmhk")
-
-[node name="PlantInteract" type="AnimatableBody2D" parent="Planter2L/Plot3" unique_id=1522501782 groups=["plant"]]
-z_index = 4
-collision_layer = 2
-collision_mask = 3
-script = ExtResource("10_choun")
-
-[node name="InteractableCollision" type="CollisionShape2D" parent="Planter2L/Plot3/PlantInteract" unique_id=1182646599]
-z_index = 6
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_0wfyh")
-
-[node name="PlantSprite" type="Sprite2D" parent="Planter2L/Plot3/PlantInteract" unique_id=136484376]
-
-[node name="PlayerBlock" type="StaticBody2D" parent="Planter2L/Plot3" unique_id=1778964673]
-z_index = -1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2L/Plot3/PlayerBlock" unique_id=185267280]
-shape = SubResource("RectangleShape2D_npwjr")
-
-[node name="Plot4" type="Area2D" parent="Planter2L" unique_id=1599095216 groups=["plot"]]
-z_index = 5
-position = Vector2(445, 353)
-scale = Vector2(0.5, 0.5)
-collision_mask = 5
-script = ExtResource("4_tbgi4")
-
-[node name="PlotSprite" type="Sprite2D" parent="Planter2L/Plot4" unique_id=1667447137]
-modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.805, 0.805)
-texture = ExtResource("4_jyhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2L/Plot4" unique_id=2077623789]
-z_index = 10
-shape = SubResource("RectangleShape2D_bpmhk")
-
-[node name="PlantInteract" type="AnimatableBody2D" parent="Planter2L/Plot4" unique_id=378438938 groups=["plant"]]
-z_index = 4
-collision_layer = 2
-collision_mask = 3
-script = ExtResource("10_choun")
-
-[node name="InteractableCollision" type="CollisionShape2D" parent="Planter2L/Plot4/PlantInteract" unique_id=705045378]
-z_index = 6
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_0wfyh")
-
-[node name="PlantSprite" type="Sprite2D" parent="Planter2L/Plot4/PlantInteract" unique_id=608382383]
-
-[node name="PlayerBlock" type="StaticBody2D" parent="Planter2L/Plot4" unique_id=1045789812]
-z_index = -1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2L/Plot4/PlayerBlock" unique_id=332512557]
-shape = SubResource("RectangleShape2D_npwjr")
-
-[node name="Plot5" type="Area2D" parent="Planter2L" unique_id=1325695658 groups=["plot"]]
-z_index = 5
-position = Vector2(525, 353)
-scale = Vector2(0.5, 0.5)
-collision_mask = 5
-script = ExtResource("4_tbgi4")
-
-[node name="PlotSprite" type="Sprite2D" parent="Planter2L/Plot5" unique_id=1210306470]
-modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.805, 0.805)
-texture = ExtResource("4_jyhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2L/Plot5" unique_id=2014227309]
-z_index = 10
-shape = SubResource("RectangleShape2D_bpmhk")
-
-[node name="PlantInteract" type="AnimatableBody2D" parent="Planter2L/Plot5" unique_id=2089563816 groups=["plant"]]
-z_index = 4
-collision_layer = 2
-collision_mask = 3
-script = ExtResource("10_choun")
-
-[node name="InteractableCollision" type="CollisionShape2D" parent="Planter2L/Plot5/PlantInteract" unique_id=1431943511]
-z_index = 6
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_0wfyh")
-
-[node name="PlantSprite" type="Sprite2D" parent="Planter2L/Plot5/PlantInteract" unique_id=722622701]
-
-[node name="PlayerBlock" type="StaticBody2D" parent="Planter2L/Plot5" unique_id=2015948754]
-z_index = -1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2L/Plot5/PlayerBlock" unique_id=358597091]
-shape = SubResource("RectangleShape2D_npwjr")
+[node name="Notification" type="Sprite2D" parent="Planter1L/Plot4" unique_id=884991849]
+position = Vector2(50, -54)
 
 [node name="Planter3L" type="Node2D" parent="." unique_id=2020319950]
 
 [node name="Plot" type="Area2D" parent="Planter3L" unique_id=830412277 groups=["plot"]]
 z_index = 5
-position = Vector2(194, 513)
+position = Vector2(280, 438)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter3L/Plot" unique_id=1795303848]
 modulate = Color(1, 1, 1, 0)
@@ -782,12 +697,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3L/Plot/PlayerBlock" unique_id=1025956633]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter3L/Plot" unique_id=1611602744]
+position = Vector2(50, -54)
+
 [node name="Plot2" type="Area2D" parent="Planter3L" unique_id=1380015182 groups=["plot"]]
 z_index = 5
-position = Vector2(277, 513)
+position = Vector2(280, 513)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter3L/Plot2" unique_id=380880289]
 modulate = Color(1, 1, 1, 0)
@@ -817,12 +736,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3L/Plot2/PlayerBlock" unique_id=1391332206]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter3L/Plot2" unique_id=707985328]
+position = Vector2(50, -54)
+
 [node name="Plot3" type="Area2D" parent="Planter3L" unique_id=234861878 groups=["plot"]]
 z_index = 5
-position = Vector2(361, 513)
+position = Vector2(357, 513)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter3L/Plot3" unique_id=1385626070]
 modulate = Color(1, 1, 1, 0)
@@ -852,12 +775,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3L/Plot3/PlayerBlock" unique_id=1104124801]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter3L/Plot3" unique_id=1924588553]
+position = Vector2(50, -54)
+
 [node name="Plot4" type="Area2D" parent="Planter3L" unique_id=607876690 groups=["plot"]]
 z_index = 5
-position = Vector2(445, 513)
+position = Vector2(437, 513)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter3L/Plot4" unique_id=534665999]
 modulate = Color(1, 1, 1, 0)
@@ -887,49 +814,18 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3L/Plot4/PlayerBlock" unique_id=1079302445]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot5" type="Area2D" parent="Planter3L" unique_id=2111358259 groups=["plot"]]
-z_index = 5
-position = Vector2(525, 513)
-scale = Vector2(0.5, 0.5)
-collision_mask = 5
-script = ExtResource("4_tbgi4")
-
-[node name="PlotSprite" type="Sprite2D" parent="Planter3L/Plot5" unique_id=2130686978]
-modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.805, 0.805)
-texture = ExtResource("4_jyhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3L/Plot5" unique_id=529632211]
-z_index = 10
-shape = SubResource("RectangleShape2D_bpmhk")
-
-[node name="PlantInteract" type="AnimatableBody2D" parent="Planter3L/Plot5" unique_id=527156915 groups=["plant"]]
-z_index = 4
-collision_layer = 2
-collision_mask = 3
-script = ExtResource("10_choun")
-
-[node name="InteractableCollision" type="CollisionShape2D" parent="Planter3L/Plot5/PlantInteract" unique_id=2109801493]
-z_index = 6
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_0wfyh")
-
-[node name="PlantSprite" type="Sprite2D" parent="Planter3L/Plot5/PlantInteract" unique_id=1483866191]
-
-[node name="PlayerBlock" type="StaticBody2D" parent="Planter3L/Plot5" unique_id=584969551]
-z_index = -1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3L/Plot5/PlayerBlock" unique_id=842075655]
-shape = SubResource("RectangleShape2D_npwjr")
+[node name="Notification" type="Sprite2D" parent="Planter3L/Plot4" unique_id=90992222]
+position = Vector2(50, -54)
 
 [node name="Planter1R" type="Node2D" parent="." unique_id=302869505]
 
 [node name="Plot" type="Area2D" parent="Planter1R" unique_id=1647953021 groups=["plot"]]
 z_index = 5
-position = Vector2(754, 193)
+position = Vector2(1000, 274)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter1R/Plot" unique_id=1837356279]
 modulate = Color(1, 1, 1, 0)
@@ -959,12 +855,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1R/Plot/PlayerBlock" unique_id=1547273680]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter1R/Plot" unique_id=2132357224]
+position = Vector2(50, -54)
+
 [node name="Plot2" type="Area2D" parent="Planter1R" unique_id=1810359153 groups=["plot"]]
 z_index = 5
 position = Vector2(837, 193)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter1R/Plot2" unique_id=1287084767]
 modulate = Color(1, 1, 1, 0)
@@ -994,12 +894,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1R/Plot2/PlayerBlock" unique_id=1778527966]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter1R/Plot2" unique_id=964368110]
+position = Vector2(50, -54)
+
 [node name="Plot3" type="Area2D" parent="Planter1R" unique_id=1481734137 groups=["plot"]]
 z_index = 5
-position = Vector2(921, 193)
+position = Vector2(915, 193)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter1R/Plot3" unique_id=443651977]
 modulate = Color(1, 1, 1, 0)
@@ -1029,12 +933,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1R/Plot3/PlayerBlock" unique_id=1723736147]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter1R/Plot3" unique_id=1058144987]
+position = Vector2(50, -54)
+
 [node name="Plot4" type="Area2D" parent="Planter1R" unique_id=1668791418 groups=["plot"]]
 z_index = 5
-position = Vector2(1005, 193)
+position = Vector2(999, 193)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter1R/Plot4" unique_id=2039597810]
 modulate = Color(1, 1, 1, 0)
@@ -1064,226 +972,18 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1R/Plot4/PlayerBlock" unique_id=960279230]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot5" type="Area2D" parent="Planter1R" unique_id=1417923312 groups=["plot"]]
-z_index = 5
-position = Vector2(1085, 193)
-scale = Vector2(0.5, 0.5)
-collision_mask = 5
-script = ExtResource("4_tbgi4")
-
-[node name="PlotSprite" type="Sprite2D" parent="Planter1R/Plot5" unique_id=1810757952]
-modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.805, 0.805)
-texture = ExtResource("4_jyhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1R/Plot5" unique_id=489571952]
-z_index = 10
-shape = SubResource("RectangleShape2D_bpmhk")
-
-[node name="PlantInteract" type="AnimatableBody2D" parent="Planter1R/Plot5" unique_id=1806197075 groups=["plant"]]
-z_index = 4
-collision_layer = 2
-collision_mask = 3
-script = ExtResource("10_choun")
-
-[node name="InteractableCollision" type="CollisionShape2D" parent="Planter1R/Plot5/PlantInteract" unique_id=179348097]
-z_index = 6
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_0wfyh")
-
-[node name="PlantSprite" type="Sprite2D" parent="Planter1R/Plot5/PlantInteract" unique_id=1955428715]
-
-[node name="PlayerBlock" type="StaticBody2D" parent="Planter1R/Plot5" unique_id=1565645224]
-z_index = -1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1R/Plot5/PlayerBlock" unique_id=1737125400]
-shape = SubResource("RectangleShape2D_npwjr")
-
-[node name="Planter2R" type="Node2D" parent="." unique_id=1035804490]
-
-[node name="Plot" type="Area2D" parent="Planter2R" unique_id=624146283 groups=["plot"]]
-z_index = 5
-position = Vector2(754, 353)
-scale = Vector2(0.5, 0.5)
-collision_mask = 5
-script = ExtResource("4_tbgi4")
-
-[node name="PlotSprite" type="Sprite2D" parent="Planter2R/Plot" unique_id=1161485141]
-modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.805, 0.805)
-texture = ExtResource("4_jyhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2R/Plot" unique_id=1714042184]
-z_index = 10
-shape = SubResource("RectangleShape2D_bpmhk")
-
-[node name="PlantInteract" type="AnimatableBody2D" parent="Planter2R/Plot" unique_id=784231699 groups=["plant"]]
-z_index = 4
-collision_layer = 2
-collision_mask = 3
-script = ExtResource("10_choun")
-
-[node name="InteractableCollision" type="CollisionShape2D" parent="Planter2R/Plot/PlantInteract" unique_id=1444993402]
-z_index = 6
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_0wfyh")
-
-[node name="PlantSprite" type="Sprite2D" parent="Planter2R/Plot/PlantInteract" unique_id=593117808]
-
-[node name="PlayerBlock" type="StaticBody2D" parent="Planter2R/Plot" unique_id=957028402]
-z_index = -1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2R/Plot/PlayerBlock" unique_id=684436929]
-shape = SubResource("RectangleShape2D_npwjr")
-
-[node name="Plot2" type="Area2D" parent="Planter2R" unique_id=303201536 groups=["plot"]]
-z_index = 5
-position = Vector2(837, 353)
-scale = Vector2(0.5, 0.5)
-collision_mask = 5
-script = ExtResource("4_tbgi4")
-
-[node name="PlotSprite" type="Sprite2D" parent="Planter2R/Plot2" unique_id=1761228105]
-modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.805, 0.805)
-texture = ExtResource("4_jyhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2R/Plot2" unique_id=1293656076]
-z_index = 10
-shape = SubResource("RectangleShape2D_bpmhk")
-
-[node name="PlantInteract" type="AnimatableBody2D" parent="Planter2R/Plot2" unique_id=1022642749 groups=["plant"]]
-z_index = 4
-collision_layer = 2
-collision_mask = 3
-script = ExtResource("10_choun")
-
-[node name="InteractableCollision" type="CollisionShape2D" parent="Planter2R/Plot2/PlantInteract" unique_id=859249944]
-z_index = 6
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_0wfyh")
-
-[node name="PlantSprite" type="Sprite2D" parent="Planter2R/Plot2/PlantInteract" unique_id=1862178654]
-
-[node name="PlayerBlock" type="StaticBody2D" parent="Planter2R/Plot2" unique_id=1965731640]
-z_index = -1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2R/Plot2/PlayerBlock" unique_id=539140962]
-shape = SubResource("RectangleShape2D_npwjr")
-
-[node name="Plot3" type="Area2D" parent="Planter2R" unique_id=1262817319 groups=["plot"]]
-z_index = 5
-position = Vector2(921, 353)
-scale = Vector2(0.5, 0.5)
-collision_mask = 5
-script = ExtResource("4_tbgi4")
-
-[node name="PlotSprite" type="Sprite2D" parent="Planter2R/Plot3" unique_id=634168509]
-modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.805, 0.805)
-texture = ExtResource("4_jyhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2R/Plot3" unique_id=225959712]
-z_index = 10
-shape = SubResource("RectangleShape2D_bpmhk")
-
-[node name="PlantInteract" type="AnimatableBody2D" parent="Planter2R/Plot3" unique_id=297323320 groups=["plant"]]
-z_index = 4
-collision_layer = 2
-collision_mask = 3
-script = ExtResource("10_choun")
-
-[node name="InteractableCollision" type="CollisionShape2D" parent="Planter2R/Plot3/PlantInteract" unique_id=385540481]
-z_index = 6
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_0wfyh")
-
-[node name="PlantSprite" type="Sprite2D" parent="Planter2R/Plot3/PlantInteract" unique_id=369353069]
-
-[node name="PlayerBlock" type="StaticBody2D" parent="Planter2R/Plot3" unique_id=111069558]
-z_index = -1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2R/Plot3/PlayerBlock" unique_id=1091456622]
-shape = SubResource("RectangleShape2D_npwjr")
-
-[node name="Plot4" type="Area2D" parent="Planter2R" unique_id=2018599937 groups=["plot"]]
-z_index = 5
-position = Vector2(1005, 353)
-scale = Vector2(0.5, 0.5)
-collision_mask = 5
-script = ExtResource("4_tbgi4")
-
-[node name="PlotSprite" type="Sprite2D" parent="Planter2R/Plot4" unique_id=404607653]
-modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.805, 0.805)
-texture = ExtResource("4_jyhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2R/Plot4" unique_id=91964522]
-z_index = 10
-shape = SubResource("RectangleShape2D_bpmhk")
-
-[node name="PlantInteract" type="AnimatableBody2D" parent="Planter2R/Plot4" unique_id=1202083840 groups=["plant"]]
-z_index = 4
-collision_layer = 2
-collision_mask = 3
-script = ExtResource("10_choun")
-
-[node name="InteractableCollision" type="CollisionShape2D" parent="Planter2R/Plot4/PlantInteract" unique_id=1720548557]
-z_index = 6
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_0wfyh")
-
-[node name="PlantSprite" type="Sprite2D" parent="Planter2R/Plot4/PlantInteract" unique_id=431466782]
-
-[node name="PlayerBlock" type="StaticBody2D" parent="Planter2R/Plot4" unique_id=1741240442]
-z_index = -1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2R/Plot4/PlayerBlock" unique_id=859700125]
-shape = SubResource("RectangleShape2D_npwjr")
-
-[node name="Plot5" type="Area2D" parent="Planter2R" unique_id=1172413464 groups=["plot"]]
-z_index = 5
-position = Vector2(1085, 353)
-scale = Vector2(0.5, 0.5)
-collision_mask = 5
-script = ExtResource("4_tbgi4")
-
-[node name="PlotSprite" type="Sprite2D" parent="Planter2R/Plot5" unique_id=40118638]
-modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.805, 0.805)
-texture = ExtResource("4_jyhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2R/Plot5" unique_id=353165598]
-z_index = 10
-shape = SubResource("RectangleShape2D_bpmhk")
-
-[node name="PlantInteract" type="AnimatableBody2D" parent="Planter2R/Plot5" unique_id=1175136398 groups=["plant"]]
-z_index = 4
-collision_layer = 2
-collision_mask = 3
-script = ExtResource("10_choun")
-
-[node name="InteractableCollision" type="CollisionShape2D" parent="Planter2R/Plot5/PlantInteract" unique_id=2039883993]
-z_index = 6
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_0wfyh")
-
-[node name="PlantSprite" type="Sprite2D" parent="Planter2R/Plot5/PlantInteract" unique_id=1506102200]
-
-[node name="PlayerBlock" type="StaticBody2D" parent="Planter2R/Plot5" unique_id=908454685]
-z_index = -1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter2R/Plot5/PlayerBlock" unique_id=818940302]
-shape = SubResource("RectangleShape2D_npwjr")
+[node name="Notification" type="Sprite2D" parent="Planter1R/Plot4" unique_id=1396151679]
+position = Vector2(50, -54)
 
 [node name="Planter3R" type="Node2D" parent="." unique_id=1649100471]
 
 [node name="Plot" type="Area2D" parent="Planter3R" unique_id=756994332 groups=["plot"]]
 z_index = 5
-position = Vector2(754, 513)
+position = Vector2(1000, 438)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter3R/Plot" unique_id=2119019023]
 modulate = Color(1, 1, 1, 0)
@@ -1313,12 +1013,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3R/Plot/PlayerBlock" unique_id=123210904]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter3R/Plot" unique_id=1291168975]
+position = Vector2(50, -54)
+
 [node name="Plot2" type="Area2D" parent="Planter3R" unique_id=257267160 groups=["plot"]]
 z_index = 5
 position = Vector2(837, 513)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter3R/Plot2" unique_id=686023410]
 modulate = Color(1, 1, 1, 0)
@@ -1348,12 +1052,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3R/Plot2/PlayerBlock" unique_id=765687497]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter3R/Plot2" unique_id=542295259]
+position = Vector2(50, -54)
+
 [node name="Plot3" type="Area2D" parent="Planter3R" unique_id=1203769939 groups=["plot"]]
 z_index = 5
-position = Vector2(921, 513)
+position = Vector2(916, 513)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter3R/Plot3" unique_id=1037018877]
 modulate = Color(1, 1, 1, 0)
@@ -1383,12 +1091,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3R/Plot3/PlayerBlock" unique_id=300212999]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter3R/Plot3" unique_id=85749256]
+position = Vector2(50, -54)
+
 [node name="Plot4" type="Area2D" parent="Planter3R" unique_id=844118770 groups=["plot"]]
 z_index = 5
-position = Vector2(1005, 513)
+position = Vector2(1000, 513)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter3R/Plot4" unique_id=1489532639]
 modulate = Color(1, 1, 1, 0)
@@ -1418,40 +1130,8 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3R/Plot4/PlayerBlock" unique_id=725606879]
 shape = SubResource("RectangleShape2D_npwjr")
 
-[node name="Plot5" type="Area2D" parent="Planter3R" unique_id=1331537684 groups=["plot"]]
-z_index = 5
-position = Vector2(1085, 513)
-scale = Vector2(0.5, 0.5)
-collision_mask = 5
-script = ExtResource("4_tbgi4")
-
-[node name="PlotSprite" type="Sprite2D" parent="Planter3R/Plot5" unique_id=1620458742]
-modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.805, 0.805)
-texture = ExtResource("4_jyhfs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3R/Plot5" unique_id=140479364]
-z_index = 10
-shape = SubResource("RectangleShape2D_bpmhk")
-
-[node name="PlantInteract" type="AnimatableBody2D" parent="Planter3R/Plot5" unique_id=831871504 groups=["plant"]]
-z_index = 4
-collision_layer = 2
-collision_mask = 3
-script = ExtResource("10_choun")
-
-[node name="InteractableCollision" type="CollisionShape2D" parent="Planter3R/Plot5/PlantInteract" unique_id=1272558891]
-z_index = 6
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_0wfyh")
-
-[node name="PlantSprite" type="Sprite2D" parent="Planter3R/Plot5/PlantInteract" unique_id=1668397971]
-
-[node name="PlayerBlock" type="StaticBody2D" parent="Planter3R/Plot5" unique_id=1685320367]
-z_index = -1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3R/Plot5/PlayerBlock" unique_id=1304467126]
-shape = SubResource("RectangleShape2D_npwjr")
+[node name="Notification" type="Sprite2D" parent="Planter3R/Plot4" unique_id=1315557406]
+position = Vector2(50, -54)
 
 [node name="SkyOverlay" type="Sprite2D" parent="." unique_id=1512364212]
 modulate = Color(1.02, 1.02, 1.02, 1)
@@ -1465,6 +1145,7 @@ script = ExtResource("27_vxglm")
 [node name="Lights_Main" type="Node2D" parent="." unique_id=572058060]
 position = Vector2(3.637979e-12, 1.8189894e-12)
 scale = Vector2(0.99999994, 0.99999994)
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="Lights_Main" unique_id=903424512]
 position = Vector2(352.00003, 180)
@@ -1519,6 +1200,7 @@ texture = SubResource("GradientTexture2D_bpmhk")
 [node name="Lights_Customers" type="Node2D" parent="." unique_id=710636430]
 position = Vector2(-1.9999998, 707)
 scale = Vector2(0.99999994, 0.99999994)
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D7" type="PointLight2D" parent="Lights_Customers" unique_id=451990756]
 position = Vector2(620, 365)
@@ -1671,6 +1353,57 @@ scale = Vector2(0.7, 0.7)
 [node name="Bottom_Position" type="Node2D" parent="Pots_Container" unique_id=908350991]
 position = Vector2(0, 146)
 
+[node name="WateringCan" type="AnimatableBody2D" parent="." unique_id=1250450530 node_paths=PackedStringArray("player")]
+z_index = 5
+position = Vector2(635, 182)
+rotation = -0.008432433
+scale = Vector2(0.6, 0.6)
+collision_layer = 10
+script = ExtResource("33_dgi5k")
+player = NodePath("../Player")
+
+[node name="WaterCanSprite" type="Sprite2D" parent="WateringCan" unique_id=2044949320]
+z_index = 8
+texture = ExtResource("33_5q0nq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WateringCan" unique_id=1215981031]
+position = Vector2(2.5, 0)
+shape = SubResource("RectangleShape2D_5q0nq")
+
+[node name="Drips" type="CPUParticles2D" parent="WateringCan" unique_id=1354052012]
+visible = false
+position = Vector2(51.62267, 5.4354925)
+amount = 12
+lifetime = 2.0
+damping_min = 6.14
+damping_max = 9.649
+damping_curve = SubResource("Curve_fuf3a")
+angle_max = 366.3
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_kmb1v")
+color = Color(0.35686275, 0.43137255, 0.88235295, 1)
+color_ramp = SubResource("Gradient_kmb1v")
+
+[node name="WaterFountain" type="Area2D" parent="." unique_id=1539356666]
+position = Vector2(1182, 88)
+collision_mask = 9
+script = ExtResource("36_fuf3a")
+
+[node name="FountainSprite" type="Sprite2D" parent="WaterFountain" unique_id=1358958505]
+texture = ExtResource("36_kmb1v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterFountain" unique_id=1126601210]
+position = Vector2(-3, 4.5)
+shape = SubResource("RectangleShape2D_4pcix")
+
+[node name="PlayerBlock" type="StaticBody2D" parent="WaterFountain" unique_id=1981606295]
+z_index = -1
+scale = Vector2(0.75, 0.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterFountain/PlayerBlock" unique_id=1560422723]
+shape = SubResource("RectangleShape2D_npwjr")
+
 [connection signal="daytime" from="Camera2D/DayManager" to="SkyOverlay" method="_on_day_manager_daytime"]
 [connection signal="daytime" from="Camera2D/DayManager" to="Lights_Main/PointLight2D" method="_on_day_manager_daytime"]
 [connection signal="nighttime" from="Camera2D/DayManager" to="SkyOverlay" method="_on_day_manager_nighttime"]
@@ -1693,24 +1426,6 @@ position = Vector2(0, 146)
 [connection signal="body_entered" from="Planter1L/Plot4" to="Planter1L/Plot4" method="_on_body_entered"]
 [connection signal="mouse_entered" from="Planter1L/Plot4" to="Planter1L/Plot4" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Planter1L/Plot4" to="Planter1L/Plot4" method="_on_mouse_exited"]
-[connection signal="body_entered" from="Planter1L/Plot5" to="Planter1L/Plot5" method="_on_body_entered"]
-[connection signal="mouse_entered" from="Planter1L/Plot5" to="Planter1L/Plot5" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Planter1L/Plot5" to="Planter1L/Plot5" method="_on_mouse_exited"]
-[connection signal="body_entered" from="Planter2L/Plot" to="Planter2L/Plot" method="_on_body_entered"]
-[connection signal="mouse_entered" from="Planter2L/Plot" to="Planter2L/Plot" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Planter2L/Plot" to="Planter2L/Plot" method="_on_mouse_exited"]
-[connection signal="body_entered" from="Planter2L/Plot2" to="Planter2L/Plot2" method="_on_body_entered"]
-[connection signal="mouse_entered" from="Planter2L/Plot2" to="Planter2L/Plot2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Planter2L/Plot2" to="Planter2L/Plot2" method="_on_mouse_exited"]
-[connection signal="body_entered" from="Planter2L/Plot3" to="Planter2L/Plot3" method="_on_body_entered"]
-[connection signal="mouse_entered" from="Planter2L/Plot3" to="Planter2L/Plot3" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Planter2L/Plot3" to="Planter2L/Plot3" method="_on_mouse_exited"]
-[connection signal="body_entered" from="Planter2L/Plot4" to="Planter2L/Plot4" method="_on_body_entered"]
-[connection signal="mouse_entered" from="Planter2L/Plot4" to="Planter2L/Plot4" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Planter2L/Plot4" to="Planter2L/Plot4" method="_on_mouse_exited"]
-[connection signal="body_entered" from="Planter2L/Plot5" to="Planter2L/Plot5" method="_on_body_entered"]
-[connection signal="mouse_entered" from="Planter2L/Plot5" to="Planter2L/Plot5" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Planter2L/Plot5" to="Planter2L/Plot5" method="_on_mouse_exited"]
 [connection signal="body_entered" from="Planter3L/Plot" to="Planter3L/Plot" method="_on_body_entered"]
 [connection signal="mouse_entered" from="Planter3L/Plot" to="Planter3L/Plot" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Planter3L/Plot" to="Planter3L/Plot" method="_on_mouse_exited"]
@@ -1723,9 +1438,6 @@ position = Vector2(0, 146)
 [connection signal="body_entered" from="Planter3L/Plot4" to="Planter3L/Plot4" method="_on_body_entered"]
 [connection signal="mouse_entered" from="Planter3L/Plot4" to="Planter3L/Plot4" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Planter3L/Plot4" to="Planter3L/Plot4" method="_on_mouse_exited"]
-[connection signal="body_entered" from="Planter3L/Plot5" to="Planter3L/Plot5" method="_on_body_entered"]
-[connection signal="mouse_entered" from="Planter3L/Plot5" to="Planter3L/Plot5" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Planter3L/Plot5" to="Planter3L/Plot5" method="_on_mouse_exited"]
 [connection signal="body_entered" from="Planter1R/Plot" to="Planter1R/Plot" method="_on_body_entered"]
 [connection signal="mouse_entered" from="Planter1R/Plot" to="Planter1R/Plot" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Planter1R/Plot" to="Planter1R/Plot" method="_on_mouse_exited"]
@@ -1738,24 +1450,6 @@ position = Vector2(0, 146)
 [connection signal="body_entered" from="Planter1R/Plot4" to="Planter1R/Plot4" method="_on_body_entered"]
 [connection signal="mouse_entered" from="Planter1R/Plot4" to="Planter1R/Plot4" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Planter1R/Plot4" to="Planter1R/Plot4" method="_on_mouse_exited"]
-[connection signal="body_entered" from="Planter1R/Plot5" to="Planter1R/Plot5" method="_on_body_entered"]
-[connection signal="mouse_entered" from="Planter1R/Plot5" to="Planter1R/Plot5" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Planter1R/Plot5" to="Planter1R/Plot5" method="_on_mouse_exited"]
-[connection signal="body_entered" from="Planter2R/Plot" to="Planter2R/Plot" method="_on_body_entered"]
-[connection signal="mouse_entered" from="Planter2R/Plot" to="Planter2R/Plot" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Planter2R/Plot" to="Planter2R/Plot" method="_on_mouse_exited"]
-[connection signal="body_entered" from="Planter2R/Plot2" to="Planter2R/Plot2" method="_on_body_entered"]
-[connection signal="mouse_entered" from="Planter2R/Plot2" to="Planter2R/Plot2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Planter2R/Plot2" to="Planter2R/Plot2" method="_on_mouse_exited"]
-[connection signal="body_entered" from="Planter2R/Plot3" to="Planter2R/Plot3" method="_on_body_entered"]
-[connection signal="mouse_entered" from="Planter2R/Plot3" to="Planter2R/Plot3" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Planter2R/Plot3" to="Planter2R/Plot3" method="_on_mouse_exited"]
-[connection signal="body_entered" from="Planter2R/Plot4" to="Planter2R/Plot4" method="_on_body_entered"]
-[connection signal="mouse_entered" from="Planter2R/Plot4" to="Planter2R/Plot4" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Planter2R/Plot4" to="Planter2R/Plot4" method="_on_mouse_exited"]
-[connection signal="body_entered" from="Planter2R/Plot5" to="Planter2R/Plot5" method="_on_body_entered"]
-[connection signal="mouse_entered" from="Planter2R/Plot5" to="Planter2R/Plot5" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Planter2R/Plot5" to="Planter2R/Plot5" method="_on_mouse_exited"]
 [connection signal="body_entered" from="Planter3R/Plot" to="Planter3R/Plot" method="_on_body_entered"]
 [connection signal="mouse_entered" from="Planter3R/Plot" to="Planter3R/Plot" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Planter3R/Plot" to="Planter3R/Plot" method="_on_mouse_exited"]
@@ -1768,10 +1462,8 @@ position = Vector2(0, 146)
 [connection signal="body_entered" from="Planter3R/Plot4" to="Planter3R/Plot4" method="_on_body_entered"]
 [connection signal="mouse_entered" from="Planter3R/Plot4" to="Planter3R/Plot4" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Planter3R/Plot4" to="Planter3R/Plot4" method="_on_mouse_exited"]
-[connection signal="body_entered" from="Planter3R/Plot5" to="Planter3R/Plot5" method="_on_body_entered"]
-[connection signal="mouse_entered" from="Planter3R/Plot5" to="Planter3R/Plot5" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Planter3R/Plot5" to="Planter3R/Plot5" method="_on_mouse_exited"]
 [connection signal="body_entered" from="Pots_Container/Pots/Pot1" to="Pots_Container/Pots/Pot1" method="_on_body_entered"]
 [connection signal="body_entered" from="Pots_Container/Pots/Pot2" to="Pots_Container/Pots/Pot2" method="_on_body_entered"]
 [connection signal="body_entered" from="Pots_Container/Pots/Pot3" to="Pots_Container/Pots/Pot3" method="_on_body_entered"]
 [connection signal="body_entered" from="Pots_Container/Pots/Pot4" to="Pots_Container/Pots/Pot4" method="_on_body_entered"]
+[connection signal="body_entered" from="WaterFountain" to="WaterFountain" method="_on_body_entered"]
