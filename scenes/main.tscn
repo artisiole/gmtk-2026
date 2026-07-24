@@ -294,7 +294,6 @@ size = Vector2(88, 27)
 [node name="Player" parent="." unique_id=1519330593 instance=ExtResource("2_0wfyh")]
 z_index = 4
 position = Vector2(121, 133)
-scale = Vector2(1.5, 1.5)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1055604865]
 position = Vector2(640, 360.00003)
