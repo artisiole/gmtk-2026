@@ -6,7 +6,7 @@ extends Sprite2D
 # These just tween to the next color unless it's the reset, in which case it just SNAPS to white.
 
 func _on_day_manager_daytime():
-	sky_overlay.modulate = Color("White")
+	sky_overlay.modulate = Color("b3cedb")
 	
 func _on_day_manager_sunset():
 	var modulate_color : Color

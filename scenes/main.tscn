@@ -46,6 +46,9 @@
 [ext_resource type="Script" uid="uid://crstuqj8qi3mf" path="res://scripts/watering_can.gd" id="33_dgi5k"]
 [ext_resource type="Script" uid="uid://dbg0rw6r5m3ss" path="res://scripts/water_fountain.gd" id="36_fuf3a"]
 [ext_resource type="Texture2D" uid="uid://be7nd2gb5cpjo" path="res://sprites/placeholder_fountain.png" id="36_kmb1v"]
+[ext_resource type="Script" uid="uid://bmv1xllg5d6pf" path="res://scripts/customer_manager.gd" id="47_nvyfr"]
+[ext_resource type="PackedScene" uid="uid://ddfaii8fe1v82" path="res://scenes/customer.tscn" id="47_vc5cj"]
+[ext_resource type="Script" uid="uid://bo4vdbi7fky7g" path="res://scripts/customer_dropoff.gd" id="49_ty1g6"]
 
 [sub_resource type="Theme" id="Theme_nvyfr"]
 default_font = ExtResource("3_og1vs")
@@ -334,6 +337,9 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_pm3ni")
 fill = 1
 fill_from = Vector2(0.5217391, 0.5173913)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3mg7"]
+size = Vector2(68, 69)
 
 [node name="Node2D" type="Node2D" unique_id=311975873]
 
@@ -1416,7 +1422,7 @@ scale = Vector2(0.75, 0.75)
 shape = SubResource("RectangleShape2D_npwjr")
 
 [node name="SkyOverlay" type="Sprite2D" parent="." unique_id=1111513563]
-modulate = Color(1.02, 1.02, 1.02, 1)
+modulate = Color(0.70135915, 0.80797166, 0.8595664, 1)
 z_index = 22
 material = SubResource("CanvasItemMaterial_chjal")
 position = Vector2(639.99994, 39.999977)
@@ -1434,72 +1440,141 @@ metadata/_edit_lock_ = true
 [node name="PointLight2D" type="PointLight2D" parent="Lights_Main" unique_id=505941851]
 position = Vector2(352, 179.99998)
 scale = Vector2(10.999998, 5.6479993)
-color = Color(1, 1, 1, 0.24313726)
+color = Color(1, 1, 1, 0.5176471)
 energy = 0.5
 texture = SubResource("GradientTexture2D_vchkt")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Lights_Main" unique_id=377531887]
 position = Vector2(350, 349.99997)
 scale = Vector2(10.843749, 5.6479993)
-color = Color(1, 1, 1, 0.24313726)
+color = Color(1, 1, 1, 0.5176471)
 energy = 0.5
 texture = SubResource("GradientTexture2D_vchkt")
 
 [node name="PointLight2D3" type="PointLight2D" parent="Lights_Main" unique_id=1275904285]
 position = Vector2(348.99997, 513.99994)
 scale = Vector2(10.875, 5.6479993)
-color = Color(1, 1, 1, 0.24313726)
+color = Color(1, 1, 1, 0.5176471)
 energy = 0.5
 texture = SubResource("GradientTexture2D_vchkt")
 
 [node name="PointLight2D4" type="PointLight2D" parent="Lights_Main" unique_id=1520197745]
 position = Vector2(927.99994, 514)
 scale = Vector2(11.406248, 5.6479993)
-color = Color(1, 1, 1, 0.24313726)
+color = Color(1, 1, 1, 0.5176471)
 energy = 0.5
 texture = SubResource("GradientTexture2D_vchkt")
 
 [node name="PointLight2D5" type="PointLight2D" parent="Lights_Main" unique_id=1910111384]
 position = Vector2(920.99994, 353.99997)
 scale = Vector2(11.218749, 5.6479993)
-color = Color(1, 1, 1, 0.24313726)
+color = Color(1, 1, 1, 0.5176471)
 energy = 0.5
 texture = SubResource("GradientTexture2D_vchkt")
 
 [node name="PointLight2D6" type="PointLight2D" parent="Lights_Main" unique_id=1261587175]
 position = Vector2(920.9999, 192)
 scale = Vector2(11.031247, 5.6479993)
-color = Color(1, 1, 1, 0.24313726)
+color = Color(1, 1, 1, 0.5176471)
 energy = 0.5
 texture = SubResource("GradientTexture2D_vchkt")
 
 [node name="PointLight2D7" type="PointLight2D" parent="Lights_Main" unique_id=1681252419]
 position = Vector2(643, 359.99997)
 scale = Vector2(8.067999, 11.999999)
-color = Color(1, 1, 1, 0.24313726)
+color = Color(1, 1, 1, 0.5176471)
 energy = 0.5
 texture = SubResource("GradientTexture2D_vchkt")
 
 [node name="PointLight2D8" type="PointLight2D" parent="Lights_Main" unique_id=317702862]
 position = Vector2(617.99994, 1072)
 scale = Vector2(14.687499, 13.281249)
-color = Color(1, 1, 1, 0.24313726)
+color = Color(1, 1, 1, 0.5176471)
 energy = 0.5
 texture = SubResource("GradientTexture2D_vchkt")
 
 [node name="PointLight2D9" type="PointLight2D" parent="Lights_Main" unique_id=582741286]
 position = Vector2(245.99997, 1064)
 scale = Vector2(11.127999, 13.812499)
-color = Color(1, 1, 1, 0.24313726)
+color = Color(1, 1, 1, 0.5176471)
 energy = 0.5
 texture = SubResource("GradientTexture2D_vchkt")
 
 [node name="PointLight2D10" type="PointLight2D" parent="Lights_Main" unique_id=866328917]
 position = Vector2(1052.9999, 1064)
 scale = Vector2(11.127999, 13.749999)
-color = Color(1, 1, 1, 0.24313726)
+color = Color(1, 1, 1, 0.5176471)
 energy = 0.5
 texture = SubResource("GradientTexture2D_vchkt")
+
+[node name="CustomerManager" type="Node2D" parent="." unique_id=521284186]
+script = ExtResource("47_nvyfr")
+slots = [NodePath("Slot1"), NodePath("Slot2"), NodePath("Slot3")]
+customer = ExtResource("47_vc5cj")
+
+[node name="Slot1" type="Node2D" parent="CustomerManager" unique_id=1142322315]
+position = Vector2(204, 989)
+
+[node name="Deposit" type="Area2D" parent="CustomerManager/Slot1" unique_id=750009609]
+collision_mask = 7
+script = ExtResource("49_ty1g6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CustomerManager/Slot1/Deposit" unique_id=1343073637]
+z_index = 7
+position = Vector2(77, 0.5)
+shape = SubResource("RectangleShape2D_h3mg7")
+
+[node name="PlotSprite" type="Sprite2D" parent="CustomerManager/Slot1/Deposit" unique_id=1243397124]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+position = Vector2(77, 2)
+scale = Vector2(0.495, 0.495)
+texture = ExtResource("4_jyhfs")
+
+[node name="Slot2" type="Node2D" parent="CustomerManager" unique_id=2029752552]
+position = Vector2(425, 1231)
+
+[node name="Deposit" type="Area2D" parent="CustomerManager/Slot2" unique_id=1293233992]
+position = Vector2(0, -80)
+collision_mask = 7
+script = ExtResource("49_ty1g6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CustomerManager/Slot2/Deposit" unique_id=1353742292]
+z_index = 7
+shape = SubResource("RectangleShape2D_h3mg7")
+
+[node name="PlotSprite" type="Sprite2D" parent="CustomerManager/Slot2/Deposit" unique_id=465006088]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+scale = Vector2(0.495, 0.495)
+texture = ExtResource("4_jyhfs")
+
+[node name="Slot3" type="Node2D" parent="CustomerManager" unique_id=4314239]
+position = Vector2(876, 1231)
+
+[node name="Deposit" type="Area2D" parent="CustomerManager/Slot3" unique_id=1175368252]
+position = Vector2(0, -80)
+collision_mask = 7
+script = ExtResource("49_ty1g6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CustomerManager/Slot3/Deposit" unique_id=113613225]
+z_index = 7
+shape = SubResource("RectangleShape2D_h3mg7")
+
+[node name="PlotSprite" type="Sprite2D" parent="CustomerManager/Slot3/Deposit" unique_id=1776427721]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+scale = Vector2(0.495, 0.495)
+texture = ExtResource("4_jyhfs")
+
+[node name="Outside" type="Node2D" parent="CustomerManager" unique_id=348530493]
+position = Vector2(637, 1522)
+
+[node name="Inside" type="Node2D" parent="CustomerManager" unique_id=129573030]
+position = Vector2(637, 1356)
+
+[node name="SidePivot" type="Node2D" parent="CustomerManager" unique_id=795307520]
+position = Vector2(183, 1325)
 
 [connection signal="button_up" from="Menus/ResultsNext" to="Menus/ResultsNext" method="_on_button_up"]
 [connection signal="shoptime" from="Menus/ResultsNext" to="Menus/ShopNext" method="_on_results_next_shoptime"]
@@ -1569,3 +1644,9 @@ texture = SubResource("GradientTexture2D_vchkt")
 [connection signal="body_entered" from="Pots_Container/Pots/Pot3" to="Pots_Container/Pots/Pot3" method="_on_body_entered"]
 [connection signal="body_entered" from="Pots_Container/Pots/Pot4" to="Pots_Container/Pots/Pot4" method="_on_body_entered"]
 [connection signal="body_entered" from="WaterFountain" to="WaterFountain" method="_on_body_entered"]
+[connection signal="body_entered" from="CustomerManager/Slot1/Deposit" to="CustomerManager/Slot1/Deposit" method="_on_body_entered"]
+[connection signal="customer_served" from="CustomerManager/Slot1/Deposit" to="CustomerManager" method="_on_deposit_customer_served"]
+[connection signal="body_entered" from="CustomerManager/Slot2/Deposit" to="CustomerManager/Slot2/Deposit" method="_on_body_entered"]
+[connection signal="customer_served" from="CustomerManager/Slot2/Deposit" to="CustomerManager" method="_on_deposit_customer_served"]
+[connection signal="body_entered" from="CustomerManager/Slot3/Deposit" to="CustomerManager/Slot3/Deposit" method="_on_body_entered"]
+[connection signal="customer_served" from="CustomerManager/Slot3/Deposit" to="CustomerManager" method="_on_deposit_customer_served"]
