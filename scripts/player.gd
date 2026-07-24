@@ -38,6 +38,7 @@ func _physics_process(delta: float) -> void:
 		velocity = input * 0
 	else:
 		velocity = input * SPEED
+		#velocity = lerp(velocity, input * SPEED * 1.5, 0.03) #HEELYS
 	
 	move_and_slide()
 
