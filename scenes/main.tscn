@@ -35,6 +35,8 @@
 [ext_resource type="Script" uid="uid://biycf687cvo5j" path="res://scripts/potted_plant.gd" id="31_qkpxi"]
 [ext_resource type="Texture2D" uid="uid://c48kmjod5fsce" path="res://sprites/plot_wateringcan.png" id="33_5q0nq"]
 [ext_resource type="Script" uid="uid://crstuqj8qi3mf" path="res://scripts/watering_can.gd" id="33_dgi5k"]
+[ext_resource type="Script" uid="uid://dbg0rw6r5m3ss" path="res://scripts/water_fountain.gd" id="36_fuf3a"]
+[ext_resource type="Texture2D" uid="uid://be7nd2gb5cpjo" path="res://sprites/placeholder_fountain.png" id="36_kmb1v"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y6deb"]
 friction = 0.0
@@ -265,6 +267,21 @@ size = Vector2(126.666595, 123.33325)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5q0nq"]
 size = Vector2(121.666855, 110)
+
+[sub_resource type="Curve" id="Curve_fuf3a"]
+_limits = [0.0, 1024.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.67906976, 1012.49445), 0.0, 0.0, 0, 0, Vector2(1, 1024), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_kmb1v"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_kmb1v"]
+colors = PackedColorArray(1, 1, 1, 1, 0.5921569, 1, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pcix"]
+size = Vector2(88, 27)
 
 [node name="Node2D" type="Node2D" unique_id=311975873]
 
@@ -1251,7 +1268,7 @@ position = Vector2(0, 146)
 
 [node name="WateringCan" type="AnimatableBody2D" parent="." unique_id=1250450530 node_paths=PackedStringArray("player")]
 z_index = 5
-position = Vector2(712, 135)
+position = Vector2(635, 182)
 rotation = -0.008432433
 scale = Vector2(0.6, 0.6)
 collision_layer = 10
@@ -1265,6 +1282,40 @@ texture = ExtResource("33_5q0nq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WateringCan" unique_id=1215981031]
 position = Vector2(2.5, 0)
 shape = SubResource("RectangleShape2D_5q0nq")
+
+[node name="Drips" type="CPUParticles2D" parent="WateringCan" unique_id=1354052012]
+visible = false
+position = Vector2(51.62267, 5.4354925)
+amount = 12
+lifetime = 2.0
+damping_min = 6.14
+damping_max = 9.649
+damping_curve = SubResource("Curve_fuf3a")
+angle_max = 366.3
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_kmb1v")
+color = Color(0.35686275, 0.43137255, 0.88235295, 1)
+color_ramp = SubResource("Gradient_kmb1v")
+
+[node name="WaterFountain" type="Area2D" parent="." unique_id=1539356666]
+position = Vector2(1182, 88)
+collision_mask = 9
+script = ExtResource("36_fuf3a")
+
+[node name="FountainSprite" type="Sprite2D" parent="WaterFountain" unique_id=1358958505]
+texture = ExtResource("36_kmb1v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterFountain" unique_id=1126601210]
+position = Vector2(-3, 4.5)
+shape = SubResource("RectangleShape2D_4pcix")
+
+[node name="PlayerBlock" type="StaticBody2D" parent="WaterFountain" unique_id=1981606295]
+z_index = -1
+scale = Vector2(0.75, 0.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterFountain/PlayerBlock" unique_id=1560422723]
+shape = SubResource("RectangleShape2D_npwjr")
 
 [connection signal="daytime" from="Camera2D/DayManager" to="SkyOverlay" method="_on_day_manager_daytime"]
 [connection signal="daytime" from="Camera2D/DayManager" to="Lights_Main/PointLight2D" method="_on_day_manager_daytime"]
@@ -1328,3 +1379,4 @@ shape = SubResource("RectangleShape2D_5q0nq")
 [connection signal="body_entered" from="Pots_Container/Pots/Pot2" to="Pots_Container/Pots/Pot2" method="_on_body_entered"]
 [connection signal="body_entered" from="Pots_Container/Pots/Pot3" to="Pots_Container/Pots/Pot3" method="_on_body_entered"]
 [connection signal="body_entered" from="Pots_Container/Pots/Pot4" to="Pots_Container/Pots/Pot4" method="_on_body_entered"]
+[connection signal="body_entered" from="WaterFountain" to="WaterFountain" method="_on_body_entered"]

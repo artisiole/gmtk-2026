@@ -35,8 +35,9 @@ func _on_body_entered(body: Node2D) -> void:
 		
 		body.queue_free()
 	if body.name == "WateringCan":
-		if time_paused:
+		if time_paused and body.has_watered:
 			time_paused = false
+			body.has_watered = false
 		
 func _process(delta: float) -> void:
 	if planted and not plant_plucked and not time_paused:

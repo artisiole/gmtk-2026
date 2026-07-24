@@ -6,6 +6,8 @@ var current_interactor
 @export var player: Node2D
 @onready var sprite = $WaterCanSprite
 
+var has_watered = false
+
 func start_interact(interactor):
 	interacting = true
 	current_interactor = interactor
@@ -17,7 +19,12 @@ func _process(delta: float) -> void:
 	# interact behavior
 	if interacting:
 		set_collision_layer_value(3, false)
+		
 		sprite.flip_h = (global_position.x - player.global_position.x) < 0
+		$Drips.position.x = abs($Drips.position.x) * sign(global_position.x - player.global_position.x)
+		
+		$Drips.visible = has_watered
+		
 		global_position = current_interactor.global_position
 	else:
 		set_collision_layer_value(3, true)
