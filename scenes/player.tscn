@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://2pdx5timqqpo" path="res://sprites/doghead.png" id="5_qlg0r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ddi6"]
-radius = 20.0
-height = 84.0
+radius = 17.0
+height = 60.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 radius = 18.0
@@ -124,7 +124,7 @@ position = Vector2(0.5, -1)
 texture = ExtResource("5_qlg0r")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=581234897]
-position = Vector2(-2, -1)
+position = Vector2(-2, 10)
 shape = SubResource("CapsuleShape2D_4ddi6")
 
 [node name="RotationPivot" type="Node2D" parent="." unique_id=1715832901]
