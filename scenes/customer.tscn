@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ddfaii8fe1v82"]
+
+[ext_resource type="Texture2D" uid="uid://baatw14sknmiq" path="res://sprites/bear.png" id="1_ktfjk"]
+[ext_resource type="Script" uid="uid://cyw1eg0tryk1d" path="res://scripts/customer.gd" id="1_xss0h"]
+[ext_resource type="Texture2D" uid="uid://cd5i66cxxb4in" path="res://sprites/altfrog.png" id="2_846g6"]
+[ext_resource type="Texture2D" uid="uid://br6267yhn0mlq" path="res://sprites/bird.png" id="4_qj8gj"]
+[ext_resource type="Texture2D" uid="uid://dc8koih8o0kwd" path="res://sprites/cat.png" id="5_w2wat"]
+[ext_resource type="Texture2D" uid="uid://cv6557htkefff" path="res://sprites/chameleon.png" id="6_pk6lr"]
+
+[node name="Customer" type="Node2D" unique_id=777623138]
+modulate = Color(2.4061394, 1.5896477, 1.5896477, 1)
+z_index = 6
+scale = Vector2(2.3, 2.3)
+script = ExtResource("1_xss0h")
+textures = [ExtResource("2_846g6"), ExtResource("1_ktfjk"), ExtResource("4_qj8gj"), ExtResource("5_w2wat"), ExtResource("6_pk6lr")]
+
+[node name="CustomerSprite" type="Sprite2D" parent="." unique_id=1254099484]
+texture = ExtResource("1_ktfjk")
