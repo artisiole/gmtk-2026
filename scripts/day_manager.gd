@@ -3,16 +3,18 @@ extends Node2D
 @export var camera: Camera2D
 @export var destination: Vector2
 
-var time_remaining: float = 301.0
+var time_remaining: float = 10.0
 var timing: bool = true
 var day: bool = true
 var evening: bool = false
 var night: bool = false
+var resultscreen: bool = false
 
 signal timeout
 signal daytime
 signal sunset
 signal nighttime
+signal results
 
 @onready var timerlabel = $Control/TimerLabel
 
@@ -48,11 +50,13 @@ func _process(delta: float) -> void:
 		evening = false
 		night = true
 	
-	if time_remaining < 0 and timing == true:
+	if time_remaining < 0 and timing == true and resultscreen == false:
 		timeout.emit()
 		var tween = get_tree().create_tween()
 		tween.tween_property($"..", "global_position", Vector2(640.0, -360.0), 2.5).set_trans(Tween.TRANS_BACK)
 		timing = false
+		results.emit()
+		resultscreen = true
 	
 	# Because we're setting timing to be false here, these statements can only be true for one frame.
 	# So (hopefully smartly and safely) it's called for until it's true and then STOPS.
@@ -72,3 +76,10 @@ func _process(delta: float) -> void:
 #func dayend() -> void:
 	#if timing == false:
 		#print("time_remaining")
+
+
+func _on_shop_next_doneshopping():
+	if resultscreen == true:
+		time_remaining = 301.1
+		timing = true
+		resultscreen = false

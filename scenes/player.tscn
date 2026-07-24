@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://bk3rtxa1ypj1p"]
 
 [ext_resource type="Script" uid="uid://b1hdk3jfuahhf" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://nuqdftfhrfvw" path="res://sprites/friendsheet1.png" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://c1ib4jnc30prf" path="res://sprites/dogwalk.png" id="2_dqkch"]
 [ext_resource type="Script" uid="uid://b3v1ih6fblcni" path="res://scripts/interactor.gd" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://cx45iyrgguf70" path="res://sprites/crosshair085.png" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://2pdx5timqqpo" path="res://sprites/doghead.png" id="5_qlg0r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ddi6"]
-radius = 15.0
-height = 60.0
+radius = 20.0
+height = 84.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 radius = 18.0
@@ -36,11 +37,40 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1.038, 1)]
+"values": [Vector2(2, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_dqkch"]
 resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_fjrip"]
+resource_name = "sprint"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2.23, 1.857)]
+}
 
 [sub_resource type="Animation" id="Animation_qlg0r"]
 resource_name = "walk"
@@ -68,13 +98,14 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1.038, 1), Vector2(1.0779992, 0.9199998)]
+"values": [Vector2(2, 2), Vector2(2.23, 1.857)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tuyoq"]
 _data = {
 &"RESET": SubResource("Animation_tuyoq"),
 &"idle": SubResource("Animation_dqkch"),
+&"sprint": SubResource("Animation_fjrip"),
 &"walk": SubResource("Animation_qlg0r")
 }
 
@@ -83,12 +114,17 @@ script = ExtResource("1_g2els")
 
 [node name="PlayerSprite" type="Sprite2D" parent="." unique_id=1766745481]
 texture_filter = 1
-scale = Vector2(1.038, 1)
+position = Vector2(0, -8)
+scale = Vector2(2, 2)
 texture = ExtResource("2_dqkch")
 hframes = 3
 
+[node name="Doghead" type="Sprite2D" parent="PlayerSprite" unique_id=1128449073]
+position = Vector2(0.5, -1)
+texture = ExtResource("5_qlg0r")
+
 [node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=581234897]
-position = Vector2(0, 3)
+position = Vector2(-2, -1)
 shape = SubResource("CapsuleShape2D_4ddi6")
 
 [node name="RotationPivot" type="Node2D" parent="." unique_id=1715832901]
