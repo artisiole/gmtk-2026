@@ -6,7 +6,7 @@ var current_interactor
 @export var player: Node2D
 @onready var sprite = $WaterCanSprite
 
-var has_watered = false
+var waters = 0
 
 func start_interact(interactor):
 	interacting = true
@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 		sprite.flip_h = (global_position.x - player.global_position.x) < 0
 		$Drips.position.x = abs($Drips.position.x) * sign(global_position.x - player.global_position.x)
 		
-		$Drips.visible = has_watered
+		$Drips.visible = waters > 0
 		
 		global_position = current_interactor.global_position
 	else:

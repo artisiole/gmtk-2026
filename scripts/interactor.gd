@@ -3,7 +3,7 @@ extends Area2D
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and has_overlapping_bodies():
 		# All interactables should be on layer2
-		print(get_overlapping_bodies())
+		#print(get_overlapping_bodies())
 		
 		# Dodgy
 		# If just pressed, prioritize seeds

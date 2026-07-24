@@ -234,14 +234,14 @@ sources/0 = SubResource("TileSetAtlasSource_vxglm")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jm57v"]
 size = Vector2(188, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4s8k"]
-size = Vector2(92, 96)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jscy8"]
+size = Vector2(105, 117)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npwjr"]
 size = Vector2(128, 128)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jscy8"]
-size = Vector2(105, 117)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4s8k"]
+size = Vector2(92, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpmhk"]
 size = Vector2(128, 128)
@@ -360,7 +360,7 @@ tile_set = SubResource("TileSet_f04hv")
 metadata/_edit_lock_ = true
 
 [node name="CameraTrigger" type="Area2D" parent="." unique_id=926716643 node_paths=PackedStringArray("camera", "pots", "pot_dest")]
-position = Vector2(1, 30)
+position = Vector2(-2, 51)
 script = ExtResource("24_y6deb")
 camera = NodePath("../Camera2D")
 destination = Vector2(640, 1080)
@@ -372,7 +372,7 @@ position = Vector2(1035, 733)
 shape = SubResource("RectangleShape2D_jm57v")
 
 [node name="CameraTrigger2" type="Area2D" parent="." unique_id=1422505816 node_paths=PackedStringArray("camera", "pots", "pot_dest")]
-position = Vector2(-1, -48)
+position = Vector2(-5, -72)
 script = ExtResource("24_y6deb")
 camera = NodePath("../Camera2D")
 destination = Vector2(640, 360)
@@ -382,6 +382,104 @@ pot_dest = NodePath("../Pots_Container/Top_Position")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraTrigger2" unique_id=1207109850]
 position = Vector2(1035, 733)
 shape = SubResource("RectangleShape2D_jm57v")
+
+[node name="SeedBags" type="Node2D" parent="." unique_id=637152682]
+
+[node name="SeedBag" type="StaticBody2D" parent="SeedBags" unique_id=1244492215]
+z_index = 6
+position = Vector2(58, 253)
+collision_layer = 2
+script = ExtResource("22_pm3ni")
+seed_spawned = ExtResource("2_yc10j")
+
+[node name="SeedBagSprite" type="Sprite2D" parent="SeedBags/SeedBag" unique_id=75806690]
+z_index = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_tefeu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBags/SeedBag" unique_id=612276195]
+position = Vector2(-0.5, -0.5)
+scale = Vector2(0.4, 0.4)
+shape = SubResource("RectangleShape2D_jscy8")
+
+[node name="PlayerBlock" type="StaticBody2D" parent="SeedBags/SeedBag" unique_id=1816433085]
+z_index = -1
+scale = Vector2(0.41, 0.41)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBags/SeedBag/PlayerBlock" unique_id=286234897]
+shape = SubResource("RectangleShape2D_npwjr")
+
+[node name="SeedBagBlue" type="StaticBody2D" parent="SeedBags" unique_id=979646887]
+z_index = 6
+position = Vector2(57, 330)
+collision_layer = 2
+script = ExtResource("22_pm3ni")
+seed_spawned = ExtResource("25_5poiv")
+
+[node name="SeedBagSprite" type="Sprite2D" parent="SeedBags/SeedBagBlue" unique_id=1268698847]
+z_index = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("25_pibwh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBags/SeedBagBlue" unique_id=1480957533]
+position = Vector2(-0.5, -0.5)
+scale = Vector2(0.4, 0.4)
+shape = SubResource("RectangleShape2D_jscy8")
+
+[node name="PlayerBlock" type="StaticBody2D" parent="SeedBags/SeedBagBlue" unique_id=1346235466]
+z_index = -1
+scale = Vector2(0.41, 0.41)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBags/SeedBagBlue/PlayerBlock" unique_id=1318060829]
+shape = SubResource("RectangleShape2D_npwjr")
+
+[node name="SeedBagRed" type="StaticBody2D" parent="SeedBags" unique_id=884574255]
+z_index = 6
+position = Vector2(58, 409)
+collision_layer = 2
+script = ExtResource("22_pm3ni")
+seed_spawned = ExtResource("27_2cjbq")
+
+[node name="SeedBagSprite" type="Sprite2D" parent="SeedBags/SeedBagRed" unique_id=1351396849]
+z_index = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("26_c6pm6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBags/SeedBagRed" unique_id=151980733]
+position = Vector2(-0.5, -0.5)
+scale = Vector2(0.4, 0.4)
+shape = SubResource("RectangleShape2D_jscy8")
+
+[node name="PlayerBlock" type="StaticBody2D" parent="SeedBags/SeedBagRed" unique_id=483324492]
+z_index = -1
+scale = Vector2(0.41, 0.41)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBags/SeedBagRed/PlayerBlock" unique_id=1971027275]
+shape = SubResource("RectangleShape2D_npwjr")
+
+[node name="SeedBagPurple" type="StaticBody2D" parent="SeedBags" unique_id=296470189]
+z_index = 6
+position = Vector2(57, 487)
+collision_layer = 2
+script = ExtResource("22_pm3ni")
+seed_spawned = ExtResource("29_chjal")
+
+[node name="SeedBagSprite" type="Sprite2D" parent="SeedBags/SeedBagPurple" unique_id=861062776]
+z_index = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("27_5he1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBags/SeedBagPurple" unique_id=762756341]
+position = Vector2(-0.5, -0.5)
+scale = Vector2(0.4, 0.4)
+shape = SubResource("RectangleShape2D_jscy8")
+
+[node name="PlayerBlock" type="StaticBody2D" parent="SeedBags/SeedBagPurple" unique_id=1249536510]
+z_index = -1
+scale = Vector2(0.41, 0.41)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBags/SeedBagPurple/PlayerBlock" unique_id=152423113]
+shape = SubResource("RectangleShape2D_npwjr")
 
 [node name="Compost" type="Area2D" parent="." unique_id=948883071]
 z_index = 1
@@ -401,102 +499,6 @@ shape = SubResource("RectangleShape2D_h4s8k")
 z_index = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Compost/PlayerBlock" unique_id=221349679]
-shape = SubResource("RectangleShape2D_npwjr")
-
-[node name="SeedBag" type="StaticBody2D" parent="." unique_id=1244492215]
-z_index = 6
-position = Vector2(58, 253)
-collision_layer = 2
-script = ExtResource("22_pm3ni")
-seed_spawned = ExtResource("2_yc10j")
-
-[node name="SeedBagSprite" type="Sprite2D" parent="SeedBag" unique_id=75806690]
-z_index = 2
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("4_tefeu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBag" unique_id=612276195]
-position = Vector2(-0.5, -0.5)
-scale = Vector2(0.4, 0.4)
-shape = SubResource("RectangleShape2D_jscy8")
-
-[node name="PlayerBlock" type="StaticBody2D" parent="SeedBag" unique_id=1816433085]
-z_index = -1
-scale = Vector2(0.41, 0.41)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBag/PlayerBlock" unique_id=286234897]
-shape = SubResource("RectangleShape2D_npwjr")
-
-[node name="SeedBagBlue" type="StaticBody2D" parent="." unique_id=979646887]
-z_index = 6
-position = Vector2(57, 330)
-collision_layer = 2
-script = ExtResource("22_pm3ni")
-seed_spawned = ExtResource("25_5poiv")
-
-[node name="SeedBagSprite" type="Sprite2D" parent="SeedBagBlue" unique_id=1268698847]
-z_index = 2
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("25_pibwh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBagBlue" unique_id=1480957533]
-position = Vector2(-0.5, -0.5)
-scale = Vector2(0.4, 0.4)
-shape = SubResource("RectangleShape2D_jscy8")
-
-[node name="PlayerBlock" type="StaticBody2D" parent="SeedBagBlue" unique_id=1346235466]
-z_index = -1
-scale = Vector2(0.41, 0.41)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBagBlue/PlayerBlock" unique_id=1318060829]
-shape = SubResource("RectangleShape2D_npwjr")
-
-[node name="SeedBagRed" type="StaticBody2D" parent="." unique_id=884574255]
-z_index = 6
-position = Vector2(58, 409)
-collision_layer = 2
-script = ExtResource("22_pm3ni")
-seed_spawned = ExtResource("27_2cjbq")
-
-[node name="SeedBagSprite" type="Sprite2D" parent="SeedBagRed" unique_id=1351396849]
-z_index = 2
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("26_c6pm6")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBagRed" unique_id=151980733]
-position = Vector2(-0.5, -0.5)
-scale = Vector2(0.4, 0.4)
-shape = SubResource("RectangleShape2D_jscy8")
-
-[node name="PlayerBlock" type="StaticBody2D" parent="SeedBagRed" unique_id=483324492]
-z_index = -1
-scale = Vector2(0.41, 0.41)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBagRed/PlayerBlock" unique_id=1971027275]
-shape = SubResource("RectangleShape2D_npwjr")
-
-[node name="SeedBagPurple" type="StaticBody2D" parent="." unique_id=296470189]
-z_index = 6
-position = Vector2(57, 487)
-collision_layer = 2
-script = ExtResource("22_pm3ni")
-seed_spawned = ExtResource("29_chjal")
-
-[node name="SeedBagSprite" type="Sprite2D" parent="SeedBagPurple" unique_id=861062776]
-z_index = 2
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("27_5he1u")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBagPurple" unique_id=762756341]
-position = Vector2(-0.5, -0.5)
-scale = Vector2(0.4, 0.4)
-shape = SubResource("RectangleShape2D_jscy8")
-
-[node name="PlayerBlock" type="StaticBody2D" parent="SeedBagPurple" unique_id=1249536510]
-z_index = -1
-scale = Vector2(0.41, 0.41)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SeedBagPurple/PlayerBlock" unique_id=152423113]
 shape = SubResource("RectangleShape2D_npwjr")
 
 [node name="Planter1L" type="Node2D" parent="." unique_id=1000403627]

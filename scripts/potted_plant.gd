@@ -5,6 +5,8 @@ var current_interactor
 
 @onready var pot = get_parent()
 
+var flower_name
+
 func start_interact(interactor):
 	interacting = true
 	current_interactor = interactor

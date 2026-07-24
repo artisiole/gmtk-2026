@@ -27,6 +27,7 @@ planted_phase1 = ExtResource("3_knp84")
 planted_phase2 = ExtResource("4_4hp63")
 planted_wilted = ExtResource("5_67v64")
 phaseTimes = [7.0, 15.0, 50.0]
+flower_name = "Blue"
 
 [node name="InteractableSprite" type="Sprite2D" parent="." unique_id=640613304]
 modulate = Color(0.19215687, 1, 1, 1)

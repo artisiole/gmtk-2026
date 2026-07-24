@@ -10,6 +10,8 @@ var current_interactor
 
 @export var phaseTimes = [0.0, 0.0, 0.0]
 
+@export var flower_name: String
+
 func start_interact(interactor):
 	interacting = true
 	current_interactor = interactor
