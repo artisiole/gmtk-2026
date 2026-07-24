@@ -3,7 +3,7 @@ extends Node2D
 @export var camera: Camera2D
 @export var destination: Vector2
 
-var time_remaining: float = 10.0
+var time_remaining: float = 301.0
 var timing: bool = true
 var day: bool = true
 var evening: bool = false

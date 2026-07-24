@@ -285,19 +285,19 @@ size = Vector2(124, 122)
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vxglm"]
 blend_mode = 3
 
-[sub_resource type="Gradient" id="Gradient_y6deb"]
+[sub_resource type="Gradient" id="Gradient_8pj4n"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_bpmhk"]
-gradient = SubResource("Gradient_y6deb")
+gradient = SubResource("Gradient_8pj4n")
 
-[sub_resource type="Gradient" id="Gradient_pm3ni"]
+[sub_resource type="Gradient" id="Gradient_y3oyw"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.76547605)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bpmhk"]
-gradient = SubResource("Gradient_pm3ni")
+gradient = SubResource("Gradient_y3oyw")
 fill = 1
 fill_from = Vector2(0.5217391, 0.5173913)
 
