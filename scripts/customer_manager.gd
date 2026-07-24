@@ -5,6 +5,10 @@ var slot_available: Array[bool] = [true, true, true]
 
 @export var customer: PackedScene
 
+@onready var spawn_point = $Outside
+@onready var pivot_point_1 = $Inside
+@onready var pivot_point_2 = $SidePivot
+
 var number_of_slots: int = 3
 
 var spawn_cooldown: float = 0.0
@@ -15,7 +19,16 @@ func spawn_customer() -> void:
 	for slot in range(number_of_slots):
 		if slot_available[slot]:
 			get_node(slots[slot]).add_child(instance)
-			instance.position = Vector2.ZERO
+			instance.global_position = spawn_point.global_position
+			
+			var tween = get_tree().create_tween()
+			tween.tween_property(instance, "global_position", pivot_point_1.global_position, 2.0)
+			
+			if slot == 0: # Side pivot
+				tween.tween_property(instance, "global_position", pivot_point_2.global_position, 2.0)
+			
+			tween.tween_property(instance, "position", Vector2.ZERO, 3.0).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+			
 			slot_available[slot] = false
 			break
 

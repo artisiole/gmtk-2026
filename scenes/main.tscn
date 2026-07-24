@@ -1567,8 +1567,14 @@ z_index = 1
 scale = Vector2(0.495, 0.495)
 texture = ExtResource("4_jyhfs")
 
-[node name="Next" type="Node2D" parent="CustomerManager" unique_id=348530493]
-position = Vector2(633, 1438)
+[node name="Outside" type="Node2D" parent="CustomerManager" unique_id=348530493]
+position = Vector2(637, 1522)
+
+[node name="Inside" type="Node2D" parent="CustomerManager" unique_id=129573030]
+position = Vector2(637, 1356)
+
+[node name="SidePivot" type="Node2D" parent="CustomerManager" unique_id=795307520]
+position = Vector2(183, 1325)
 
 [connection signal="button_up" from="Menus/ResultsNext" to="Menus/ResultsNext" method="_on_button_up"]
 [connection signal="shoptime" from="Menus/ResultsNext" to="Menus/ShopNext" method="_on_results_next_shoptime"]
