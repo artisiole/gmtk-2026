@@ -69,7 +69,7 @@ func _process(delta: float) -> void:
 	
 	if distance_from_mouse > cursor_max_distance: # if the mouse is farther from the player than the cursor max distance, point it towards the mouse
 		# reset interactor position to max distance
-		rotation_pivot.get_node("Interactor").position = Vector2(86, 0)
+		rotation_pivot.get_node("Interactor").position = Vector2(129, 0)
 		
 		# get the vectors needed
 		var v1: Vector2 = Vector2.RIGHT

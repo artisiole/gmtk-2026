@@ -130,7 +130,8 @@ shape = SubResource("CapsuleShape2D_4ddi6")
 [node name="RotationPivot" type="Node2D" parent="." unique_id=1715832901]
 
 [node name="Interactor" type="Area2D" parent="RotationPivot" unique_id=742383532]
-position = Vector2(86, 0)
+position = Vector2(129, 0)
+scale = Vector2(1.5, 1.5)
 collision_mask = 2
 script = ExtResource("3_dqkch")
 

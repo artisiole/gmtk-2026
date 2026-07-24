@@ -345,7 +345,7 @@ offset_top = 133.0
 offset_right = 161.0
 offset_bottom = 173.0
 
-[node name="ResultsNext" type="Button" parent="Menus" unique_id=1198181251 node_paths=PackedStringArray("camera")]
+[node name="ResultsNext" type="Button" parent="Menus" unique_id=1198181251]
 z_index = 50
 texture_filter = 1
 layout_mode = 0
@@ -363,9 +363,8 @@ text = "NEXT"
 flat = true
 icon_alignment = 1
 script = ExtResource("2_txyw0")
-camera = NodePath("")
 
-[node name="ShopNext" type="Button" parent="Menus" unique_id=2023881967 node_paths=PackedStringArray("camera", "wipe")]
+[node name="ShopNext" type="Button" parent="Menus" unique_id=2023881967]
 z_index = 50
 texture_filter = 1
 layout_mode = 0
@@ -383,8 +382,6 @@ text = "NEXT"
 flat = true
 icon_alignment = 1
 script = ExtResource("3_vc5cj")
-camera = NodePath("")
-wipe = NodePath("")
 
 [node name="Player" parent="." unique_id=1519330593 instance=ExtResource("2_0wfyh")]
 z_index = 4

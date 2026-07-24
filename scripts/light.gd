@@ -6,7 +6,7 @@ extends Node2D
 func _on_day_manager_daytime():
 	for light in get_children():
 		light.energy = 0.5
-		light.color = Color("ffffff3e")
+		light.color = Color("ffffffff")
 
 func _on_day_manager_sunset():
 	for light in get_children():
