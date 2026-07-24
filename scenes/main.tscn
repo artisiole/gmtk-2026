@@ -442,8 +442,9 @@ position = Vector2(50, -54)
 z_index = 5
 position = Vector2(277, 193)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter1L/Plot2" unique_id=1248815210]
 modulate = Color(1, 1, 1, 0)
@@ -473,12 +474,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1L/Plot2/PlayerBlock" unique_id=1592257853]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter1L/Plot2" unique_id=1337850736]
+position = Vector2(50, -54)
+
 [node name="Plot3" type="Area2D" parent="Planter1L" unique_id=2036477470 groups=["plot"]]
 z_index = 5
 position = Vector2(359, 193)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter1L/Plot3" unique_id=1264716179]
 modulate = Color(1, 1, 1, 0)
@@ -508,12 +513,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1L/Plot3/PlayerBlock" unique_id=1000817171]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter1L/Plot3" unique_id=1979463933]
+position = Vector2(50, -54)
+
 [node name="Plot4" type="Area2D" parent="Planter1L" unique_id=90850051 groups=["plot"]]
 z_index = 5
 position = Vector2(438, 193)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter1L/Plot4" unique_id=1487155357]
 modulate = Color(1, 1, 1, 0)
@@ -543,14 +552,18 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1L/Plot4/PlayerBlock" unique_id=1006129150]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter1L/Plot4" unique_id=884991849]
+position = Vector2(50, -54)
+
 [node name="Planter3L" type="Node2D" parent="." unique_id=2020319950]
 
 [node name="Plot" type="Area2D" parent="Planter3L" unique_id=830412277 groups=["plot"]]
 z_index = 5
 position = Vector2(280, 438)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter3L/Plot" unique_id=1795303848]
 modulate = Color(1, 1, 1, 0)
@@ -580,12 +593,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3L/Plot/PlayerBlock" unique_id=1025956633]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter3L/Plot" unique_id=1611602744]
+position = Vector2(50, -54)
+
 [node name="Plot2" type="Area2D" parent="Planter3L" unique_id=1380015182 groups=["plot"]]
 z_index = 5
 position = Vector2(280, 513)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter3L/Plot2" unique_id=380880289]
 modulate = Color(1, 1, 1, 0)
@@ -615,12 +632,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3L/Plot2/PlayerBlock" unique_id=1391332206]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter3L/Plot2" unique_id=707985328]
+position = Vector2(50, -54)
+
 [node name="Plot3" type="Area2D" parent="Planter3L" unique_id=234861878 groups=["plot"]]
 z_index = 5
 position = Vector2(357, 513)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter3L/Plot3" unique_id=1385626070]
 modulate = Color(1, 1, 1, 0)
@@ -650,12 +671,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3L/Plot3/PlayerBlock" unique_id=1104124801]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter3L/Plot3" unique_id=1924588553]
+position = Vector2(50, -54)
+
 [node name="Plot4" type="Area2D" parent="Planter3L" unique_id=607876690 groups=["plot"]]
 z_index = 5
 position = Vector2(437, 513)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter3L/Plot4" unique_id=534665999]
 modulate = Color(1, 1, 1, 0)
@@ -685,14 +710,18 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3L/Plot4/PlayerBlock" unique_id=1079302445]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter3L/Plot4" unique_id=90992222]
+position = Vector2(50, -54)
+
 [node name="Planter1R" type="Node2D" parent="." unique_id=302869505]
 
 [node name="Plot" type="Area2D" parent="Planter1R" unique_id=1647953021 groups=["plot"]]
 z_index = 5
 position = Vector2(1000, 274)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter1R/Plot" unique_id=1837356279]
 modulate = Color(1, 1, 1, 0)
@@ -722,12 +751,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1R/Plot/PlayerBlock" unique_id=1547273680]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter1R/Plot" unique_id=2132357224]
+position = Vector2(50, -54)
+
 [node name="Plot2" type="Area2D" parent="Planter1R" unique_id=1810359153 groups=["plot"]]
 z_index = 5
 position = Vector2(837, 193)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter1R/Plot2" unique_id=1287084767]
 modulate = Color(1, 1, 1, 0)
@@ -757,12 +790,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1R/Plot2/PlayerBlock" unique_id=1778527966]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter1R/Plot2" unique_id=964368110]
+position = Vector2(50, -54)
+
 [node name="Plot3" type="Area2D" parent="Planter1R" unique_id=1481734137 groups=["plot"]]
 z_index = 5
 position = Vector2(915, 193)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter1R/Plot3" unique_id=443651977]
 modulate = Color(1, 1, 1, 0)
@@ -792,12 +829,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1R/Plot3/PlayerBlock" unique_id=1723736147]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter1R/Plot3" unique_id=1058144987]
+position = Vector2(50, -54)
+
 [node name="Plot4" type="Area2D" parent="Planter1R" unique_id=1668791418 groups=["plot"]]
 z_index = 5
 position = Vector2(999, 193)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter1R/Plot4" unique_id=2039597810]
 modulate = Color(1, 1, 1, 0)
@@ -827,14 +868,18 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter1R/Plot4/PlayerBlock" unique_id=960279230]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter1R/Plot4" unique_id=1396151679]
+position = Vector2(50, -54)
+
 [node name="Planter3R" type="Node2D" parent="." unique_id=1649100471]
 
 [node name="Plot" type="Area2D" parent="Planter3R" unique_id=756994332 groups=["plot"]]
 z_index = 5
 position = Vector2(1000, 438)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter3R/Plot" unique_id=2119019023]
 modulate = Color(1, 1, 1, 0)
@@ -864,12 +909,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3R/Plot/PlayerBlock" unique_id=123210904]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter3R/Plot" unique_id=1291168975]
+position = Vector2(50, -54)
+
 [node name="Plot2" type="Area2D" parent="Planter3R" unique_id=257267160 groups=["plot"]]
 z_index = 5
 position = Vector2(837, 513)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter3R/Plot2" unique_id=686023410]
 modulate = Color(1, 1, 1, 0)
@@ -899,12 +948,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3R/Plot2/PlayerBlock" unique_id=765687497]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter3R/Plot2" unique_id=542295259]
+position = Vector2(50, -54)
+
 [node name="Plot3" type="Area2D" parent="Planter3R" unique_id=1203769939 groups=["plot"]]
 z_index = 5
 position = Vector2(916, 513)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter3R/Plot3" unique_id=1037018877]
 modulate = Color(1, 1, 1, 0)
@@ -934,12 +987,16 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3R/Plot3/PlayerBlock" unique_id=300212999]
 shape = SubResource("RectangleShape2D_npwjr")
 
+[node name="Notification" type="Sprite2D" parent="Planter3R/Plot3" unique_id=85749256]
+position = Vector2(50, -54)
+
 [node name="Plot4" type="Area2D" parent="Planter3R" unique_id=844118770 groups=["plot"]]
 z_index = 5
 position = Vector2(1000, 513)
 scale = Vector2(0.5, 0.5)
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("4_tbgi4")
+water_notification = ExtResource("28_j8jky")
 
 [node name="PlotSprite" type="Sprite2D" parent="Planter3R/Plot4" unique_id=1489532639]
 modulate = Color(1, 1, 1, 0)
@@ -968,6 +1025,9 @@ z_index = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planter3R/Plot4/PlayerBlock" unique_id=725606879]
 shape = SubResource("RectangleShape2D_npwjr")
+
+[node name="Notification" type="Sprite2D" parent="Planter3R/Plot4" unique_id=1315557406]
+position = Vector2(50, -54)
 
 [node name="SkyOverlay" type="Sprite2D" parent="." unique_id=1512364212]
 modulate = Color(1.02, 1.02, 1.02, 1)
